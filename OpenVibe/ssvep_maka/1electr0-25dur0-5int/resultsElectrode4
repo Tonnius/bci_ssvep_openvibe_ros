@@ -1,0 +1,120 @@
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Received train stimulation. Data dim is [2720x2]
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> For information, we have 544 feature vector(s) for input 1
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> For information, we have 2176 feature vector(s) for input 2
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> k-fold test could take quite a long time, be patient
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 1 / 10 (performance : 77.2059%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 2 / 10 (performance : 75%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 3 / 10 (performance : 98.1618%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 4 / 10 (performance : 80.5147%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 5 / 10 (performance : 71.3235%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 6 / 10 (performance : 100%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 7 / 10 (performance : 75%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 8 / 10 (performance : 75%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 9 / 10 (performance : 75%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Finished with partition 10 / 10 (performance : 79.4118%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Cross-validation test accuracy is 80.6618% (sigma = 9.53504%)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer>   Target  1:    7.5  92.5 %, 544 examples
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer>   Target  2:    1.1  98.9 %, 2176 examples
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer> Training set accuracy is 81.5809% (optimistic)
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer>   Target  1:   11.4  88.6 %, 544 examples
+[ INF ] At time 504.102 sec <Box algorithm::(0x3a97f4c0, 0x507b1728) aka Classifier trainer>   Target  2:    0.9  99.1 %, 2176 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Received train stimulation. Data dim is [2720x2]
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> For information, we have 544 feature vector(s) for input 1
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> For information, we have 2176 feature vector(s) for input 2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> k-fold test could take quite a long time, be patient
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 1 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 2 / 10 (performance : 50%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 3 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 4 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 5 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 6 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 7 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 8 / 10 (performance : 50%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 9 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Finished with partition 10 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Cross-validation test accuracy is 80% (sigma = 18.7083%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer>   Target  1:    0.0 100.0 %, 544 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer>   Target  2:    0.0 100.0 %, 2176 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer> Training set accuracy is 80% (optimistic)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer>   Target  1:    0.0 100.0 %, 544 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1727) aka Classifier trainer>   Target  2:    0.0 100.0 %, 2176 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Received train stimulation. Data dim is [2720x2]
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> For information, we have 544 feature vector(s) for input 1
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> For information, we have 2176 feature vector(s) for input 2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> k-fold test could take quite a long time, be patient
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 1 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 2 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 3 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 4 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 5 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 6 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 7 / 10 (performance : 73.1618%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 8 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 9 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Finished with partition 10 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Cross-validation test accuracy is 79.8162% (sigma = 10.1066%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer>   Target  1:    1.1  98.9 %, 544 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer>   Target  2:    0.5  99.5 %, 2176 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer> Training set accuracy is 79.6324% (optimistic)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer>   Target  1:    0.0 100.0 %, 544 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b1729) aka Classifier trainer>   Target  2:    0.5  99.5 %, 2176 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Received train stimulation. Data dim is [2720x2]
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> For information, we have 544 feature vector(s) for input 1
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> For information, we have 2176 feature vector(s) for input 2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> k-fold test could take quite a long time, be patient
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 1 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 2 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 3 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 4 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 5 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 6 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 7 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 8 / 10 (performance : 100%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 9 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Finished with partition 10 / 10 (performance : 75%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Cross-validation test accuracy is 80% (sigma = 10%)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer>   Target  1:    0.0 100.0 %, 544 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer>   Target  2:    0.0 100.0 %, 2176 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer> Training set accuracy is 80% (optimistic)
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer>   Cls vs cls      1     2
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer>   Target  1:    0.0 100.0 %, 544 examples
+[ INF ] At time 504.109 sec <Box algorithm::(0x3a97f4c0, 0x507b172a) aka Classifier trainer>   Target  2:    0.0 100.0 %, 2176 examples
+[ INF ] At time 504.117 sec <Box algorithm::(0x4d1b5207, 0x778f8de5) aka Target Separator> Lua script terminated
+[ INF ] At time 504.117 sec <Box algorithm::(0x6e5f7222, 0x3cb22a2b) aka Target Separator> Lua script terminated
+[ INF ] At time 504.117 sec <Box algorithm::(0x6e5f7222, 0x3cb22a2c) aka Target Separator> Lua script terminated
+[ INF ] At time 504.125 sec <Box algorithm::(0x00c60f3a, 0x0b80f2a4) aka Target Separator> Lua script terminated
+[ INF ] At time 504.133 sec <Box algorithm::(0x083672cc, 0x0afdec3e) aka FlipSwitch> Lua script terminated
+[ WARNING ] <Player::can not reach realtime> 44 second(s) late...
+
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script> box has 1 input(s)
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script> box has 1 output(s)
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script> box has 1 setting(s)
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script>  - setting 1 has value [/home/tonnius/Git/openvibe/dist/extras-Release/share/openvibe/scenarios/bci-examples/ssvep_copy/scripts/stimulation_indexer.lua]
+[ WARNING ] Box <Classifier processor> sends inconsistent chunk dates on output [0] (current chunk dates are [429496729,1494648619] whereas previous chunk dates were [0,1065151889])
+[ WARNING ] 'Stimulations' streams should have continuously dated chunks
+[ WARNING ] Please report to box author and attach your scenario
+[ WARNING ] Box <Classifier processor> sends inconsistent chunk dates on output [0] (current chunk dates are [429496729,1494648619] whereas previous chunk dates were [0,1065151889])
+[ WARNING ] 'Stimulations' streams should have continuously dated chunks
+[ WARNING ] Please report to box author and attach your scenario
+[ WARNING ] Box <Classifier processor> sends inconsistent chunk dates on output [0] (current chunk dates are [429496729,1494648619] whereas previous chunk dates were [0,1065151889])
+[ WARNING ] 'Stimulations' streams should have continuously dated chunks
+[ WARNING ] Please report to box author and attach your scenario
+[ WARNING ] Box <Classifier processor> sends inconsistent chunk dates on output [0] (current chunk dates are [429496729,1494648619] whereas previous chunk dates were [0,1065151889])
+[ WARNING ] 'Stimulations' streams should have continuously dated chunks
+[ WARNING ] Please report to box author and attach your scenario
+[ INF ] At time 493.258 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> Lua script terminated
+[ INF ] At time 633.234 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 0 : 0 :   0.0%, 1 : 100.0%, 2 :   0.0%, 3 :   0.0%,  total 15
+[ INF ] At time 633.234 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 1 : 0 :   0.0%, 1 : 100.0%, 2 :   0.0%, 3 :   0.0%,  total 20
+[ INF ] At time 633.234 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 2 : 0 :  0.0%, 1 :  0.0%, 2 :  0.0%, 3 :  0.0%,  total 0
+[ INF ] At time 633.234 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 3 : 0 :   0.0%, 1 : 100.0%, 2 :   0.0%, 3 :   0.0%,  total 3
+[ INF ] At time 633.234 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Correct     20 ->  52.6%
+[ INF ] At time 633.234 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Incorrect   18 ->  47.4%
+[ INF ] At time 633.234 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Mean time between stimulation start and prediction was 0.38037109375 
+

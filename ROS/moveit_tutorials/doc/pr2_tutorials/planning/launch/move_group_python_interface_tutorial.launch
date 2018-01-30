@@ -1,0 +1,10 @@
+<launch>
+  <!-- 
+  <include file="$(find ur5_custom_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+  -->
+  <node name="move_group_python_interface_tutorial" pkg="moveit_tutorials" type="move_group_python_interface_tutorial.py" respawn="false" output="screen">
+  </node>
+
+</launch>

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ur5_custom_description
+    relative_path: urdf/ur5_on_table.xacro
+    use_jade_xacro: true
+  SRDF:
+    relative_path: config/ur5_on_table.srdf
+  CONFIG:
+    author_name: Martin Appo
+    author_email: martin33@ut.ee
+    generated_timestamp: 1509721941

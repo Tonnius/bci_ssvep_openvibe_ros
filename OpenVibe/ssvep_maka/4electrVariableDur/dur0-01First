@@ -1,0 +1,13 @@
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script> box has 1 input(s)
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script> box has 1 output(s)
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script> box has 1 setting(s)
+[ INF ] At time 0.000 sec <Box algorithm::(0x0e753632, 0x6b20f4b8) aka Lua Stimulator> <In Script>  - setting 1 has value [/home/tonnius/Git/openvibe/dist/extras-Release/share/openvibe/scenarios/bci-examples/ssvep_copy/scripts/stimulation_indexer.lua]
+[ INF ] At time 507.273 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> Lua script terminated
+[ INF ] At time 598.922 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 0 : 0 : 100.0%, 1 :   0.0%, 2 :   0.0%, 3 :   0.0%,  total 8
+[ INF ] At time 598.922 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 1 : 0 :   0.0%, 1 :  75.0%, 2 :   0.0%, 3 :  25.0%,  total 8
+[ INF ] At time 598.922 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 2 : 0 :   0.0%, 1 :   0.0%, 2 :  75.0%, 3 :  25.0%,  total 8
+[ INF ] At time 598.922 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Target 3 : 0 :   0.0%, 1 :   0.0%, 2 :  12.5%, 3 :  87.5%,  total 8
+[ INF ] At time 598.922 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Correct     27 ->  84.4%
+[ INF ] At time 598.922 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Incorrect    5 ->  15.6%
+[ INF ] At time 598.922 sec <Box algorithm::(0x53e21741, 0x46473b67) aka Confusion Matrix Calculator> <In Script> Mean time between stimulation start and prediction was 1.8115234375 
+
