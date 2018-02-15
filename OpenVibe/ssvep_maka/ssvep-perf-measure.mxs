@@ -2155,7 +2155,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[2018.01.17-16.49.48]-test.ov</Value>
+					<Value>/home/tonnius/Git/openvibe/dist/extras-Release/share/openvibe/scenarios/bci-examples/ssvep_maka/signals/ssvep-record-[2018.02.15-14.32.32]-teet-test.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

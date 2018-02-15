@@ -1144,7 +1144,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[2018.01.10-15.32.49].ov</Value>
+					<Value>/home/tonnius/Git/openvibe/dist/extras-Release/share/openvibe/scenarios/bci-examples/ssvep_maka/signals/ssvep-record-[2018.02.15-14.20.15]-teet.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
