@@ -31,7 +31,7 @@ function initialize(box)
 
 	processing_epoch_duration = box:get_setting(5)
 	processing_epoch_interval = box:get_setting(6)
-	processing_frequency_tolerance = tonumber(box:get_setting(7))
+	processing_frequency_tolerance = box:get_setting(7)
 	channels = box:get_setting(8)
 	--box:log("Info", "input '" .. processing_epoch_duration .. "'")
 

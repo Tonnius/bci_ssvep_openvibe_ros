@@ -1,22 +1,24 @@
 #!/bin/bash
 
 OPENVIBE_ROOT_PATH="$HOME/Git/openvibe/dist/extras-Release"
-MY_SCRIPT_PATH="$HOME/Git/openvibe/dist/extras-Release/share/openvibe/scenarios/bci-examples/ssvep_maka"
-INPUT_TRAINING_FILE_LOC="$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.09-12.25.10].ov"
+MY_SCRIPT_PATH="$HOME/Git/magister_BCI/OpenVibe/ssvep_maka"
+INPUT_TRAINING_FILE_LOC="$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.22.10]-martin-8-5elect.ov"
+INPUT_TESTING_FILE_LOC="$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect.ov"
 
 PROC_EPOCH_DUR=0.25
 PROC_EPOCH_INTER=0.1
 FREQ_TOLERANCE=0.25
-CHANNELS="1:4"
-sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-bci-1-ssvep-configuration.xml" --invisible \
+CHANNELS="1:5"
+
+sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-configuration-auto.xml" --invisible \
 --define epDur $PROC_EPOCH_DUR \
 --define epInt $PROC_EPOCH_INTER \
 --define freqTol $FREQ_TOLERANCE \
 --define ch $CHANNELS
 wait
-#sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-bci-3-CSP-training.xml" --define inFile "$INPUT_TRAINING_FILE_LOC" --invisible 
-#wait
-#sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-bci-4-classifier-training.xml" --invisible
-#wait
-#sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-perf-measure.mxs" --invisible
+sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/CSP-training-auto.xml" --define inFile "$INPUT_TRAINING_FILE_LOC" --invisible 
+wait
+sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/classifier-training-auto.xml" --define inFile "$INPUT_TRAINING_FILE_LOC" --invisible
+wait
+sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/perf-measure-auto.mxs" --define inFile "$INPUT_TESTING_FILE_LOC" --invisible
 
