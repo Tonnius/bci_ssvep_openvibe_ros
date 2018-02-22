@@ -10,7 +10,7 @@ training_targets_positions = {}
 processing_epoch_duration = nil
 processing_epoch_interval = nil
 processing_frequency_tolerance = nil
-
+channels = nil
 function initialize(box)
 
 	dofile(box:get_config("${Path_Data}") .. "/plugins/stimulation/lua-stimulator-stim-codes.lua")
@@ -27,10 +27,13 @@ function initialize(box)
 		table.insert(stimulation_frequencies, value)
 		frequency_count = frequency_count + 1
 	end
+	
 
 	processing_epoch_duration = box:get_setting(5)
 	processing_epoch_interval = box:get_setting(6)
-	processing_frequency_tolerance = box:get_setting(7)
+	processing_frequency_tolerance = tonumber(box:get_setting(7))
+	channels = box:get_setting(8)
+	--box:log("Info", "input '" .. processing_epoch_duration .. "'")
 
 end
 
@@ -118,6 +121,23 @@ function process(box)
 	success = success and cfg_file:write(string.format("<SettingValue>%g</SettingValue>\n", processing_epoch_interval))
 	success = success and cfg_file:write("</OpenViBE-SettingsOverride>\n")
 		
+	cfg_file:close()
+
+	box:log("Info", box:get_config("Writing file '${Player_ScenarioDirectory}/configuration/channel-selector.cfg'"))
+
+	cfg_file = io.open(box:get_config("${Player_ScenarioDirectory}/configuration/channel-selector.cfg"), "w")
+
+	if cfg_file == nil then
+		box:log("Error", "Could not open config file for writing")
+	end
+	--success = true
+
+	success = success and cfg_file:write("<OpenViBE-SettingsOverride>\n")
+	success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", channels))
+	success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", "Select"))
+	success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", "Smart"))
+	success = success and cfg_file:write("</OpenViBE-SettingsOverride>\n")
+
 	cfg_file:close()
 
 	if (success == false) then

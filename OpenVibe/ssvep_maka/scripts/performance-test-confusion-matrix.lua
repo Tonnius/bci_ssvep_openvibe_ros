@@ -1,4 +1,4 @@
-dclasses = nil
+classes = nil
 
 current_target = nil
 start_time = 0;
@@ -29,7 +29,6 @@ function uninitialize(box)
 		
 		output = string.format("Target %d : ", j - 1)
 		inClass = 0
-		
 		for i = 1, classes do
 			inClass = inClass + score[j][i]
 		end
@@ -38,7 +37,9 @@ function uninitialize(box)
 			output = output .. string.format("%d : %5.1f%%, ", i - 1, 100*score[j][i]/inClass)
 
 			if i == j then
-				correct = correct + score[j][i]	
+				
+				correct = correct + score[j][i]
+				
 			else
 				incorrect = incorrect + score[j][i]
 			end
@@ -46,11 +47,9 @@ function uninitialize(box)
 
 		box:log("Info", string.format("%s total %d", output, inClass))
 	end
-
 	box:log("Info", string.format("Correct   %4d -> %5.1f%%", correct, 100*correct/(correct+incorrect)))
 	box:log("Info", string.format("Incorrect %4d -> %5.1f%%", incorrect, 100*incorrect/(correct+incorrect)))
 	box:log("Info", string.format("Mean time between stimulation start and prediction was %s ", mean_detect_time / (4*8)))
-
 end
 
 function process(box)
@@ -100,6 +99,8 @@ function process(box)
 					real_target = current_target + 1
 					prediction = s_code - OVTK_StimulationId_Label_00 + 1
 					score[real_target][prediction] = score[real_target][prediction] + 1
+					box:send_stimulation(1, OVTK_StimulationId_Label_00 + real_target, box:get_current_time() + 0.001, 0)
+					box:send_stimulation(2, OVTK_StimulationId_Label_00 + prediction, box:get_current_time() + 0.001, 0)
 					if pred_done == false then
 
 						pred_done = true

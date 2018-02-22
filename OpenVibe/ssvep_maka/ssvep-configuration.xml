@@ -2,7 +2,32 @@
 	<FormatVersion>1</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
 	<CreatorVersion>2.0.0</CreatorVersion>
-	<Settings></Settings>
+	<Settings>
+		<Setting>
+			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+			<Name>epDur</Name>
+			<DefaultValue>0.25</DefaultValue>
+			<Value>0.25</Value>
+		</Setting>
+		<Setting>
+			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+			<Name>epInt</Name>
+			<DefaultValue>0.1</DefaultValue>
+			<Value>0.1</Value>
+		</Setting>
+		<Setting>
+			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+			<Name>freqTol</Name>
+			<DefaultValue>0.25</DefaultValue>
+			<Value>0.25</Value>
+		</Setting>
+		<Setting>
+			<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
+			<Name>ch</Name>
+			<DefaultValue>1:5</DefaultValue>
+			<Value>1:5</Value>
+		</Setting>
+	</Settings>
 	<Inputs></Inputs>
 	<Outputs></Outputs>
 	<Boxes>
@@ -104,21 +129,28 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Epoch Duration</Name>
 					<DefaultValue>0.5</DefaultValue>
-					<Value>0.1</Value>
+					<Value>$var{epDur}</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Epoch Interval</Name>
 					<DefaultValue>0.1</DefaultValue>
-					<Value>0.025</Value>
+					<Value>$var{epInt}</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Frequency Tolerance</Name>
 					<DefaultValue>0.250</DefaultValue>
-					<Value>0.25</Value>
+					<Value>$var{freqTol}</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
+					<Name>Selected channels</Name>
+					<DefaultValue>1:5</DefaultValue>
+					<Value>$var{ch}</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

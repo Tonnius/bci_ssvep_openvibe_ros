@@ -2,7 +2,14 @@
 	<FormatVersion>1</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
 	<CreatorVersion>2.0.0</CreatorVersion>
-	<Settings></Settings>
+	<Settings>
+		<Setting>
+			<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
+			<Name>inFile</Name>
+			<DefaultValue>${Player_ScenarioDirectory}/signals/ssvep-record-[2018.01.10-15.32.49].ov</DefaultValue>
+			<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[2018.01.10-15.32.49]-tonis.ov</Value>
+		</Setting>
+	</Settings>
 	<Inputs></Inputs>
 	<Outputs></Outputs>
 	<Boxes>
@@ -1144,7 +1151,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[2018.01.10-15.32.49].ov</Value>
+					<Value>$var{inFile}</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -1159,7 +1166,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1616</Value>
+					<Value>1632</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -1828,7 +1835,7 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>176</Value>
+					<Value>160</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
@@ -2190,7 +2197,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1616</Value>
+					<Value>1584</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -2654,17 +2661,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x6296d9d2, 0x021184dc)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x45f96cf7, 0x16a31a72)</BoxIdentifier>
-				<BoxOutputIndex>2</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x07586dc6, 0x2d35f843)</BoxIdentifier>
-				<BoxInputIndex>1</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x6349e049, 0x221de597)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x7b41a707, 0x681981b2)</BoxIdentifier>
@@ -2731,6 +2727,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x7081a854, 0x4b6e5e39)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x45f96cf7, 0x16a31a72)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x7b41a707, 0x681981b2)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x733dc181, 0x2e85d3be)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x1aa60f45, 0x30bb776f)</BoxIdentifier>
@@ -2764,6 +2771,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x7a8026ea, 0x5442d76d)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x45f96cf7, 0x16a31a72)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x07586dc6, 0x2d35f843)</BoxIdentifier>
+				<BoxInputIndex>1</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x7ab91715, 0x21c5374a)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x07586dc6, 0x2d35f843)</BoxIdentifier>
@@ -2771,17 +2789,6 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x50c3b2f7, 0x77f1f351)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x7b8f513b, 0x26a0d229)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x45f96cf7, 0x16a31a72)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x7b41a707, 0x681981b2)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
@@ -2800,7 +2807,7 @@
 	<Comments>
 		<Comment>
 			<Identifier>(0x00bcf70b, 0x626ab066)</Identifier>
-			<Text>Signal processing for the &lt;b&gt;third&lt;/b&gt; stimulation frequency</Text>
+			<Text>Signal processing for the &lt;b&gt;fourth&lt;/b&gt; stimulation frequency</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
@@ -2849,7 +2856,7 @@ scenario uses example data provided with OpenViBE.</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1328</Value>
+					<Value>1120</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
