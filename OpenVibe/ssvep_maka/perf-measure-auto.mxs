@@ -1057,7 +1057,7 @@
 					<TypeIdentifier>(0xb0d0db45, 0x49cbc34a)</TypeIdentifier>
 					<Name>Script</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/openvibe/dist/extras-Release/share/openvibe/scenarios/box-tutorials/python/scripts/python-confusion-matrix.py</Value>
+					<Value>${Player_ScenarioDirectory}/scripts/python-confusion-matrix.py</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

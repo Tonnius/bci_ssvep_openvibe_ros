@@ -8,6 +8,7 @@ do_debug = false;
 
 score = {}
 mean_detect_time = 0;
+nr_of_stim = 0;
 function initialize(box)
 	dofile(box:get_config("${Path_Data}") .. "/plugins/stimulation/lua-stimulator-stim-codes.lua")
 	classes = box:get_setting(2)
@@ -49,7 +50,7 @@ function uninitialize(box)
 	end
 	box:log("Info", string.format("Correct   %4d -> %5.1f%%", correct, 100*correct/(correct+incorrect)))
 	box:log("Info", string.format("Incorrect %4d -> %5.1f%%", incorrect, 100*incorrect/(correct+incorrect)))
-	box:log("Info", string.format("Mean time between stimulation start and prediction was %s ", mean_detect_time / (4*8)))
+	box:log("Info", string.format("Mean time between stimulation start and prediction was %s , nr of stims was %s", mean_detect_time / nr_of_stim, nr_of_stim))
 end
 
 function process(box)
@@ -71,6 +72,7 @@ function process(box)
 				current_target = s_code - OVTK_StimulationId_Label_00
 				current_target_time = s_date
 				pred_done = false
+				nr_of_stim = nr_of_stim + 1
 			elseif s_code == OVTK_StimulationId_VisualStimulationStart then
 				if do_debug then box:log("Info", "Trial started at " .. s_date) end
 				start_time = s_date
@@ -101,7 +103,7 @@ function process(box)
 					score[real_target][prediction] = score[real_target][prediction] + 1
 					box:send_stimulation(1, OVTK_StimulationId_Label_00 + real_target, box:get_current_time() + 0.001, 0)
 					box:send_stimulation(2, OVTK_StimulationId_Label_00 + prediction, box:get_current_time() + 0.001, 0)
-					if pred_done == false then
+					if pred_done == false and real_target == prediction then
 
 						pred_done = true
 						--box:log("Info", string.format("Time between stimulation start and prediction was %s ", s_date - start_time))
