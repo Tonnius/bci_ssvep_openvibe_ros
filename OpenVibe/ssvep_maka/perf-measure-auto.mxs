@@ -1060,6 +1060,34 @@
 					<Value>${Player_ScenarioDirectory}/scripts/python-confusion-matrix.py</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
+					<Name>channels</Name>
+					<DefaultValue>1:5</DefaultValue>
+					<Value>${ch}</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+					<Name>Epoch Duration</Name>
+					<DefaultValue>0.25</DefaultValue>
+					<Value>${epDur}</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+					<Name>Epoch Interval</Name>
+					<DefaultValue>0.1</DefaultValue>
+					<Value>${epInt}</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+					<Name>Freq Tol</Name>
+					<DefaultValue>0.25</DefaultValue>
+					<Value>${freqTol}</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
 			</Settings>
 			<Attributes>
 				<Attribute>
