@@ -1,23 +1,23 @@
 -- this function is called when the box is initialized
 function initialize(box)
-        box:log("Trace", "initialize has been called")
+        --box:log("Trace", "initialize has been called")
  
         dofile(box:get_config("${Path_Data}") .. "/plugins/stimulation/lua-stimulator-stim-codes.lua")
         -- inspects the box topology
-        box:log("Info", string.format("box has %i input(s)", box:get_input_count()))
-        box:log("Info", string.format("box has %i output(s)", box:get_output_count()))
-        box:log("Info", string.format("box has %i setting(s)", box:get_setting_count()))
-        for i = 1, box:get_setting_count() do
-                box:log("Info", string.format(" - setting %i has value [%s]", i, box:get_setting(i)))
-        end
+        --box:log("Info", string.format("box has %i input(s)", box:get_input_count()))
+        --box:log("Info", string.format("box has %i output(s)", box:get_output_count()))
+        --box:log("Info", string.format("box has %i setting(s)", box:get_setting_count()))
+        --for i = 1, box:get_setting_count() do
+                --box:log("Info", string.format(" - setting %i has value [%s]", i, box:get_setting(i)))
+        --end
 end
 -- this function is called when the box is uninitialized
 function uninitialize(box)
-        box:log("Trace", "uninitialize has been called")
+        --box:log("Trace", "uninitialize has been called")
 end
 -- this function is called once by the box
 function process(box)
-        box:log("Trace", "process has been called")
+        --box:log("Trace", "process has been called")
         -- enters infinite loop
         -- cpu will be released with a call to sleep
         -- at the end of the loop

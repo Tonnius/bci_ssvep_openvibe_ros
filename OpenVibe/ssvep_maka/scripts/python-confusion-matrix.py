@@ -1,4 +1,4 @@
-import numpy as np
+#import numpy as np
 import os
 # from pandas_ml import ConfusionMatrix
 import pickle
@@ -10,7 +10,10 @@ class MyOVBox(OVBox):
         OVBox.__init__(self)
         self.actualLabels = []
         self.predictedLabels = []
-
+        self.nrOfStims = 0
+        self.stimStartTime = 0
+        self.stimEndTime = 0
+        self.meanDetectTime = 0
     def initialize(self):
         # nop
         return
@@ -19,7 +22,7 @@ class MyOVBox(OVBox):
         stim = 0
         for chunkIndex in range(len(self.input[0])):
             chunk = self.input[0].pop()
-            if (type(chunk) == OVStimulationSet):
+            if type(chunk) == OVStimulationSet:
                 for stimIdx in range(len(chunk)):
                     stim = chunk.pop()
                     # print 'Received stim on input0', stim.identifier, 'stamped at', stim.date, 's'
@@ -27,7 +30,7 @@ class MyOVBox(OVBox):
 
         for chunkIndex1 in range(len(self.input[1])):
             chunk1 = self.input[1].pop()
-            if (type(chunk1) == OVStimulationSet):
+            if type(chunk1) == OVStimulationSet:
                 for stimIdx1 in range(len(chunk1)):
                     stim1 = chunk1.pop()
                     # if stim is not 0:
@@ -35,41 +38,65 @@ class MyOVBox(OVBox):
                     # print 'Received stim on input1', stim1.identifier, 'stamped at', stim1.date, 's'
                     self.predictedLabels.append(stim1.identifier)
 
+        for chunkIndex2 in range(len(self.input[2])):
+            chunk2 = self.input[2].pop()
+            if type(chunk2) == OVStimulationSet:
+                for stimIdx2 in range(len(chunk2)):
+                    stim2 = chunk2.pop()
+                    # if stim is not 0:
+                    # if stim1.date > stim.date:
+                    #print 'Received stim on input2', stim2.identifier, 'stamped at', stim2.date, 's'
+                    #stimCode = OpenViBE_stimulation[stim2.identifier]
+                    if (stim2.identifier == 33054):
+                        self.stimStartTime = stim2.date
+                        self.nrOfStims += 1
+                    elif (stim2.identifier == 33055):
+                        self.stimEndTime = stim2.date
+                        if (self.stimEndTime > self.stimStartTime):
+                            self.meanDetectTime += self.stimEndTime - self.stimStartTime
+                        else:
+                            print "Start Time came after End Time. Something went wrong."
         # else:
         #	print 'Received chunk of type ', type(chunk), " looking for StimulationSet"
         return
 
     def uninitialize(self):
-        nrOfSubjects = 3
+
+        nrOfSubj = int(self.setting['Nr of subjects'])
+
         dirToWrite = '/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/data/'
         dataDirFileNames = sorted(os.listdir(dirToWrite))
-        print dataDirFileNames
+        #print dataDirFileNames
         fileNrToWrite = dataDirFileNames[0]
-        exSettings = [self.setting['channels'],
-                      self.setting['Epoch Duration'],
-                      self.setting['Epoch Interval'],
-                      self.setting['Freq Tol']]
+        self.meanDetectTime /= self.nrOfStims
+        exSettings = {'ch': self.setting['channels'],
+                      'epDur': self.setting['Epoch Duration'],
+                      'epInt': self.setting['Epoch Interval'],
+                      'freqTol': self.setting['Freq Tol'],
+                      'nrOfSubjects': nrOfSubj}
 
-        if int(fileNrToWrite) > nrOfSubjects:
-            fileNrToWrite = '1'
+        #print 'nr of subjects ' + str(nrOfSubj)
+        if int(fileNrToWrite) > (nrOfSubj - 1):
+            fileNrToWrite = '0'
 
         settingsFileName = ''
-        for setting in exSettings:
-            settingsFileName = settingsFileName + str(setting)[2:]
+        for key,value in exSettings.items():
+            settingsFileName += str(value)[2:]
 
         writeFile = dirToWrite + 'Ex' + settingsFileName + 'subject' + fileNrToWrite
-        labels = []
+        labels = {'settings': exSettings,
+                  'actual': self.actualLabels,
+                  'predicted': self.predictedLabels,
+                  'detectTime': self.meanDetectTime}
 
-        print 'Experiment setting: '.join([str(item) for item in exSettings])
-        labels.append(exSettings)
-        labels.append(self.actualLabels)
-        labels.append(self.predictedLabels)
         pickle.dump(labels, open(writeFile, 'wb'))
 
         os.rename(dirToWrite + dataDirFileNames[0], dirToWrite + str(int(fileNrToWrite) + 1))
 
         # with open(dirToWrite, 'a') as f:
         # np.savetxt(f, (self.actualLabels, self.predictedLabels))
+        print "meanDetectTime " + str(self.meanDetectTime) + "and nr of stims " + str(self.nrOfStims)
+        print "Mean detect time was " + str(self.meanDetectTime)
         print 'File saved to ' + writeFile
         print 'actual labels array size: ', len(self.actualLabels), ' predictedLabels array size: ', len(
             self.predictedLabels)

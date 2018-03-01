@@ -73,11 +73,13 @@ function process(box)
 				current_target_time = s_date
 				pred_done = false
 				nr_of_stim = nr_of_stim + 1
+				box:send_stimulation(3, OVTK_StimulationId_Label_1E, box:get_current_time() + 1, 0)
+
 			elseif s_code == OVTK_StimulationId_VisualStimulationStart then
 				if do_debug then box:log("Info", "Trial started at " .. s_date) end
 				start_time = s_date
 				-- We don't know the stop time yet, so for now accept anything in range [start_time, infty]
-				stop_time = -1 
+				stop_time = -1
 				
 			elseif s_code == OVTK_StimulationId_VisualStimulationStop then
 				if do_debug then box:log("Info", "Trial ended at " .. s_date) end
@@ -103,7 +105,8 @@ function process(box)
 					score[real_target][prediction] = score[real_target][prediction] + 1
 					box:send_stimulation(1, OVTK_StimulationId_Label_00 + real_target, box:get_current_time() + 0.001, 0)
 					box:send_stimulation(2, OVTK_StimulationId_Label_00 + prediction, box:get_current_time() + 0.001, 0)
-					if pred_done == false and real_target == prediction then
+					if pred_done == false then --and real_target == prediction then
+						box:send_stimulation(3, OVTK_StimulationId_Label_1F, box:get_current_time() + 0.001, 0)
 
 						pred_done = true
 						--box:log("Info", string.format("Time between stimulation start and prediction was %s ", s_date - start_time))

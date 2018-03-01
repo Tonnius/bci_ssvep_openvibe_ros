@@ -29,9 +29,9 @@ function initialize(box)
 	end
 	
 
-	processing_epoch_duration = box:get_setting(5)
-	processing_epoch_interval = box:get_setting(6)
-	processing_frequency_tolerance = box:get_setting(7)
+	processing_epoch_duration = tonumber(box:get_setting(5))
+	processing_epoch_interval = tonumber(box:get_setting(6))
+	processing_frequency_tolerance = tonumber(box:get_setting(7))
 	channels = box:get_setting(8)
 	--box:log("Info", "input '" .. processing_epoch_duration .. "'")
 
@@ -89,8 +89,8 @@ function process(box)
 		success = success and cfg_file:write("<SettingValue>Butterworth</SettingValue>\n")
 		success = success and cfg_file:write("<SettingValue>Band pass</SettingValue>\n")
 		success = success and cfg_file:write("<SettingValue>4</SettingValue>\n")
-		success = success and cfg_file:write(string.format("<SettingValue>%g</SettingValue>\n", stimulation_frequencies[i] - processing_frequency_tolerance))
-		success = success and cfg_file:write(string.format("<SettingValue>%g</SettingValue>\n", stimulation_frequencies[i] + processing_frequency_tolerance))
+		success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", tostring(stimulation_frequencies[i] - processing_frequency_tolerance)))
+		success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", tostring(stimulation_frequencies[i] + processing_frequency_tolerance)))
 		success = success and cfg_file:write("<SettingValue>0.500000</SettingValue>\n")
 		success = success and cfg_file:write("</OpenViBE-SettingsOverride>\n")
 		
@@ -117,8 +117,8 @@ function process(box)
 		
 	success = true
 	success = success and cfg_file:write("<OpenViBE-SettingsOverride>\n")
-	success = success and cfg_file:write(string.format("<SettingValue>%g</SettingValue>\n", processing_epoch_duration))
-	success = success and cfg_file:write(string.format("<SettingValue>%g</SettingValue>\n", processing_epoch_interval))
+	success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", tostring(processing_epoch_duration)))
+	success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", tostring(processing_epoch_interval)))
 	success = success and cfg_file:write("</OpenViBE-SettingsOverride>\n")
 		
 	cfg_file:close()

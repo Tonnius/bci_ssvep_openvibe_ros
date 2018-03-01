@@ -35,11 +35,11 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>944</Value>
+					<Value>1008</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>880</Value>
+					<Value>848</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
@@ -1039,17 +1039,21 @@
 			</Attributes>
 		</Box>
 		<Box>
-			<Identifier>(0x102c3aa1, 0x2d1a241f)</Identifier>
+			<Identifier>(0x102c3aa1, 0x2d1a2420)</Identifier>
 			<Name>Python scripting</Name>
 			<AlgorithmClassIdentifier>(0x5dc4f669, 0xd3fd4d64)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
 					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>New1</Name>
+					<Name>realTarget</Name>
 				</Input>
 				<Input>
 					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>New2</Name>
+					<Name>predictedTarget</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
+					<Name>detectTime</Name>
 				</Input>
 			</Inputs>
 			<Settings>
@@ -1064,7 +1068,35 @@
 					<TypeIdentifier>(0xb0d0db45, 0x49cbc34a)</TypeIdentifier>
 					<Name>Script</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/scripts/python-confusion-matrix.py</Value>
+					<Value>${Player_ScenarioDirectory}/scripts/python-confusion-matrix.py</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+					<Name>Epoch Duration</Name>
+					<DefaultValue>0.25</DefaultValue>
+					<Value>0.5</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+					<Name>Epoch Interval</Name>
+					<DefaultValue>0.1</DefaultValue>
+					<Value>0.1</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
+					<Name>Freq Tol</Name>
+					<DefaultValue>0.25</DefaultValue>
+					<Value>0.25</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
+					<Name>channels</Name>
+					<DefaultValue>1:5</DefaultValue>
+					<Value>1:5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -1079,7 +1111,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>656</Value>
+					<Value>672</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -1501,10 +1533,6 @@
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
 					<Value>1184</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -2039,7 +2067,7 @@
 			</Attributes>
 		</Box>
 		<Box>
-			<Identifier>(0x53e21741, 0x46473b67)</Identifier>
+			<Identifier>(0x53e21741, 0x46473b68)</Identifier>
 			<Name>Confusion Matrix Calculator</Name>
 			<AlgorithmClassIdentifier>(0x0b5a2787, 0x02750621)</AlgorithmClassIdentifier>
 			<Inputs>
@@ -2056,6 +2084,10 @@
 				<Output>
 					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
 					<Name>Stimulations</Name>
+				</Output>
+				<Output>
+					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
+					<Name>New output</Name>
 				</Output>
 				<Output>
 					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
@@ -2089,7 +2121,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>656</Value>
+					<Value>672</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -3590,17 +3622,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x3d3bfeee, 0x2d69bce8)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x3ba849a3, 0x056b34cd)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x53e21741, 0x46473b67)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x3e955bd7, 0x1cde7f3f)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x116a588d, 0x6abe2637)</BoxIdentifier>
@@ -3612,24 +3633,13 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x400c94f2, 0x68b25f09)</Identifier>
+			<Identifier>(0x42fc12bd, 0x0f8f8265)</Identifier>
 			<Source>
-				<BoxIdentifier>(0x3a243aca, 0x1bdf11d0)</BoxIdentifier>
+				<BoxIdentifier>(0x53e21741, 0x46473b68)</BoxIdentifier>
 				<BoxOutputIndex>0</BoxOutputIndex>
 			</Source>
 			<Target>
-				<BoxIdentifier>(0x0000099d, 0x00007c08)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x42fc12bd, 0x0f8f8264)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x53e21741, 0x46473b67)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x102c3aa1, 0x2d1a241f)</BoxIdentifier>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
@@ -3656,6 +3666,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x464ca82c, 0x203f628d)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x3ba849a3, 0x056b34cd)</BoxIdentifier>
+				<BoxOutputIndex>0</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x53e21741, 0x46473b68)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x46f000ae, 0x287f1eba)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x76038e41, 0x0629cf1e)</BoxIdentifier>
@@ -3678,13 +3699,13 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x47a40d17, 0x021fa817)</Identifier>
+			<Identifier>(0x47a40d17, 0x021fa818)</Identifier>
 			<Source>
-				<BoxIdentifier>(0x53e21741, 0x46473b67)</BoxIdentifier>
+				<BoxIdentifier>(0x53e21741, 0x46473b68)</BoxIdentifier>
 				<BoxOutputIndex>1</BoxOutputIndex>
 			</Source>
 			<Target>
-				<BoxIdentifier>(0x102c3aa1, 0x2d1a241f)</BoxIdentifier>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
 				<BoxInputIndex>1</BoxInputIndex>
 			</Target>
 		</Link>
@@ -3744,6 +3765,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x4d5edef8, 0x5c4c00ef)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x3a243aca, 0x1bdf11d0)</BoxIdentifier>
+				<BoxOutputIndex>0</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x53e21741, 0x46473b68)</BoxIdentifier>
+				<BoxInputIndex>1</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x5106cdae, 0x2b509d01)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x5ed47113, 0x3027c90c)</BoxIdentifier>
@@ -3777,6 +3809,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x56bbbfcf, 0x00679c48)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x53e21741, 0x46473b68)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x0000099d, 0x00007c08)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x5d620b3e, 0x30235ed3)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x03788915, 0x6e15d707)</BoxIdentifier>
@@ -3785,6 +3828,17 @@
 			<Target>
 				<BoxIdentifier>(0x3290efe3, 0x7e015b2e)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x61c1938f, 0x6735e9ee)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x53e21741, 0x46473b68)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
+				<BoxInputIndex>2</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>
@@ -3851,17 +3905,6 @@
 			<Target>
 				<BoxIdentifier>(0x3a243aca, 0x1bdf11d0)</BoxIdentifier>
 				<BoxInputIndex>2</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x70e6abd3, 0x42e122fd)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x3a243aca, 0x1bdf11d0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x53e21741, 0x46473b67)</BoxIdentifier>
-				<BoxInputIndex>1</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>
