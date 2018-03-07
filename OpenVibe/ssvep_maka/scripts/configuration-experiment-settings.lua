@@ -100,6 +100,20 @@ function process(box)
 			box:log("Error", box:get_config("Write error"))
 			return false
 		end
+		cfg_file = assert(io.open(string.format(box:get_config("${Player_ScenarioDirectory}/configuration/temporal-filter-freq-%dh1.cfg"), i), "w"))
+
+		cfg_file:write("<OpenViBE-SettingsOverride>\n")
+		cfg_file:write("<SettingValue>Butterworth</SettingValue>\n")
+		cfg_file:write("<SettingValue>Band pass</SettingValue>\n")
+		cfg_file:write("<SettingValue>4</SettingValue>\n")
+		cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", tostring(stimulation_frequencies[i] * 2 - processing_frequency_tolerance)))
+		cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", tostring(stimulation_frequencies[i] * 2 + processing_frequency_tolerance)))
+		cfg_file:write("<SettingValue>0.500000</SettingValue>\n")
+		cfg_file:write("</OpenViBE-SettingsOverride>\n")
+
+		cfg_file:close()
+
+		box:log("Info", string.format(box:get_config("Writing file '${Player_ScenarioDirectory}/configuration/csp-spatial-filter-trainer-%db.cfg'"), i))
 	
 	end
 

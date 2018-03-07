@@ -30,6 +30,7 @@ function process(box)
 					flips[i] = true
 
 					io.write("Flip ", i, " of ", flip_count, " switched\n")
+					box:log("Info", string.format("Flip %d of 4 done", i))
 
 				end
 
