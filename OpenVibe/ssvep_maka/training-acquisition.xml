@@ -1,7 +1,7 @@
 <OpenViBE-Scenario>
 	<FormatVersion>1</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
-	<CreatorVersion>2.0.0</CreatorVersion>
+	<CreatorVersion>2.0.1</CreatorVersion>
 	<Settings></Settings>
 	<Inputs></Inputs>
 	<Outputs></Outputs>
@@ -51,11 +51,11 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>272.000000</Value>
+					<Value>272</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>880.000000</Value>
+					<Value>880</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -107,7 +107,7 @@
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Goal sequence</Name>
 					<DefaultValue>0 2 3 1 2 1 0 3 1 2 3 0 2 0 3 1 0 3 1 2 3 0 1 2 1 3 2 0 3 2 0 1 </DefaultValue>
-					<Value>0 2 3 4 1 2 1 4 0 3 1 4 2 3 4 0 2 0 4 3 1 0 4 3 1 2 4 3 0 1 2 1 4 3 2 0 3 2 0 1 </Value>
+					<Value>0 2 3 4 1 2 1 4 0 3 1 4 2 3 4 0 2 0 4 3 1 0 4 3 1 2 4 3 0 1 2 1 4 3 2 0 3 2 0 1 3 4 0 2 1 0 3 1 4 2 </Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -625,7 +625,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</Value>
+					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}]-t6nis-75Hz.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>

@@ -1,7 +1,7 @@
 <OpenViBE-Scenario>
 	<FormatVersion>1</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
-	<CreatorVersion>2.0.0</CreatorVersion>
+	<CreatorVersion>2.0.1</CreatorVersion>
 	<Settings>
 		<Setting>
 			<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
@@ -685,7 +685,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>$var{inFile}</Value>
+					<Value>C:/Users/Tonnius/Documents/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.15-14.20.15]-teet.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -1854,7 +1854,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x3a97f4c0, 0x507b1727)</Identifier>
-			<Name>Classifier trainer</Name>
+			<Name>Classifier trainer freq 1</Name>
 			<AlgorithmClassIdentifier>(0xf3dae8a8, 0x3b444154)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -1992,7 +1992,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x3a97f4c0, 0x507b1728)</Identifier>
-			<Name>Classifier trainer</Name>
+			<Name>Classifier trainer freq 2</Name>
 			<AlgorithmClassIdentifier>(0xf3dae8a8, 0x3b444154)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -2130,7 +2130,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x3a97f4c0, 0x507b1729)</Identifier>
-			<Name>Classifier trainer</Name>
+			<Name>Classifier trainer freq 4</Name>
 			<AlgorithmClassIdentifier>(0xf3dae8a8, 0x3b444154)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -2268,7 +2268,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x3a97f4c0, 0x507b172a)</Identifier>
-			<Name>Classifier trainer</Name>
+			<Name>Classifier trainer freq 3</Name>
 			<AlgorithmClassIdentifier>(0xf3dae8a8, 0x3b444154)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>

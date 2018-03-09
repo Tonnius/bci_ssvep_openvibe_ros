@@ -1,13 +1,13 @@
 <OpenViBE-Scenario>
 	<FormatVersion>1</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
-	<CreatorVersion>2.0.0</CreatorVersion>
+	<CreatorVersion>2.0.1</CreatorVersion>
 	<Settings>
 		<Setting>
 			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 			<Name>epDur</Name>
 			<DefaultValue>0.25</DefaultValue>
-			<Value>0.25</Value>
+			<Value>0.5</Value>
 		</Setting>
 		<Setting>
 			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
@@ -122,7 +122,7 @@
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Stimulation Frequencies</Name>
 					<DefaultValue>20;15;12</DefaultValue>
-					<Value>20;15;12;10</Value>
+					<Value>30;20;12;7.5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
