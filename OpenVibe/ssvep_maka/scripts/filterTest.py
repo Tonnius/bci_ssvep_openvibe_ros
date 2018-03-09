@@ -27,11 +27,13 @@ def run():
     # Plot the frequency response for a few different orders.
     plt.figure(1)
     plt.clf()
-    proov1 = [8.57142857143, 17.1428571429, 10, 20, 12, 24, 30, 15]
+    proov1 = [8.57142857143, 17.1428571429, 20, 40, 12, 24, 30, 15] #10, 20 or 20, 40
     proov3 = [6, 12, 8.57142857143, 17.1428571429, 20, 40, 30, 60]
     proov2 = [7.5, 15, 10, 20, 12, 24, 30, 60]
+    proov4 = [6.6666, 6.6666*2,  8.57142857143,  8.57142857143*2, 20, 40, 30, 60]
+    proov5 = [7.5, 7.5*2, 10, 20, 12, 24, 30, 60]
     threshold = 0.25
-    for fCent in proov2:
+    for fCent in proov5:
         b, a = butter_bandpass(fCent-threshold, fCent+threshold, fs, order=4)
         w, h = freqz(b, a, worN=2000)
         plt.plot((fs * 0.5 / np.pi) * w, abs(h), label="order = %d" % 4)
