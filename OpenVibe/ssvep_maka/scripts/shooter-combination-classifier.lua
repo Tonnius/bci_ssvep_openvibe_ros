@@ -37,7 +37,7 @@ function process(box)
 			end
 
 			if decision ~= 0 then
-				box:send_stimulation(1, OVTK_StimulationId_Label_00 + decision - 1, box:get_current_time() + 0.001, 0)
+				box:send_stimulation(1, OVTK_StimulationId_Label_01 + decision - 1, box:get_current_time() + 0.001, 0)
 			end
 
 		end

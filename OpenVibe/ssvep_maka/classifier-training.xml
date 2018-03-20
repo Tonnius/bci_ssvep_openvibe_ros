@@ -1,7 +1,7 @@
 <OpenViBE-Scenario>
 	<FormatVersion>1</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
-	<CreatorVersion>2.0.1</CreatorVersion>
+	<CreatorVersion>2.0.0</CreatorVersion>
 	<Settings>
 		<Setting>
 			<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
@@ -685,7 +685,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>C:/Users/Tonnius/Documents/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.15-14.20.15]-teet.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.01.10-15.32.49]-tonis.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

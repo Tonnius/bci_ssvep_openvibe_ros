@@ -56,6 +56,14 @@ class MyOVBox(OVBox):
                             self.meanDetectTime += self.stimEndTime - self.stimStartTime
                         else:
                             print "Start Time came after End Time. Something went wrong."
+        #for chunkIndexMatrix in range(len(self.input[3])):
+        #    chunk = self.input[3].pop()
+         #   print chunk
+          #  for matrix in range(len(chunk)):
+
+           #     thing = chunk.pop()
+                #print thing
+                    
         # else:
         #	print 'Received chunk of type ', type(chunk), " looking for StimulationSet"
         return
