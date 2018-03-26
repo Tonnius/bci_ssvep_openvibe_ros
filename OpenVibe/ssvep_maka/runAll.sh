@@ -15,7 +15,7 @@ declare -a testingArr=("$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.3
                 "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.01.17-16.49.48]-tonis-test.ov"
                 )
 
-parameterIdent="channel"
+parameterIdent="epDur"
 
 declare -a parametersEpDur=(0.5 0.4 0.3 0.2 0.1)
 #declare -a parametersEpInt=(0.012 0.024 0.048 0.096 0.192)
