@@ -625,7 +625,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}]-t6nis-75Hz.ov</Value>
+					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}]-t6nis-75-857Hz.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>

@@ -1737,6 +1737,10 @@
 					<Value></Value>
 				</Attribute>
 				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0x2a651510, 0xb4fad0d4)</Value>
 				</Attribute>
@@ -3854,7 +3858,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>C:/Users/Tonnius/Documents/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.07-12.25.21]-t6nis-75Hz-test.ov</Value>
+					<Value>C:/Users/Tonnius/Documents/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857Hz-test.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
