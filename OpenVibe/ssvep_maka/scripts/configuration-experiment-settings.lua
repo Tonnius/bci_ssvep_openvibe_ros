@@ -27,7 +27,8 @@ function initialize(box)
 		table.insert(stimulation_frequencies, value)
 		frequency_count = frequency_count + 1
 	end
-	
+	box:log("Info", "box:get_setting(4) '" .. box:get_setting(4) .. "'")
+
 
 	processing_epoch_duration = tonumber(box:get_setting(5))
 	processing_epoch_interval = tonumber(box:get_setting(6))
@@ -72,7 +73,8 @@ function process(box)
 	-- create configuration files for temporal filters
 
 	scenario_path = box:get_config("${Player_ScenarioDirectory}")
-		
+	box:log("Info", "frequency_count '" .. frequency_count .. "'")
+
 	for i=1,frequency_count do
 		cfg_file_name = scenario_path .. string.format("/configuration/temporal-filter-freq-%d.cfg", i)
 		box:log("Info", "Writing file '" .. cfg_file_name .. "'")
@@ -83,7 +85,7 @@ function process(box)
 			box:log("Error", "Please copy the scenario folder to a directory with write access and use from there.")		
 			return false
 		end
-		
+		box:log("Info", "stimulation_frequencies[i] '" .. stimulation_frequencies[i] .. "'")
 		success = true
 		success = success and cfg_file:write("<OpenViBE-SettingsOverride>\n")
 		success = success and cfg_file:write("<SettingValue>Butterworth</SettingValue>\n")

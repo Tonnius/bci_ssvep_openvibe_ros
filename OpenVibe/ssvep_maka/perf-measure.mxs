@@ -35,10 +35,6 @@
 					<Value>848</Value>
 				</Attribute>
 				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0xf451ad91, 0x14c75f86)</Value>
 				</Attribute>
@@ -880,7 +876,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>656</Value>
+					<Value>304</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
@@ -1051,6 +1047,26 @@
 				<Input>
 					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
 					<Name>detectTime</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x544a003e, 0x6dcba5f6)</TypeIdentifier>
+					<Name>classMat1</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x544a003e, 0x6dcba5f6)</TypeIdentifier>
+					<Name>classMat2</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x544a003e, 0x6dcba5f6)</TypeIdentifier>
+					<Name>classMat3</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x544a003e, 0x6dcba5f6)</TypeIdentifier>
+					<Name>classMat4</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
+					<Name>currentTarget</Name>
 				</Input>
 			</Inputs>
 			<Settings>
@@ -1530,10 +1546,6 @@
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
 					<Value>1184</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -2268,7 +2280,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.01.17-16.49.48]-tonis-test.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -3513,6 +3525,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x1e4e6e8a, 0x3e918a4a)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x116a588d, 0x6abe2635)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
+				<BoxInputIndex>4</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x20d0372c, 0x1c3140e1)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x116a588d, 0x6abe2637)</BoxIdentifier>
@@ -3832,6 +3855,28 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x57cf6738, 0x30aa11e3)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x116a588d, 0x6abe2636)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
+				<BoxInputIndex>5</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x596baa98, 0x1d7ba573)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x3ba849a3, 0x056b34cd)</BoxIdentifier>
+				<BoxOutputIndex>0</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
+				<BoxInputIndex>7</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x5d620b3e, 0x30235ed3)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x03788915, 0x6e15d707)</BoxIdentifier>
@@ -3931,6 +3976,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x789e48b0, 0x313ba76a)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x116a588d, 0x6abe2637)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
+				<BoxInputIndex>6</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x7a60ed13, 0x51a0c30e)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x7c152733, 0x65a8c7f0)</BoxIdentifier>
@@ -4005,6 +4061,17 @@
 			<Target>
 				<BoxIdentifier>(0x48752a0e, 0x13c751c1)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x7d3e51a9, 0x7de2b8fa)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x116a588d, 0x6abe2634)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
+				<BoxInputIndex>3</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>

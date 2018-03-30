@@ -1191,7 +1191,14 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Nr of subjects</Name>
 					<DefaultValue>3</DefaultValue>
-					<Value>3</Value>
+					<Value>${nrOfSubjects}</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
+					<Name>SimulationFreq</Name>
+					<DefaultValue>"20;15;12;10"</DefaultValue>
+					<Value>${simFreq1};${simFreq2};${simFreq3};${simFreq4}</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

@@ -90,7 +90,8 @@ function process(box)
 			end
 		end
 
-		while box:get_stimulation_count(2) > 0 and current_target ~= nil do
+		while box:get_stimulation_count(2) > 0 do
+			if current_target ~= nil then
 				s_code, s_date, s_duration = box:get_stimulation(2, 1)
 				box:remove_stimulation(2, 1)
 
@@ -112,8 +113,9 @@ function process(box)
 						--box:log("Info", string.format("Time between stimulation start and prediction was %s ", s_date - start_time))
 						mean_detect_time = mean_detect_time + (s_date - start_time)
 					end
-			--else
-				--box:remove_stimulation(2, 1)
+				end
+			else
+				box:remove_stimulation(2, 1)
 			end
 			
 		end
