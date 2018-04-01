@@ -1,7 +1,7 @@
 classes = nil
 
 current_target = nil
-start_time = 0;
+start_time = 999;
 stop_time = -1;
 
 do_debug = false;
@@ -97,13 +97,14 @@ function process(box)
 
 				if do_debug then box:log("Info", string.format("Received prediction %d at ", s_code) .. s_date) end
 				
-				if s_date >= start_time and (stop_time < 0 or s_date < stop_time) and (s_code >= OVTK_StimulationId_Label_01 and s_code <= OVTK_StimulationId_Label_1F) then
+				if (s_date >= start_time) and (stop_time < 0 or s_date <= stop_time) and (s_code >= OVTK_StimulationId_Label_01 and s_code <= OVTK_StimulationId_Label_1F) then
 
 					if do_debug then box:log("Info", string.format("Accepted prediction %d at ", s_code) .. s_date) end
 
 					real_target = current_target + 1
 					prediction = s_code - OVTK_StimulationId_Label_01 + 1
 					score[real_target][prediction] = score[real_target][prediction] + 1
+					--if prediction == 4 and real_target == 2 then box:log("Info", string.format("pred 4, real target 2")) end
 					box:send_stimulation(1, OVTK_StimulationId_Label_01 + real_target, box:get_current_time() + 0.001, 0)
 					box:send_stimulation(2, OVTK_StimulationId_Label_01 + prediction, box:get_current_time() + 0.001, 0)
 					if pred_done == false then --and real_target == prediction then
