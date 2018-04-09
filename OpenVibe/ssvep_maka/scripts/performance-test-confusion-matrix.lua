@@ -2,7 +2,7 @@ classes = nil
 
 current_target = nil
 start_time = 999;
-stop_time = -1;
+stop_time = 999;
 
 do_debug = false;
 
@@ -60,7 +60,7 @@ function process(box)
 	current_target_time = box:get_current_time()
 	while not finished do
 
-		-- time = box:get_current_time()
+
 
 		while box:get_stimulation_count(1) > 0 do
 
@@ -90,6 +90,8 @@ function process(box)
 			end
 		end
 
+
+
 		while box:get_stimulation_count(2) > 0 do
 			if current_target ~= nil then
 				s_code, s_date, s_duration = box:get_stimulation(2, 1)
@@ -97,7 +99,7 @@ function process(box)
 
 				if do_debug then box:log("Info", string.format("Received prediction %d at ", s_code) .. s_date) end
 				
-				if (s_date >= start_time) and (stop_time < 0 or s_date <= stop_time) and (s_code >= OVTK_StimulationId_Label_01 and s_code <= OVTK_StimulationId_Label_1F) then
+				if (s_date >= start_time) and (stop_time == 999 or s_date <= stop_time) and (s_code >= OVTK_StimulationId_Label_01 and s_code <= OVTK_StimulationId_Label_1F) then
 
 					if do_debug then box:log("Info", string.format("Accepted prediction %d at ", s_code) .. s_date) end
 
@@ -120,7 +122,11 @@ function process(box)
 			end
 			
 		end
-
+		if (box:get_current_time() > stop_time) and pred_done == false then
+            mean_detect_time = mean_detect_time + 7
+            pred_done = true
+            --box:log("Info", string.format("didn't classify lua"))
+        end
 		box:sleep()
 
 	end
