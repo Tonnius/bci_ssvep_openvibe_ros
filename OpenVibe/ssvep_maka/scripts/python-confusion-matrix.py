@@ -30,7 +30,7 @@ class MyOVBox(OVBox):
 
     def getProbValue(self, inputNr, classNr):
         for chunkIndexMatrix in range(len(self.input[inputNr])):
-            probMatrix = self.input[inputNr].pop()
+            probMatrix = self.input[inputNr].pop() #probMatrix[0] is stimulated, probMatrix[1] is non-stimulated
             self.classProbs[classNr].append([probMatrix[0], self.getCurrentTime()])
             if probMatrix[0] > self.classThresh:
 
