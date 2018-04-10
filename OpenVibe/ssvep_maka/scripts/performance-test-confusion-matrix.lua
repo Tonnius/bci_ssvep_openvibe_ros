@@ -73,9 +73,9 @@ function process(box)
 				stop_time = start_time + 7.0
 				if do_debug then box:log("Info", string.format("Trial start %s at and ends at %s at", start_time, stop_time) .. s_date) end
 				pred_done = false
-				box:send_stimulation(3, OVTK_StimulationId_Label_1E, start_time, 0)
+				--box:send_stimulation(3, OVTK_StimulationId_Label_1E, start_time, 0)
 
-				--box:log("Info", string.format("total nr of classified so far lua %d ", totalNrClassified))
+				if do_debug then box:log("Info", string.format("total nr of classified so far lua %d ", totalNrClassified)) end
 
 
 			elseif s_code == OVTK_StimulationId_ExperimentStop then
@@ -95,15 +95,14 @@ function process(box)
 				if (s_date >= start_time) and (s_date <= stop_time) and (s_code >= OVTK_StimulationId_Label_01 and s_code <= OVTK_StimulationId_Label_1F) then
 
 					if do_debug then box:log("Info", string.format("Accepted prediction %d at ", s_code) .. s_date) end
-					--totalNrClassified = totalNrClassified + 1
+					totalNrClassified = totalNrClassified + 1
 					real_target = current_target + 1
 					prediction = s_code - OVTK_StimulationId_Label_01 + 1
 					score[real_target][prediction] = score[real_target][prediction] + 1
-					--if prediction == 4 and real_target == 2 then box:log("Info", string.format("pred 4, real target 2")) end
-					box:send_stimulation(1, OVTK_StimulationId_Label_01 + real_target, box:get_current_time() + 0.001, 0)
-					box:send_stimulation(2, OVTK_StimulationId_Label_01 + prediction, box:get_current_time() + 0.001, 0)
-					if pred_done == false then --and real_target == prediction then
-						box:send_stimulation(3, OVTK_StimulationId_Label_1F, box:get_current_time() + 0.001, 0)
+					--box:send_stimulation(1, OVTK_StimulationId_Label_01 + real_target, box:get_current_time() + 0.001, 0)
+					--box:send_stimulation(2, OVTK_StimulationId_Label_01 + prediction, box:get_current_time() + 0.001, 0)
+					if pred_done == false and (s_date - start_time) > 0.25 then --and real_target == prediction then
+						--box:send_stimulation(3, OVTK_StimulationId_Label_1F, box:get_current_time() + 0.001, 0)
 						nr_of_stim = nr_of_stim + 1
 
 						pred_done = true
@@ -121,8 +120,8 @@ function process(box)
 		if (curr_time > stop_time) and pred_done == false then
             --mean_detect_time = mean_detect_time + 7
             pred_done = true
-            box:log("Info", string.format("didn't classify lua at ") .. curr_time)
-        end
+            if do_debug then box:log("Info", string.format("didn't classify lua at ") .. curr_time) end
+       end
         
 		box:sleep()
 

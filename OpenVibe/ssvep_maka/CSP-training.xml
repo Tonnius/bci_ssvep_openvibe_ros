@@ -373,7 +373,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Filter dimension</Name>
 					<DefaultValue>2</DefaultValue>
-					<Value>2</Value>
+					<Value>4</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -454,7 +454,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Filter dimension</Name>
 					<DefaultValue>2</DefaultValue>
-					<Value>2</Value>
+					<Value>4</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -1151,7 +1151,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.01.10-15.32.49]-tonis.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.13-15.22.10]-martin-8-5elect.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -1303,7 +1303,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Filter dimension</Name>
 					<DefaultValue>2</DefaultValue>
-					<Value>2</Value>
+					<Value>4</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -1987,7 +1987,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Filter dimension</Name>
 					<DefaultValue>2</DefaultValue>
-					<Value>2</Value>
+					<Value>4</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>

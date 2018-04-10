@@ -129,28 +129,28 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Epoch Duration</Name>
 					<DefaultValue>0.5</DefaultValue>
-					<Value>$var{epDur}</Value>
+					<Value>0.5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Epoch Interval</Name>
 					<DefaultValue>0.1</DefaultValue>
-					<Value>$var{epInt}</Value>
+					<Value>0.05</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Frequency Tolerance</Name>
 					<DefaultValue>0.250</DefaultValue>
-					<Value>$var{freqTol}</Value>
+					<Value>0.25</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Selected channels</Name>
 					<DefaultValue>1:5</DefaultValue>
-					<Value>$var{ch}</Value>
+					<Value>1:5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
