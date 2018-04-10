@@ -23,10 +23,12 @@ class MyOVBox(OVBox):
         self.meanDetectTime = 0
         self.classProbs = [collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen),
                            collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen)]
-        self.classThresh = 0.4
+        self.classThresh = 0.5
         self.predictedTime = 0
         self.newLabel = False
         self.meanDetectTimeProb = 0
+
+        self.totalNrClassified = 0
     def initialize(self):
         # nop
         return
@@ -69,7 +71,6 @@ class MyOVBox(OVBox):
                     stim2 = chunk2.pop()
                     if (stim2.identifier == 33054):
                         self.stimStartTime = stim2.date
-                        self.nrOfStims += 1
                     elif (stim2.identifier == 33055):
                         self.stimEndTime = stim2.date
                         if (self.stimEndTime > self.stimStartTime):
@@ -85,12 +86,13 @@ class MyOVBox(OVBox):
                     #print 'Received stim on input0', stim.identifier-33025, 'stamped at', stim.date, 's'
                     if(stim.identifier > 33024 and stim.identifier < 33030):
                         self.currentLabel = stim.identifier-33024
-                        self.currentLabelTimeStart = stim.date + 1
-                        self.currentLabelTimeStop = self.currentLabelTimeStart + 7
+                        self.currentLabelTimeStart = stim.date + 1.0
+                        self.currentLabelTimeStop = self.currentLabelTimeStart + 7.0
                         self.newLabel = True
+                        #print 'Total classified up to now py: '+str(self.totalNrClassified)
 
         if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel is True:
-            self.meanDetectTimeProb += 7
+            #self.meanDetectTimeProb += 7
             self.newLabel = False
             print "didnt classify!"
 
@@ -105,24 +107,29 @@ class MyOVBox(OVBox):
                 for prob in self.classProbs[idx]:
                         #if prob[1] > (self.getCurrentTime()-1): #only use probabilities from last second
                     if prob[0] > self.classThresh:
-                        probsAll[idx] += prob[0]
                         self.predictedTime = self.getCurrentTime()
+                        probsAll[idx] += prob[0]
+
+
 
             #print classHit
-            #print probsAll
-            maxpos = probsAll.index(max(probsAll))
-            #(np.count_nonzero(probsAll) == 1) and \
-            if (self.currentLabel is not -1) and \
-                    (self.currentLabelTimeStart < self.predictedTime) and \
-                    (self.predictedTime < self.currentLabelTimeStop):
 
+            maxpos = probsAll.index(max(probsAll))
+            #
+            if (self.currentLabel is not -1) and \
+                    (np.count_nonzero(probsAll) == 1) and \
+                    (self.currentLabelTimeStart <= self.predictedTime) and \
+                    (self.predictedTime <= self.currentLabelTimeStop):
+                self.actualLabelsProb.append(self.currentLabel)
+                self.predictedLabelsProb.append(maxpos+1)
+                self.totalNrClassified += 1
                 if self.newLabel:
                     self.meanDetectTimeProb += self.predictedTime - self.currentLabelTimeStart
                     self.newLabel = False
-                self.actualLabelsProb.append(self.currentLabel)
-                self.predictedLabelsProb.append(maxpos+1)
+                    self.nrOfStims += 1
 
 
+                #print probsAll
                 #print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
         # else:
         #	print 'Received chunk of type ', type(chunk), " looking for StimulationSet"
@@ -131,7 +138,8 @@ class MyOVBox(OVBox):
     def uninitialize(self):
         #print self.predictedLabelsProb[0:10]
         #print self.actualLabelsProb[0:10]
-        #print 'size of predicted old' + str(len(self.predictedLabels))+ " size of actual old"+str(len(self.actualLabels))
+        print 'nr of stims: '+str(self.nrOfStims)
+        print 'size of predicted ' + str(len(self.predictedLabelsProb))+ " size of actual "+str(len(self.actualLabelsProb))
         print "mean time old: "+str(self.meanDetectTime / self.nrOfStims)
         print "mean time new: "+str(self.meanDetectTimeProb/self.nrOfStims)
         #confusion_matrix = ConfusionMatrix(self.actualLabelsProb, self.predictedLabelsProb)
