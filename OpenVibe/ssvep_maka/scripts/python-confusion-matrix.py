@@ -12,9 +12,9 @@ class MyOVBox(OVBox):
         classDequeMaxLen = 1
         self.actualLabels = []
         self.predictedLabels = []
-        self.currentLabelTimeStop = 0
+        self.currentLabelTimeStop = 9999
         self.currentLabelTimeStart = 0
-        self.currentLabel = 0
+        self.currentLabel = -1
         self.actualLabelsProb = []
         self.predictedLabelsProb = []
         self.nrOfStims = 0
@@ -23,7 +23,10 @@ class MyOVBox(OVBox):
         self.meanDetectTime = 0
         self.classProbs = [collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen),
                            collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen)]
-        self.classThresh = 0.5
+        self.classThresh = 0.4
+        self.predictedTime = 0
+        self.newLabel = False
+        self.meanDetectTimeProb = 0
     def initialize(self):
         # nop
         return
@@ -64,10 +67,6 @@ class MyOVBox(OVBox):
             if type(chunk2) == OVStimulationSet:
                 for stimIdx2 in range(len(chunk2)):
                     stim2 = chunk2.pop()
-                    # if stim is not 0:
-                    # if stim1.date > stim.date:
-                    #print 'Received stim on input2', stim2.identifier, 'stamped at', stim2.date, 's'
-                    #stimCode = OpenViBE_stimulation[stim2.identifier]
                     if (stim2.identifier == 33054):
                         self.stimStartTime = stim2.date
                         self.nrOfStims += 1
@@ -84,10 +83,17 @@ class MyOVBox(OVBox):
                 for stimIdx in range(len(chunk)):
                     stim = chunk.pop()
                     #print 'Received stim on input0', stim.identifier-33025, 'stamped at', stim.date, 's'
-                    if(stim.identifier > 33024):
+                    if(stim.identifier > 33024 and stim.identifier < 33030):
                         self.currentLabel = stim.identifier-33024
                         self.currentLabelTimeStart = stim.date + 1
-                        self.currentLabelTimeStop = self.currentLabelTimeStart+7
+                        self.currentLabelTimeStop = self.currentLabelTimeStart + 7
+                        self.newLabel = True
+
+        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel is True:
+            self.meanDetectTimeProb += 7
+            self.newLabel = False
+            print "didnt classify!"
+
         classHit = [self.getProbValue(inputNr=3, classNr=0),
                     self.getProbValue(inputNr=4, classNr=1),
                     self.getProbValue(inputNr=5, classNr=2),
@@ -100,33 +106,42 @@ class MyOVBox(OVBox):
                         #if prob[1] > (self.getCurrentTime()-1): #only use probabilities from last second
                     if prob[0] > self.classThresh:
                         probsAll[idx] += prob[0]
+                        self.predictedTime = self.getCurrentTime()
 
             #print classHit
-            print probsAll
+            #print probsAll
             maxpos = probsAll.index(max(probsAll))
+            #(np.count_nonzero(probsAll) == 1) and \
+            if (self.currentLabel is not -1) and \
+                    (self.currentLabelTimeStart < self.predictedTime) and \
+                    (self.predictedTime < self.currentLabelTimeStop):
 
-            if self.actualLabels and (self.currentLabel is not 0) and \
-                        (np.count_nonzero(probsAll) == 1) and \
-                        (self.currentLabelTimeStart < self.getCurrentTime()) and (self.getCurrentTime() < self.currentLabelTimeStop):
-
+                if self.newLabel:
+                    self.meanDetectTimeProb += self.predictedTime - self.currentLabelTimeStart
+                    self.newLabel = False
                 self.actualLabelsProb.append(self.currentLabel)
                 self.predictedLabelsProb.append(maxpos+1)
-                print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
+
+
+                #print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
         # else:
         #	print 'Received chunk of type ', type(chunk), " looking for StimulationSet"
         return
 
     def uninitialize(self):
-        print self.predictedLabelsProb[0:10]
-        print self.actualLabelsProb[0:10]
-        print 'size of predicted old' + str(len(self.predictedLabels))+ " size of actual old"+str(len(self.actualLabels))
+        #print self.predictedLabelsProb[0:10]
+        #print self.actualLabelsProb[0:10]
+        #print 'size of predicted old' + str(len(self.predictedLabels))+ " size of actual old"+str(len(self.actualLabels))
+        print "mean time old: "+str(self.meanDetectTime / self.nrOfStims)
+        print "mean time new: "+str(self.meanDetectTimeProb/self.nrOfStims)
         #confusion_matrix = ConfusionMatrix(self.actualLabelsProb, self.predictedLabelsProb)
         cmSklearn = confusion_matrix(self.actualLabelsProb, self.predictedLabelsProb)
+        print cmSklearn
         cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
-        print(cmSklearn)
+        print cmSklearn
         #print("Confusion matrix:\n%s" % confusion_matrix)
         #confusion_matrix.print_stats()
-        nrOfSubj = int(self.setting['Nr of subjects'])
+        nrOfSubj = 1# int(self.setting['Nr of subjects'])
 
         dirToWrite = '/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/data/'
         dataDirFileNames = sorted(os.listdir(dirToWrite))
@@ -161,7 +176,7 @@ class MyOVBox(OVBox):
         # with open(dirToWrite, 'a') as f:
         # np.savetxt(f, (self.actualLabels, self.predictedLabels))
         print "meanDetectTime " + str(self.meanDetectTime) + "and nr of stims " + str(self.nrOfStims)
-        print "Mean detect time was " + str(self.meanDetectTime)
+        #print "Mean detect time was " + str(self.meanDetectTime)
         print 'File saved to ' + writeFile
         print 'actual labels array size: ', len(self.actualLabels), ' predictedLabels array size: ', len(
             self.predictedLabels)
