@@ -1,5 +1,5 @@
 #!/bin/bash
-
+trap "exit" INT
 OPENVIBE_ROOT_PATH="$HOME/Git/openvibe/dist/extras-Release"
 MY_SCRIPT_PATH="$HOME/Git/magister_BCI/OpenVibe/ssvep_maka"
 #INPUT_TRAINING_FILE_LOC="$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.22.10]-martin-8-5elect.ov"
