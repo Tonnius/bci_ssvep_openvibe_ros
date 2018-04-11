@@ -47,6 +47,8 @@ for fileN in dataDirFileNames:
         acc = result['overall']['Accuracy']
         if acc == 1.0:
             itr = (math.log(NR_OF_STATES, 2) + acc*math.log(acc, 2)) * (60.0 / meanDetectTime)
+        elif acc == 0.0:
+            itr = 0
         else:
             itr = (math.log(NR_OF_STATES, 2) + acc*math.log(acc, 2) + (1.0-acc)*math.log((1.0 - acc)/(NR_OF_STATES - 1.0),2)) * (60.0 / meanDetectTime)
         subjectNr = int(experimentSettings['currentSubjNr'])
@@ -65,8 +67,9 @@ for fileN in dataDirFileNames:
 for res in maxResList:
     print "Subject {0} had max ITR {1} with settings {2}".format(res.subjectNr, res.maxItr, res.settings)
     #res.maxCmPanda.print_stats()
-    print(classification_report(res.actualLabels, res.predictedLabels))
+
     res.maxCmSklearn = res.maxCmSklearn.astype('float') / res.maxCmSklearn.sum(axis=1)[:, np.newaxis]
     print(res.maxCmSklearn)
     print "stims all/classified "+str(res.stims)
     print "mean detect time "+str(res.meanPredictTime)
+    print(classification_report(res.actualLabels, res.predictedLabels))

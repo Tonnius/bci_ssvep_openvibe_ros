@@ -126,7 +126,7 @@ class MyOVBox(OVBox):
                 self.actualLabelsProb.append(self.currentLabel)
                 self.predictedLabelsProb.append(maxpos+1)
                 self.totalNrClassified += 1
-                if self.newLabel and (self.predictedTime - self.currentLabelTimeStart) > 0.25: #so that old classifications dont interrupt
+                if self.newLabel and (self.predictedTime - self.currentLabelTimeStart) > 0.5: #so that old classifications dont interrupt
                     self.meanDetectTimeProb += self.predictedTime - self.currentLabelTimeStart
                     self.newLabel = False
                     self.nrOfStimsClassified += 1
