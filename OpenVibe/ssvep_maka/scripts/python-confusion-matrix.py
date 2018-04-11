@@ -13,6 +13,7 @@ class MyOVBox(OVBox):
         self.predictedLabels = []
         self.stimStartTime = 0
         self.stimEndTime = 0
+        self.meanDetectTime = 0
 
         classDequeMaxLen = 1
         self.classThresh = 0.5
@@ -21,9 +22,9 @@ class MyOVBox(OVBox):
         self.currentLabel = -1
         self.actualLabelsProb = []
         self.predictedLabelsProb = []
-        self.nrOfStims = 0
+        self.nrOfStimsClassified = 0
+        self.nrOfStimsActual = 0
 
-        self.meanDetectTime = 0
         self.classProbs = [collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen),
                            collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen)]
 
@@ -91,6 +92,7 @@ class MyOVBox(OVBox):
                         self.currentLabelTimeStart = stim.date + 1.0
                         self.currentLabelTimeStop = self.currentLabelTimeStart + 7.0
                         self.newLabel = True
+                        self.nrOfStimsActual += 1
                         if self.debugEnabled:
                             print 'Total classified up to now py: '+str(self.totalNrClassified)
 
@@ -127,9 +129,9 @@ class MyOVBox(OVBox):
                 if self.newLabel and (self.predictedTime - self.currentLabelTimeStart) > 0.25: #so that old classifications dont interrupt
                     self.meanDetectTimeProb += self.predictedTime - self.currentLabelTimeStart
                     self.newLabel = False
-                    self.nrOfStims += 1
+                    self.nrOfStimsClassified += 1
                     if self.debugEnabled:
-                        print "nr of stims is " + str(self.nrOfStims)
+                        print "nr of stims is " + str(self.nrOfStimsClassified)
                 if self.debugEnabled:
                     print probsAll
                     print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
@@ -138,10 +140,10 @@ class MyOVBox(OVBox):
         return
 
     def uninitialize(self):
-        self.meanDetectTimeProb /= self.nrOfStims
-        print 'nr of stims: '+str(self.nrOfStims)
-        print 'size of predicted ' + str(len(self.predictedLabelsProb))+ " size of actual "+str(len(self.actualLabelsProb))
-        #print "mean time old: "+str(self.meanDetectTime / self.nrOfStims)
+        self.meanDetectTimeProb /= self.nrOfStimsClassified
+        print 'nr of stims classified: '+str(self.nrOfStimsClassified)
+        #print 'size of predicted ' + str(len(self.predictedLabelsProb))+ " size of actual "+str(len(self.actualLabelsProb))
+        #print "mean time old: "+str(self.meanDetectTime / self.nrOfStimsClassified)
         print "mean time new: "+str(self.meanDetectTimeProb)
         #confusion_matrix = ConfusionMatrix(self.actualLabelsProb, self.predictedLabelsProb)
         cmSklearn = confusion_matrix(self.actualLabelsProb, self.predictedLabelsProb)
@@ -153,38 +155,41 @@ class MyOVBox(OVBox):
         nrOfSubj = int(self.setting['Nr of subjects'])
 
         dirToWrite = '/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/data/'
-        dataDirFileNames = sorted(os.listdir(dirToWrite))
+        #dataDirFileNames = sorted(os.listdir(dirToWrite))
         #print dataDirFileNames
-        fileNrToWrite = str(self.setting['Current Subject Nr'])
+        fileNrToWrite = self.setting['Current Subject Nr']
 
         exSettings = {'ch': self.setting['channels'],
                       'epDur': self.setting['Epoch Duration'],
                       'epInt': self.setting['Epoch Interval'],
                       'freqTol': self.setting['Freq Tol'],
                       'simFreq': self.setting['SimulationFreq'],
-                      'nrOfSubjects': nrOfSubj}
+                      'nrOfSubjects': nrOfSubj,
+                      'currentSubjNr': fileNrToWrite}
 
-        if int(fileNrToWrite) > (nrOfSubj - 1):
-            fileNrToWrite = '0'
+        #if int(fileNrToWrite) > (nrOfSubj - 1):
+        #   fileNrToWrite = '0'
 
         settingsFileName = ''
         for key,value in exSettings.items():
             if(key != 'simFreq'):
                 settingsFileName += str(value)[2:]
 
-        writeFile = dirToWrite + 'Ex' + settingsFileName + 'subject' + fileNrToWrite
-        labels = {'settings': exSettings,
-                  'actual': self.actualLabels,
-                  'predicted': self.predictedLabels,
-                  'detectTime': self.meanDetectTimeProb}
+        writeFile = dirToWrite + 'Ex' + settingsFileName + 'subject' + str(fileNrToWrite)
+        data = {'settings': exSettings,
+                  'actual': self.actualLabelsProb,
+                  'predicted': self.predictedLabelsProb,
+                  'detectTime': self.meanDetectTimeProb,
+                  'stims': {'stimsNrClassified': self.nrOfStimsClassified, 'stimsNrActual': self.nrOfStimsActual}
+                  }
 
-        pickle.dump(labels, open(writeFile, 'wb'))
+        pickle.dump(data, open(writeFile, 'wb'))
 
         #os.rename(dirToWrite + dataDirFileNames[0], dirToWrite + str(int(fileNrToWrite) + 1))
 
         # with open(dirToWrite, 'a') as f:
         # np.savetxt(f, (self.actualLabels, self.predictedLabels))
-        print "meanDetectTime " + str(self.meanDetectTimeProb) + "and nr of stims " + str(self.nrOfStims)
+        #print "meanDetectTime " + str(self.meanDetectTimeProb) + "and nr of stims " + str(self.nrOfStimsClassified)
         #print "Mean detect time was " + str(self.meanDetectTime)
         print 'File saved to ' + writeFile
         #print 'actual labels array size: ', len(self.actualLabels), ' predictedLabels array size: ', len(self.predictedLabels)
