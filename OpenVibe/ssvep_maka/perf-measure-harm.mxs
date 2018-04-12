@@ -2304,7 +2304,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.01.10-15.32.49]-tonis-edit.csv</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test-2.csv</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -3736,6 +3736,10 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -5172,17 +5176,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x25307c33, 0x7d871430)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x0e753632, 0x6b20f4b8)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x269d03e6, 0x292ddba4)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x26348893, 0x2bd9372e)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
@@ -5256,6 +5249,17 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x116a588d, 0x6abe2637)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x30367265, 0x0fc7d07f)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x15c3c68e, 0x026e27c4)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x269d03e6, 0x292ddba4)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>

@@ -8301,7 +8301,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8443,7 +8443,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8457,11 +8457,11 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>416.000000</Value>
+					<Value>416</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>2656.000000</Value>
+					<Value>2656</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -8585,7 +8585,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8727,7 +8727,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>

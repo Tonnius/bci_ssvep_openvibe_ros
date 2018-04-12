@@ -34,6 +34,7 @@ class MyOVBox(OVBox):
 
         self.totalNrClassified = 0
         self.debugEnabled = False
+        self.nothingEnabled = False
     def initialize(self):
         # nop
         return
@@ -95,10 +96,21 @@ class MyOVBox(OVBox):
                         self.nrOfStimsActual += 1
                         if self.debugEnabled:
                             print 'Total classified up to now py: '+str(self.totalNrClassified)
+        probsAll = [0.0, 0.0, 0.0, 0.0]
+        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel and self.nothingEnabled and (self.currentLabel is not -1):
+            for i in range(4):
+                for prob in self.classProbs[i]:
+                    probsAll[i] += prob[0]
 
-        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel is True:
-            #self.meanDetectTimeProb += 7
+            maxpos = probsAll.index(max(probsAll))
+
+            self.actualLabelsProb.append(self.currentLabel)
+            self.predictedLabelsProb.append(maxpos + 1)
+            self.totalNrClassified += 1
+            self.nrOfStimsClassified += 1
+            self.meanDetectTimeProb += 7
             self.newLabel = False
+
             if self.debugEnabled:
                 print "didnt classify!"
 
@@ -106,15 +118,15 @@ class MyOVBox(OVBox):
                     self.getProbValue(inputNr=4, classNr=1),
                     self.getProbValue(inputNr=5, classNr=2),
                     self.getProbValue(inputNr=6, classNr=3)]
-        probsAll = [0.0, 0.0, 0.0, 0.0]
+
 
         if True in classHit:
-            for idx, val in enumerate(classHit):
-                for prob in self.classProbs[idx]:
+            for i in range(4):
+                for prob in self.classProbs[i]:
                     #if prob[1] > (self.getCurrentTime()-1): #only use probabilities from last second
                     if prob[0] > self.classThresh:
                         self.predictedTime = self.getCurrentTime()
-                        probsAll[idx] += prob[0]
+                        probsAll[i] += prob[0]
             #print classHit
 
             maxpos = probsAll.index(max(probsAll))

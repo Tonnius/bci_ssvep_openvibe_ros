@@ -4469,7 +4469,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.13-15.22.10]-martin-8-5elect.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.26-11.45.32]-t6nis-75-857-10-12Hz.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8301,7 +8301,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8443,7 +8443,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8585,7 +8585,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8727,7 +8727,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of partitions for k-fold cross-validation test</Name>
 					<DefaultValue>10</DefaultValue>
-					<Value>10</Value>
+					<Value>5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
