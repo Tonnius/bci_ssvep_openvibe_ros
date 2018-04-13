@@ -58,7 +58,7 @@ for fileN in dataDirFileNames:
         stimsClassified = stimsNrs['stimsNrClassified']
         stimsTotal = stimsNrs['stimsNrActual']
 
-        if itr > maxResList[subjectNr].maxItr:
+        if itr > maxResList[subjectNr].maxItr and acc > 0.7 and meanDetectTime < 5:
             if stimsClassified >= maxResList[subjectNr].stimsClassified:
                 maxResList[subjectNr].maxItr = itr
                 maxResList[subjectNr].maxItrFileN = fileN

@@ -34,7 +34,7 @@ class MyOVBox(OVBox):
 
         self.totalNrClassified = 0
         self.debugEnabled = False
-        self.nothingEnabled = False
+        self.nothingEnabled = True
     def initialize(self):
         # nop
         return
@@ -97,7 +97,8 @@ class MyOVBox(OVBox):
                         if self.debugEnabled:
                             print 'Total classified up to now py: '+str(self.totalNrClassified)
         probsAll = [0.0, 0.0, 0.0, 0.0]
-        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel:
+        if (self.getCurrentTime() > self.currentLabelTimeStop-2) and self.newLabel:
+            self.currentLabelTimeStop -= 2
             self.newLabel = False
             if self.debugEnabled:
                 print "didnt classify!"
@@ -113,7 +114,7 @@ class MyOVBox(OVBox):
                 self.predictedLabelsProb.append(maxpos + 1)
                 self.totalNrClassified += 1
                 self.nrOfStimsClassified += 1
-                self.meanDetectTimeProb += 7
+                self.meanDetectTimeProb += 5
 
 
 
@@ -143,14 +144,14 @@ class MyOVBox(OVBox):
                 self.actualLabelsProb.append(self.currentLabel)
                 self.predictedLabelsProb.append(maxpos+1)
                 self.totalNrClassified += 1
-                if self.newLabel and (self.predictedTime - self.currentLabelTimeStart) > 0.5: #so that old classifications dont interrupt
+                if self.newLabel and self.currentLabel == : #and (self.predictedTime - self.currentLabelTimeStart) > 0.5
                     self.meanDetectTimeProb += self.predictedTime - self.currentLabelTimeStart
                     self.newLabel = False
                     self.nrOfStimsClassified += 1
                     if self.debugEnabled:
                         print "nr of stims is " + str(self.nrOfStimsClassified)
 
-                    print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
+                    #print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
         # else:
         #	print 'Received chunk of type ', type(chunk), " looking for StimulationSet"
         return
