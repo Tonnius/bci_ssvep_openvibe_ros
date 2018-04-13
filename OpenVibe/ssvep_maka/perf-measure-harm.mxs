@@ -134,11 +134,11 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>-48</Value>
+					<Value>-64</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>720</Value>
+					<Value>752</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -1491,11 +1491,11 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>-112</Value>
+					<Value>-64</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1024</Value>
+					<Value>976</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
@@ -2304,7 +2304,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test-2.csv</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.27-13.46.46]-annika-75-857-10-12Hz-test-o.csv</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -2320,6 +2320,10 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -2817,10 +2821,6 @@
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
 					<Value>1184</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -3716,7 +3716,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.16-12.41.41]-anti-test.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -3727,19 +3727,15 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>-208</Value>
+					<Value>-224</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>848</Value>
+					<Value>832</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -5099,6 +5095,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x14528614, 0x2716cf8b)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x269d03e6, 0x292ddba4)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x18087071, 0x4c0a39bb)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x116a588d, 0x6abe2635)</BoxIdentifier>
@@ -5209,6 +5216,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x2c3f21a5, 0x0a117eb8)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x2d54734a, 0x308f3048)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x48983297, 0x0cf16837)</BoxIdentifier>
@@ -5249,17 +5267,6 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x116a588d, 0x6abe2637)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x30367265, 0x0fc7d07f)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x15c3c68e, 0x026e27c4)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x269d03e6, 0x292ddba4)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
@@ -5316,6 +5323,17 @@
 			<Target>
 				<BoxIdentifier>(0x54c56c66, 0x77e047d5)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x4428c751, 0x60a2a1a1)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
+				<BoxOutputIndex>2</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x4803c39c, 0x50ab550d)</BoxIdentifier>
+				<BoxInputIndex>1</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>
@@ -5613,28 +5631,6 @@
 			<Target>
 				<BoxIdentifier>(0x3a243aca, 0x1bdf11d0)</BoxIdentifier>
 				<BoxInputIndex>2</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x7269e94a, 0x23bbd8b4)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x15c3c68e, 0x026e27c4)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x4803c39c, 0x50ab550d)</BoxIdentifier>
-				<BoxInputIndex>1</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x72dfa52c, 0x139b6ba4)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x15c3c68e, 0x026e27c4)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>

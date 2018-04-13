@@ -1439,10 +1439,6 @@
 					<Value>1168</Value>
 				</Attribute>
 				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0xf451ad91, 0x14c75f86)</Value>
 				</Attribute>
@@ -2076,7 +2072,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.16-12.41.41]-anti-test.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

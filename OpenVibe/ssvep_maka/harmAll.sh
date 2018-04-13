@@ -39,17 +39,17 @@ declare -a trainingArr=(
                )
 
 declare -a testingArr=(
-				"$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect-2.csv" 
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.15-14.32.32]-teet-test-no-zero-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.01.10-16.10.07]-tonis-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.16-12.41.41]-anti-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.08-15.24.56]-klavs-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.09-16.05.30]-frida-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.27-13.46.46]-annika-75-857-10-12Hz-test-2.csv"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test-2.csv"
+				"$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect-o.csv" 
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.15-14.32.32]-teet-test-no-zero-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.01.10-16.10.07]-tonis-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.16-12.41.41]-anti-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.08-15.24.56]-klavs-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.09-16.05.30]-frida-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.27-13.46.46]-annika-75-857-10-12Hz-test-o.csv"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test-o.csv"
                 )
 parameterIdent="epDur"
-declare -a parametersEpDur=(0.05 0.02)
+declare -a parametersEpDur=(0.1)
 
 #declare -a parametersEpDur=(0.5 0.4 0.3 0.2 0.1)
 #declare -a parametersEpInt=(0.012 0.024 0.048 0.096 0.192)

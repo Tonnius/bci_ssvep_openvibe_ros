@@ -97,22 +97,26 @@ class MyOVBox(OVBox):
                         if self.debugEnabled:
                             print 'Total classified up to now py: '+str(self.totalNrClassified)
         probsAll = [0.0, 0.0, 0.0, 0.0]
-        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel and self.nothingEnabled and (self.currentLabel is not -1):
-            for i in range(4):
-                for prob in self.classProbs[i]:
-                    probsAll[i] += prob[0]
-
-            maxpos = probsAll.index(max(probsAll))
-
-            self.actualLabelsProb.append(self.currentLabel)
-            self.predictedLabelsProb.append(maxpos + 1)
-            self.totalNrClassified += 1
-            self.nrOfStimsClassified += 1
-            self.meanDetectTimeProb += 7
+        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel:
             self.newLabel = False
-
             if self.debugEnabled:
                 print "didnt classify!"
+
+            if self.nothingEnabled and (self.currentLabel is not -1):
+                for i in range(4):
+                    for prob in self.classProbs[i]:
+                        probsAll[i] += prob[0]
+
+                maxpos = probsAll.index(max(probsAll))
+
+                self.actualLabelsProb.append(self.currentLabel)
+                self.predictedLabelsProb.append(maxpos + 1)
+                self.totalNrClassified += 1
+                self.nrOfStimsClassified += 1
+                self.meanDetectTimeProb += 7
+
+
+
 
         classHit = [self.getProbValue(inputNr=3, classNr=0),
                     self.getProbValue(inputNr=4, classNr=1),
@@ -127,7 +131,8 @@ class MyOVBox(OVBox):
                     if prob[0] > self.classThresh:
                         self.predictedTime = self.getCurrentTime()
                         probsAll[i] += prob[0]
-            #print classHit
+            if self.debugEnabled:
+                print probsAll
 
             maxpos = probsAll.index(max(probsAll))
             #
@@ -144,8 +149,7 @@ class MyOVBox(OVBox):
                     self.nrOfStimsClassified += 1
                     if self.debugEnabled:
                         print "nr of stims is " + str(self.nrOfStimsClassified)
-                if self.debugEnabled:
-                    print probsAll
+
                     print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
         # else:
         #	print 'Received chunk of type ', type(chunk), " looking for StimulationSet"
@@ -153,7 +157,7 @@ class MyOVBox(OVBox):
 
     def uninitialize(self):
         self.meanDetectTimeProb /= self.nrOfStimsClassified
-        print 'nr of stims classified: '+str(self.nrOfStimsClassified)
+        print 'nr of stims classified '+str(self.nrOfStimsClassified)+' of all '+str(self.nrOfStimsActual)
         #print 'size of predicted ' + str(len(self.predictedLabelsProb))+ " size of actual "+str(len(self.actualLabelsProb))
         #print "mean time old: "+str(self.meanDetectTime / self.nrOfStimsClassified)
         print "mean time new: "+str(self.meanDetectTimeProb)

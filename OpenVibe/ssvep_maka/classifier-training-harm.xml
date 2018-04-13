@@ -4469,7 +4469,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.26-11.45.32]-t6nis-75-857-10-12Hz.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.16-12.29.19]-anti.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8280,7 +8280,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Use shrinkage</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8294,7 +8294,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Shrinkage: Force diagonal cov (DDA)</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8308,7 +8308,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8422,7 +8422,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Use shrinkage</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8436,7 +8436,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Shrinkage: Force diagonal cov (DDA)</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8450,7 +8450,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8564,7 +8564,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Use shrinkage</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8578,7 +8578,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Shrinkage: Force diagonal cov (DDA)</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8592,7 +8592,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8706,7 +8706,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Use shrinkage</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8720,7 +8720,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Shrinkage: Force diagonal cov (DDA)</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -8734,7 +8734,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>false</Value>
+					<Value>true</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

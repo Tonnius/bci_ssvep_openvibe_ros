@@ -32,6 +32,8 @@ def run():
     proov2 = [7.5, 15, 10, 20, 12, 24, 30, 60]
     proov4 = [6.6666, 6.6666*2,  8.57142857143,  8.57142857143*2, 20, 40, 30, 60]
     proov5 = [7.5, 7.5*2, 7.5*3, 20, 40,80, 12, 24, 36, 30, 60, 90]
+    proov6 = [10, 20, 30, 20, 40, 80, 12, 24, 36, 15, 30, 45]
+
     threshold = 0.25
     for fCent in proov1:
         b, a = butter_bandpass(fCent-threshold, fCent+threshold, fs, order=4)
