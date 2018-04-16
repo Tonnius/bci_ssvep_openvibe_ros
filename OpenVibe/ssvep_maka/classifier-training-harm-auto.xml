@@ -8308,7 +8308,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>true</Value>
+					<Value>false</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8450,7 +8450,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>true</Value>
+					<Value>false</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8592,7 +8592,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>true</Value>
+					<Value>false</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -8734,7 +8734,7 @@
 					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
 					<Name>Balance classes</Name>
 					<DefaultValue>false</DefaultValue>
-					<Value>true</Value>
+					<Value>false</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

@@ -57,17 +57,17 @@ def run():
     x += 0.01 * np.cos(2 * np.pi * 312 * t + 0.1)
     x += a * np.cos(2 * np.pi * f0 * t + .11)
     x += 0.03 * np.cos(2 * np.pi * 2000 * t)
-    plt.figure(2)
-    plt.clf()
-    plt.plot(t, x, label='Noisy signal')
-
-    y = butter_bandpass_filter(x, lowcut, highcut, fs, order=4)
-    plt.plot(t, y, label='Filtered signal (%g Hz)' % f0)
-    plt.xlabel('time (seconds)')
-    plt.hlines([-a, a], 0, T, linestyles='--')
-    plt.grid(True)
-    plt.axis('tight')
-    plt.legend(loc='upper left')
+    # plt.figure(2)
+    # plt.clf()
+    # plt.plot(t, x, label='Noisy signal')
+    #
+    # y = butter_bandpass_filter(x, lowcut, highcut, fs, order=4)
+    # plt.plot(t, y, label='Filtered signal (%g Hz)' % f0)
+    # plt.xlabel('time (seconds)')
+    # plt.hlines([-a, a], 0, T, linestyles='--')
+    # plt.grid(True)
+    # plt.axis('tight')
+    # plt.legend(loc='upper left')
 
     plt.show()
 
