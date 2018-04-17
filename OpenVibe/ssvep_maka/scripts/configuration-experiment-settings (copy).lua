@@ -47,28 +47,28 @@ function process(box)
 		box:sleep()
 	end
 
---	box:log("Info", box:get_config("Writing additional configuration to '${CustomConfigurationPrefix${OperatingSystem}}-ssvep-demo${CustomConfigurationSuffix${OperatingSystem}}'"))
---
---	cfg_file = assert(io.open(box:get_config("${CustomConfigurationPrefix${OperatingSystem}}-ssvep-demo${CustomConfigurationSuffix${OperatingSystem}}"), "a"))
---
---	success = true 
---	success = success and cfg_file:write("SSVEP_TargetLightColourRed = ", target_light_color[1] / 100, "\n")
---	success = success and cfg_file:write("SSVEP_TargetLightColourGreen = ", target_light_color[2] / 100, "\n")
---	success = success and cfg_file:write("SSVEP_TargetLightColourBlue = ", target_light_color[3] / 100, "\n")
---	success = success and cfg_file:write("SSVEP_TargetDarkColourRed = ", target_dark_color[1] / 100, "\n")
---	success = success and cfg_file:write("SSVEP_TargetDarkColourGreen = ", target_dark_color[2] / 100, "\n")
---	success = success and cfg_file:write("SSVEP_TargetDarkColourBlue = ", target_dark_color[3] / 100, "\n")
---
---	for i=1,frequency_count do
---		success = success and cfg_file:write("SSVEP_Frequency_", i, " = ", string.format("%g", stimulation_frequencies[i]), "\n")
---	end
---	
---	cfg_file:close()
---
---	if (success == false) then
---		box:log("Error", box:get_config("Write error"))
---		return false
---	end
+	box:log("Info", box:get_config("Writing additional configuration to '${CustomConfigurationPrefix${OperatingSystem}}-ssvep-demo${CustomConfigurationSuffix${OperatingSystem}}'"))
+
+	cfg_file = assert(io.open(box:get_config("${CustomConfigurationPrefix${OperatingSystem}}-ssvep-demo${CustomConfigurationSuffix${OperatingSystem}}"), "a"))
+
+	success = true 
+	success = success and cfg_file:write("SSVEP_TargetLightColourRed = ", target_light_color[1] / 100, "\n")
+	success = success and cfg_file:write("SSVEP_TargetLightColourGreen = ", target_light_color[2] / 100, "\n")
+	success = success and cfg_file:write("SSVEP_TargetLightColourBlue = ", target_light_color[3] / 100, "\n")
+	success = success and cfg_file:write("SSVEP_TargetDarkColourRed = ", target_dark_color[1] / 100, "\n")
+	success = success and cfg_file:write("SSVEP_TargetDarkColourGreen = ", target_dark_color[2] / 100, "\n")
+	success = success and cfg_file:write("SSVEP_TargetDarkColourBlue = ", target_dark_color[3] / 100, "\n")
+
+	for i=1,frequency_count do
+		success = success and cfg_file:write("SSVEP_Frequency_", i, " = ", string.format("%g", stimulation_frequencies[i]), "\n")
+	end
+	
+	cfg_file:close()
+
+	if (success == false) then
+		box:log("Error", box:get_config("Write error"))
+		return false
+	end
 	
 	-- create configuration files for temporal filters
 
