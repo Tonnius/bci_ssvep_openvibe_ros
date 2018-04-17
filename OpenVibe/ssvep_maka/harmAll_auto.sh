@@ -27,7 +27,7 @@ declare -a testingArr=(
                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.27-13.46.46]-annika-75-857-10-12Hz-test-2.csv"
                 "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test-2.csv"
                 )
-parameterIdent=$1
+parameterIdent="epDur"
 declare -a parametersEpDur=(1.0 0.9 0.8 0.7 0.6 0.5)
 #declare -a parametersEpInt=(0.01 0.025 0.05 0.075 0.1 0.2)
 declare -a parametersFreqTol=(0.4 0.3 0.25 0.5)
@@ -46,7 +46,7 @@ fi
 
 PROC_EPOCH_DUR=0.5
 PROC_EPOCH_INTER=0.5
-FREQ_TOLERANCE=0.25
+FREQ_TOLERANCE=$1
 
 TRESH=$2
 
@@ -77,9 +77,6 @@ do
 			SIM_FREQ3="8.57142857143"
 			SIM_FREQ4="7.5"
 
-    	fi
-    	if [ "$i" -eq "2" ]; then
-			CHANNELS="1:4"
     	fi
 
 		if (( $parameterIdent == "epDur" || $parameterIdent == "freqTol")) || (( $parameterIdent == "thresh" && $k == 0 )); then

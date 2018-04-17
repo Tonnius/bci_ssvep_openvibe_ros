@@ -1,0 +1,10 @@
+SVM for subj1
+Subject 0 had max ITR 22.2969351346 with settings {'classTresh': 0.6, 'maxProbDiffThresh': 0.1, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '0', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+[[ 0.96666667  0.          0.          0.03333333]
+ [ 0.          0.70588235  0.          0.29411765]
+ [ 0.          0.          1.          0.        ]
+ [ 0.53846154  0.          0.          0.46153846]]
+ classThresh 0.5
+ DiffThresh 0.1
+ freqTol 0.3
+ epdur 0.5

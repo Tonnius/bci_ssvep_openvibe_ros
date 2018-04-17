@@ -112,9 +112,9 @@ do
 			SIM_FREQ4="7.5"
 
     	fi
-    	if [ "$i" -eq "2" ]; then
-			CHANNELS="1:4"
-    	fi
+#    	if [ "$i" -eq "2" ]; then
+#			CHANNELS="1:4"
+#    	fi
 	for ((k=0; k<${paramArraylength}; k++));
 	do
 	if [ "$parameterIdent" = "epDur" ]; then
