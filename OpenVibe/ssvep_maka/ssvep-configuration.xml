@@ -129,28 +129,28 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Epoch Duration</Name>
 					<DefaultValue>0.5</DefaultValue>
-					<Value>0.2</Value>
+					<Value>0.5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Epoch Interval</Name>
 					<DefaultValue>0.1</DefaultValue>
-					<Value>0.02</Value>
+					<Value>0.5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Frequency Tolerance</Name>
 					<DefaultValue>0.250</DefaultValue>
-					<Value>0.25</Value>
+					<Value>0.3</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Selected channels</Name>
 					<DefaultValue>1:5</DefaultValue>
-					<Value>1:6</Value>
+					<Value>1:5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -421,4 +421,10 @@ around the stimulation frequency used for classification.</Text>
 			<Data>[{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":1,"identifier":"(0x48715606, 0x15ba4f24)","name":"Default window","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":1},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x3683b3e2, 0x7c4b4806)","index":0,"name":"Default tab","parentIdentifier":"(0x48715606, 0x15ba4f24)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":0,"identifier":"(0x1fb42682, 0x45866d35)","index":0,"name":"Empty","parentIdentifier":"(0x3683b3e2, 0x7c4b4806)","type":0}]</Data>
 		</Entry>
 	</Metadata>
+	<Attributes>
+		<Attribute>
+			<Identifier>(0x4c536d0a, 0xb23dc545)</Identifier>
+			<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/ssvep-configuration.xml</Value>
+		</Attribute>
+	</Attributes>
 </OpenViBE-Scenario>

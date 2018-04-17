@@ -44,20 +44,23 @@ for fileN in dataDirFileNames:
             0.25*((stimsData['stimsNrActual']*(7-data['detectTime']))/(stimsData['totalNrClassified']-stimsData['stimsNrClassified']))
 
     if actualLabels and predictedLabels:
-        cmPanda = ConfusionMatrix(actualLabels, predictedLabels)
+        #cmPanda = ConfusionMatrix(actualLabels, predictedLabels)
         cmSklearn = confusion_matrix(actualLabels, predictedLabels)
         cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
         perClassAccs = [False, False, False, False]
+        acc = 0.0
         for i in range(4):
-            if cmSklearn[i][i] >= 0.7:
+            acc += cmSklearn[i][i]
+            if cmSklearn[i][i] >= 0.6:
                 perClassAccs[i] = True
 
         perClassAccCond = all(item is True for item in perClassAccs)
 
         #print(cmSklearn)
         # print("Confusion matrix:\n%s" % confusion_matrix)
-        result = cmPanda.stats()
-        acc = result['overall']['Accuracy']
+        #result = cmPanda.stats()
+        acc /= 4
+        #acc = result['overall']['Accuracy']
         if acc == 1.0:
             itr = (math.log(NR_OF_STATES, 2) + acc*math.log(acc, 2)) * (60.0 / meanDetectTime)
         elif acc == 0.0:
@@ -74,7 +77,7 @@ for fileN in dataDirFileNames:
             if stimsClassified >= maxResList[subjectNr].stimsClassified:
                 maxResList[subjectNr].maxItr = itr
                 maxResList[subjectNr].maxItrFileN = fileN
-                maxResList[subjectNr].maxCmPanda = cmPanda
+                #maxResList[subjectNr].maxCmPanda = cmPanda
                 maxResList[subjectNr].maxCmSklearn = cmSklearn
                 maxResList[subjectNr].settings = experimentSettings
                 maxResList[subjectNr].actualLabels = actualLabels

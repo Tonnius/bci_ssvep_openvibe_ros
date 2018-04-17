@@ -1,6 +1,6 @@
 import numpy as np
 import os
-from pandas_ml import ConfusionMatrix
+#from pandas_ml import ConfusionMatrix
 import pickle
 import collections
 from sklearn.metrics import confusion_matrix
@@ -202,7 +202,7 @@ class MyOVBox(OVBox):
         print "mean time new: "+str(self.meanDetectTimeProb)
         #confusion_matrix = ConfusionMatrix(self.actualLabelsProb, self.predictedLabelsProb)
         cmSklearn = confusion_matrix(self.actualLabelsProb, self.predictedLabelsProb)
-        print cmSklearn
+        #print cmSklearn
         cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
         print cmSklearn
         #print("Confusion matrix:\n%s" % confusion_matrix)
