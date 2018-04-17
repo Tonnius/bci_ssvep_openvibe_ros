@@ -68,6 +68,7 @@
         <option value="$PROJECT_DIR$/filterTest.py" />
         <option value="$PROJECT_DIR$/python-confusion-matrix.py" />
         <option value="$PROJECT_DIR$/analyzeData.py" />
+        <option value="$PROJECT_DIR$/analyzeData_auto.py" />
       </list>
     </option>
   </component>
@@ -164,9 +165,10 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.analyzeData" />
-      <item index="1" class="java.lang.String" itemvalue="Python.filtTest" />
+      <item index="1" class="java.lang.String" itemvalue="Python.analyzeData_auto" />
+      <item index="2" class="java.lang.String" itemvalue="Python.filtTest" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -215,7 +217,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
