@@ -22,7 +22,7 @@ class maxRes():
         self.acc = 0.0
         self.thresh = None
 
-#dataDir = '/home/tonnius/Dropbox/Magistritoo/katseTulemused/data-origLda'
+#dataDir = '/home/tonnius/Dropbox/Magistritoo/katseTulemused/data_freqTol_thresh_ALL_SVM'
 dataDir = '/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/data'
 dataDirFileNames = sorted(os.listdir(dataDir))
 #fileNames = dataDirFileNames[1:]
@@ -43,7 +43,9 @@ for fileN in dataDirFileNames:
     meanDetectTime = (data['detectTime']*0.75)+ \
             0.25*((stimsData['stimsNrActual']*(7-data['detectTime']))/(stimsData['totalNrClassified']-stimsData['stimsNrClassified']))
 
-    if actualLabels and predictedLabels:
+    if actualLabels and predictedLabels: #and \
+                    #experimentSettings['epDur'] == '0.5' and experimentSettings['freqTol'] == '0.3' \
+                    #and experimentSettings['classTresh'] == 0.5 and experimentSettings['maxProbDiffThresh'] == 0.1:
         #cmPanda = ConfusionMatrix(actualLabels, predictedLabels)
         cmSklearn = confusion_matrix(actualLabels, predictedLabels)
         cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
@@ -51,7 +53,7 @@ for fileN in dataDirFileNames:
         acc = 0.0
         for i in range(4):
             acc += cmSklearn[i][i]
-            if cmSklearn[i][i] >= 0.6:
+            if cmSklearn[i][i] >= 0.4:
                 perClassAccs[i] = True
 
         perClassAccCond = all(item is True for item in perClassAccs)
@@ -60,6 +62,8 @@ for fileN in dataDirFileNames:
         # print("Confusion matrix:\n%s" % confusion_matrix)
         #result = cmPanda.stats()
         acc /= 4
+        if acc > 0.7:
+            perClassAccCond = True
         #acc = result['overall']['Accuracy']
         if acc == 1.0:
             itr = (math.log(NR_OF_STATES, 2) + acc*math.log(acc, 2)) * (60.0 / meanDetectTime)

@@ -1,0 +1,139 @@
+/usr/bin/python2.7 /home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/scripts/analyzeData.py
+Subject 0 had max ITR 29.9278567984 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '0', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+[[ 0.88888889  0.          0.05555556  0.05555556]
+ [ 0.02        0.8         0.02        0.16      ]
+ [ 0.          0.01694915  0.98305085  0.        ]
+ [ 0.26190476  0.          0.07142857  0.66666667]]
+stims data {'totalTime': 224, 'stimsNrActual': 32, 'notClassified': 0, 'stimsNrClassified': 32, 'totalNrClassified': 205}
+mean detect time 2.18721281724
+accuracy was 0.834651600753
+             precision    recall  f1-score   support
+
+          1     0.8000    0.8889    0.8421        54
+          2     0.9756    0.8000    0.8791        50
+          3     0.8923    0.9831    0.9355        59
+          4     0.7179    0.6667    0.6914        42
+
+avg / total     0.8526    0.8488    0.8471       205
+
+Subject 1 had max ITR 29.7810578444 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '1', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+[[ 0.72368421  0.14473684  0.05263158  0.07894737]
+ [ 0.          0.9         0.07142857  0.02857143]
+ [ 0.04918033  0.03278689  0.90163934  0.01639344]
+ [ 0.19736842  0.          0.09210526  0.71052632]]
+stims data {'totalTime': 280, 'stimsNrActual': 40, 'notClassified': 0, 'stimsNrClassified': 40, 'totalNrClassified': 283}
+mean detect time 2.00176062564
+accuracy was 0.808962467645
+             precision    recall  f1-score   support
+
+          1     0.7534    0.7237    0.7383        76
+          2     0.8289    0.9000    0.8630        70
+          3     0.7746    0.9016    0.8333        61
+          4     0.8571    0.7105    0.7770        76
+
+avg / total     0.8045    0.8021    0.8000       283
+
+Subject 2 had max ITR 65.6227207783 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '2', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+[[ 1.  0.  0.  0.]
+ [ 0.  1.  0.  0.]
+ [ 0.  0.  1.  0.]
+ [ 0.  0.  0.  1.]]
+stims data {'totalTime': 224, 'stimsNrActual': 32, 'notClassified': 0, 'stimsNrClassified': 32, 'totalNrClassified': 280}
+mean detect time 1.82863493889
+accuracy was 1.0
+             precision    recall  f1-score   support
+
+          1     1.0000    1.0000    1.0000        69
+          2     1.0000    1.0000    1.0000        72
+          3     1.0000    1.0000    1.0000        70
+          4     1.0000    1.0000    1.0000        69
+
+avg / total     1.0000    1.0000    1.0000       280
+
+Subject 3 had max ITR 40.3229882651 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '3', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+[[ 1.          0.          0.          0.        ]
+ [ 0.          0.94        0.          0.06      ]
+ [ 0.          0.04285714  0.95714286  0.        ]
+ [ 0.04166667  0.          0.01388889  0.94444444]]
+stims data {'totalTime': 280, 'stimsNrActual': 40, 'notClassified': 1, 'stimsNrClassified': 40, 'totalNrClassified': 233}
+mean detect time 2.5247543414
+accuracy was 0.960396825397
+             precision    recall  f1-score   support
+
+          1     0.9318    1.0000    0.9647        41
+          2     0.9400    0.9400    0.9400        50
+          3     0.9853    0.9571    0.9710        70
+          4     0.9577    0.9444    0.9510        72
+
+avg / total     0.9577    0.9571    0.9571       233
+
+Subject 4 had max ITR 49.0205472658 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '4', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
+[[ 0.8974359   0.          0.          0.1025641 ]
+ [ 0.          0.97222222  0.          0.02777778]
+ [ 0.          0.          0.92682927  0.07317073]
+ [ 0.          0.          0.          1.        ]]
+stims data {'totalTime': 224, 'stimsNrActual': 32, 'notClassified': 0, 'stimsNrClassified': 32, 'totalNrClassified': 223}
+mean detect time 1.99415692235
+accuracy was 0.949121846988
+             precision    recall  f1-score   support
+
+          1     1.0000    0.8974    0.9459        39
+          2     1.0000    0.9722    0.9859        72
+          3     1.0000    0.9268    0.9620        82
+          4     0.7143    1.0000    0.8333        30
+
+avg / total     0.9616    0.9462    0.9496       223
+
+Subject 5 had max ITR 30.5917562538 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '5', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
+[[ 0.7173913   0.04347826  0.04347826  0.19565217]
+ [ 0.13846154  0.78461538  0.03076923  0.04615385]
+ [ 0.          0.075       0.8875      0.0375    ]
+ [ 0.11864407  0.          0.06779661  0.81355932]]
+stims data {'totalTime': 224, 'stimsNrActual': 32, 'notClassified': 0, 'stimsNrClassified': 32, 'totalNrClassified': 250}
+mean detect time 1.89037190009
+accuracy was 0.800766502749
+             precision    recall  f1-score   support
+
+          1     0.6735    0.7174    0.6947        46
+          2     0.8644    0.7846    0.8226        65
+          3     0.8987    0.8875    0.8931        80
+          4     0.7619    0.8136    0.7869        59
+
+avg / total     0.8161    0.8120    0.8132       250
+
+Subject 6 had max ITR 44.3826170126 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '6', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}
+[[ 0.92307692  0.02564103  0.02564103  0.02564103]
+ [ 0.          0.98484848  0.01515152  0.        ]
+ [ 0.          0.0212766   0.93617021  0.04255319]
+ [ 0.          0.02272727  0.          0.97727273]]
+stims data {'totalTime': 224, 'stimsNrActual': 32, 'notClassified': 0, 'stimsNrClassified': 32, 'totalNrClassified': 196}
+mean detect time 2.25218386766
+accuracy was 0.955342086991
+             precision    recall  f1-score   support
+
+          1     1.0000    0.9231    0.9600        39
+          2     0.9559    0.9848    0.9701        66
+          3     0.9565    0.9362    0.9462        47
+          4     0.9348    0.9773    0.9556        44
+
+avg / total     0.9601    0.9592    0.9591       196
+
+Subject 7 had max ITR 50.5074868823 with settings {'classTresh': 0.48, 'maxProbDiffThresh': 0.12, 'ch': '1:5', 'freqTol': '0.3', 'currentSubjNr': '7', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}
+[[ 0.98550725  0.          0.01449275  0.        ]
+ [ 0.          0.95238095  0.04761905  0.        ]
+ [ 0.          0.          1.          0.        ]
+ [ 0.          0.          0.08571429  0.91428571]]
+stims data {'totalTime': 224, 'stimsNrActual': 32, 'notClassified': 0, 'stimsNrClassified': 32, 'totalNrClassified': 250}
+mean detect time 2.03526152165
+accuracy was 0.963043478261
+             precision    recall  f1-score   support
+
+          1     1.0000    0.9855    0.9927        69
+          2     1.0000    0.9524    0.9756        63
+          3     0.8276    1.0000    0.9057        48
+          4     1.0000    0.9143    0.9552        70
+
+avg / total     0.9669    0.9600    0.9612       250
+
+
+Process finished with exit code 0

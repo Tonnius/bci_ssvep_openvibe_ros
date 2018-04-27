@@ -1591,14 +1591,14 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Epoch Interval</Name>
 					<DefaultValue>0.1</DefaultValue>
-					<Value>0.1</Value>
+					<Value>0.5</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Freq Tol</Name>
 					<DefaultValue>0.25</DefaultValue>
-					<Value>0.25</Value>
+					<Value>0.3</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -1612,7 +1612,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Nr of subjects</Name>
 					<DefaultValue>3</DefaultValue>
-					<Value>3</Value>
+					<Value>1</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -1633,7 +1633,7 @@
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Thresholds</Name>
 					<DefaultValue>0.5:0.25</DefaultValue>
-					<Value>0.5:0.25</Value>
+					<Value>0.6:0.1</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -2311,7 +2311,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.27-13.46.46]-annika-75-857-10-12Hz-test-o.csv</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect-o.csv</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -2327,10 +2327,6 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -3727,7 +3723,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/signals/ssvep-record-[2018.02.15-14.32.32]-teet-test-no-zero.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -3747,6 +3743,10 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -5007,6 +5007,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x0212fad1, 0x1c51dde7)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x15c3c68e, 0x026e27c4)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x4803c39c, 0x50ab550d)</BoxIdentifier>
+				<BoxInputIndex>1</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x03ce3ff4, 0x2c30bc96)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x2249d2c1, 0x6b94a1b7)</BoxIdentifier>
@@ -5227,17 +5238,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x2c3f21a5, 0x0a117eb8)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x2d54734a, 0x308f3048)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x48983297, 0x0cf16837)</BoxIdentifier>
@@ -5293,6 +5293,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x37914a92, 0x0f265b42)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x15c3c68e, 0x026e27c4)</BoxIdentifier>
+				<BoxOutputIndex>0</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x38b291c6, 0x145ac148)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x48752a0e, 0x13c751c1)</BoxIdentifier>
@@ -5334,17 +5345,6 @@
 			<Target>
 				<BoxIdentifier>(0x54c56c66, 0x77e047d5)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x4428c751, 0x60a2a1a1)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
-				<BoxOutputIndex>2</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x4803c39c, 0x50ab550d)</BoxIdentifier>
-				<BoxInputIndex>1</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>
@@ -5818,4 +5818,10 @@
 			<Data>[{"boxIdentifier":"(0x0e019b3a, 0x3538aa46)","childCount":0,"identifier":"(0x0ccccffc, 0x5e44742b)","parentIdentifier":"(0xffffffff, 0xffffffff)","type":3},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":320,"identifier":"(0x4e39bf3a, 0x4380c93e)","name":"Default window","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":480},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x7dcb609f, 0x3cbb6053)","index":0,"name":"Default tab","parentIdentifier":"(0x4e39bf3a, 0x4380c93e)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":0,"identifier":"(0x66826987, 0x513bf2b8)","index":0,"name":"Empty","parentIdentifier":"(0x7dcb609f, 0x3cbb6053)","type":0}]</Data>
 		</Entry>
 	</Metadata>
+	<Attributes>
+		<Attribute>
+			<Identifier>(0x4c536d0a, 0xb23dc545)</Identifier>
+			<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/perf-measure-harm.mxs</Value>
+		</Attribute>
+	</Attributes>
 </OpenViBE-Scenario>

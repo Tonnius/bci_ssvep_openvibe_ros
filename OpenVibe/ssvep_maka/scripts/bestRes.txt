@@ -6,3 +6,25 @@ Best global settings so far:[None
  {'classTresh': 0.5, 'maxProbDiffThresh': 0.25, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '5', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
  {'classTresh': 0.5, 'maxProbDiffThresh': 0.25, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '6', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}
  {'classTresh': 0.5, 'maxProbDiffThresh': 0.25, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '7', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}]at avg ITR 34.1984257976
+Best global settings so far:[None
+ {'classTresh': 0.570008230445, 'maxProbDiffThresh': 0.30703807979, 'ch': '1:5', 'freqTol': '0.156231917631', 'currentSubjNr': '1', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+ {'classTresh': 0.570008230445, 'maxProbDiffThresh': 0.30703807979, 'ch': '1:5', 'freqTol': '0.156231917631', 'currentSubjNr': '2', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+ {'classTresh': 0.570008230445, 'maxProbDiffThresh': 0.30703807979, 'ch': '1:5', 'freqTol': '0.156231917631', 'currentSubjNr': '3', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+ {'classTresh': 0.570008230445, 'maxProbDiffThresh': 0.30703807979, 'ch': '1:5', 'freqTol': '0.156231917631', 'currentSubjNr': '4', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
+ {'classTresh': 0.570008230445, 'maxProbDiffThresh': 0.30703807979, 'ch': '1:5', 'freqTol': '0.156231917631', 'currentSubjNr': '5', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
+ {'classTresh': 0.570008230445, 'maxProbDiffThresh': 0.30703807979, 'ch': '1:5', 'freqTol': '0.156231917631', 'currentSubjNr': '6', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}
+ {'classTresh': 0.570008230445, 'maxProbDiffThresh': 0.30703807979, 'ch': '1:5', 'freqTol': '0.156231917631', 'currentSubjNr': '7', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}]at avg ITR 27.3867528889
+Best global settings so far:[None None
+ {'classTresh': 0.387412706718, 'maxProbDiffThresh': 0.294437973738, 'ch': '1:5', 'freqTol': '0.440464760233', 'currentSubjNr': '2', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+ {'classTresh': 0.387412706718, 'maxProbDiffThresh': 0.294437973738, 'ch': '1:5', 'freqTol': '0.440464760233', 'currentSubjNr': '3', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+ {'classTresh': 0.387412706718, 'maxProbDiffThresh': 0.294437973738, 'ch': '1:5', 'freqTol': '0.440464760233', 'currentSubjNr': '4', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
+ None
+ {'classTresh': 0.387412706718, 'maxProbDiffThresh': 0.294437973738, 'ch': '1:5', 'freqTol': '0.440464760233', 'currentSubjNr': '6', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}
+ {'classTresh': 0.387412706718, 'maxProbDiffThresh': 0.294437973738, 'ch': '1:5', 'freqTol': '0.440464760233', 'currentSubjNr': '7', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}]at avg ITR 36.680940657
+Best global settings so far:[None None
+ {'classTresh': 0.490426430905, 'maxProbDiffThresh': 0.343997693993, 'ch': '1:5', 'freqTol': '0.474761594012', 'currentSubjNr': '2', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+ {'classTresh': 0.490426430905, 'maxProbDiffThresh': 0.343997693993, 'ch': '1:5', 'freqTol': '0.474761594012', 'currentSubjNr': '3', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
+ {'classTresh': 0.490426430905, 'maxProbDiffThresh': 0.343997693993, 'ch': '1:5', 'freqTol': '0.474761594012', 'currentSubjNr': '4', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
+ None
+ {'classTresh': 0.490426430905, 'maxProbDiffThresh': 0.343997693993, 'ch': '1:5', 'freqTol': '0.474761594012', 'currentSubjNr': '6', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}
+ {'classTresh': 0.490426430905, 'maxProbDiffThresh': 0.343997693993, 'ch': '1:5', 'freqTol': '0.474761594012', 'currentSubjNr': '7', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}]at avg ITR 37.049467072

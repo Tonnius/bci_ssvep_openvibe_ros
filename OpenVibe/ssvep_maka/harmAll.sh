@@ -39,27 +39,27 @@ declare -a trainingArr=(
                )
 
 declare -a testingArr=(
-				"$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect-2.csv" 
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.15-14.32.32]-teet-test-no-zero-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.01.10-16.10.07]-tonis-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.16-12.41.41]-anti-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.08-15.24.56]-klavs-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.09-16.05.30]-frida-test-2.csv"
-               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.27-13.46.46]-annika-75-857-10-12Hz-test-2.csv"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test-2.csv"
+				"$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect-o.csv" 
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.15-14.32.32]-teet-test-no-zero-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.01.10-16.10.07]-tonis-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.16-12.41.41]-anti-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.08-15.24.56]-klavs-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.09-16.05.30]-frida-test-o.csv"
+               "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.27-13.46.46]-annika-75-857-10-12Hz-test-o.csv"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.26-11.57.22]-t6nis-75-857-10-12Hz-test-o.csv"
                 )
-parameterIdent2="thresh"
-parameterIdent="freqTol"
-declare -a parametersEpDur=(1.0 0.9 0.8 0.7 0.6 0.5)
+parameterIdent2="freqTol"
+parameterIdent="epDur"
+declare -a parametersEpDur=(0.5)
 #declare -a parametersEpInt=(0.01 0.025 0.05 0.075 0.1 0.2)
-declare -a parametersFreqTol=(0.5 0.4 0.3 0.25 0.2)
-#declare -a parametersThresh=("0.5:0.3" "0.5:0.2" "0.4:0.35" "0.6:0.2" "0.7:0.1")
-declare -a parametersThresh=("0.5:0.15" "0.5:0.20" "0.5:0.25" "0.5:0.3" "0.5:0.10"
-							 "0.4:0.40" "0.4:0.20" "0.4:0.25" "0.4:0.3" "0.4:0.35"
-							 "0.45:0.15" "0.45:0.20" "0.45:0.25" "0.45:0.3" "0.45:0.35"
-							 "0.55:0.15" "0.55:0.20" "0.55:0.25" "0.55:0.3" "0.55:0.10"
-							 "0.6:0.10" "0.6:0.15" "0.35:0.35" "0.35:0.3" "0.35:0.25" "0.35:0.40"
-							 )
+declare -a parametersFreqTol=(0.25)
+declare -a parametersThresh=("0.5:0.1")
+#declare -a parametersThresh=("0.5:0.15" "0.5:0.20" "0.5:0.25" "0.5:0.3" "0.5:0.10"
+#							 "0.4:0.40" "0.4:0.20" "0.4:0.25" "0.4:0.3" "0.4:0.35"
+#							 "0.45:0.15" "0.45:0.20" "0.45:0.25" "0.45:0.3" "0.45:0.35"
+#							 "0.55:0.15" "0.55:0.20" "0.55:0.25" "0.55:0.3" "0.55:0.10"
+#							 "0.6:0.10" "0.6:0.15" "0.35:0.35" "0.35:0.3" "0.35:0.25" "0.35:0.40"
+#							 )
 
 if [ "$parameterIdent" = "epDur" ]; then
     declare -a parameters=( ${parametersEpDur[@]} )
@@ -83,10 +83,10 @@ if [ "$parameterIdent2" = "thresh" ]; then
 fi
 PROC_EPOCH_DUR=0.5
 PROC_EPOCH_INTER=0.5
-FREQ_TOLERANCE=0.25
+FREQ_TOLERANCE=0.3
 
 
-TRESH="0.5:0.25"
+TRESH="0.46:0.22"
 paramArraylength=${#parameters[@]}
 paramArraylength2=${#parameters2[@]}
 arraylength=${#trainingArr[@]}
@@ -137,7 +137,7 @@ do
     		if [ "$parameterIdent2" = "thresh" ]; then
         		TRESH=${parameters2[$j]}
     		fi
-			if (( $parameterIdent2 == "thresh" && $j == 0 )); then
+			if (( $parameterIdent == "epDur" )) || (( $parameterIdent2 == "thresh" && $j == 0 )); then
 			#if [ "$parameterIdent" = "epDur" ] || [ "$parameterIdent" = "freqTol" ]; then
 
 				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-configuration-auto.xml" --invisible \
