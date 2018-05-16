@@ -1,9 +1,0 @@
-Best global settings:[ {'classTresh': 0.5, 'maxProbDiffThresh': 0.2, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '0', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
- {'classTresh': 0.5, 'maxProbDiffThresh': 0.2, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '1', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
- None
- {'classTresh': 0.5, 'maxProbDiffThresh': 0.2, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '3', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '20;15;12;10', 'nrOfSubjects': 8}
- {'classTresh': 0.5, 'maxProbDiffThresh': 0.2, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '4', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
- {'classTresh': 0.5, 'maxProbDiffThresh': 0.2, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '5', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '30;20;12;7.5', 'nrOfSubjects': 8}
- {'classTresh': 0.5, 'maxProbDiffThresh': 0.2, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '6', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}
- {'classTresh': 0.5, 'maxProbDiffThresh': 0.2, 'ch': '1:5', 'freqTol': '0.25', 'currentSubjNr': '7', 'epInt': '0.5', 'epDur': '0.5', 'simFreq': '12;10;8.57142857143;7.5', 'nrOfSubjects': 8}]
-at avg ITR 32.0210632244 LDA
