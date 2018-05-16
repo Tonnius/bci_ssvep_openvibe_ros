@@ -6,26 +6,23 @@ trap "exit" INT
 OPENVIBE_ROOT_PATH="$HOME/Git/openvibe/dist/extras-Release"
 MY_SCRIPT_PATH="$HOME/Git/magister_BCI/OpenVibe/ssvep_maka"
 rm -rf "$MY_SCRIPT_PATH/data/"*
-#INPUT_TRAINING_FILE_LOC="$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.22.10]-martin-8-5elect.ov"
-#INPUT_TESTING_FILE_LOC="$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect.ov"
 
-#declare -a trainingArr=("$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.26-14.25.26]-robert-ch3BAD.ov")
-
-#declare -a testingArr=("$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.26-14.37.24]-robert-ch3BAD-test.ov")
-declare -a trainingArr=("$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.22.10]-martin-8-5elect.ov" 
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.15-14.20.15]-teet.ov"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.01.10-15.32.49]-tonis.ov"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.16-12.29.19]-anti.ov"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.08-15.10.29]-klavs.ov" 
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.09-15.52.56]-frida.ov"                  
+declare -a trainingArr=(
+				"$MY_SCRIPT_PATH/signals/ssvep-record-subject1.ov" 
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject2.ov"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject3.ov"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject4.ov"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject5.ov" 
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject6.ov"                  
                )
 
-declare -a testingArr=("$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.13-15.31.38]-martin-test-no-zero-8-5-elect.ov" 
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.15-14.32.32]-teet-test-no-zero.ov"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.01.17-16.49.48]-tonis-test.ov"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.02.16-12.41.41]-anti-test.ov"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.08-15.24.56]-klavs-test.ov"
-                "$MY_SCRIPT_PATH/signals/ssvep-record-[2018.03.09-16.05.30]-frida-test.ov"
+declare -a testingArr=(
+				"$MY_SCRIPT_PATH/signals/ssvep-record-subject1-test.ov" 
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject2-test.ov"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject3-test.ov"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject4-test.ov"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject5-test.ov"
+                "$MY_SCRIPT_PATH/signals/ssvep-record-subject6-test.ov"
 
                 )
 parameterIdent="epDur"
