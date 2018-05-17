@@ -1,8 +1,8 @@
 
-OpenVibe/ssvep_maka/scripts/venv/*
+OpenVibe/scripts/venv/*
 
-OpenVibe/ssvep_maka/data/*
+OpenVibe/scripts/.idea/*
 
-OpenVibe/ssvep_maka/classifiers/*
+OpenVibe/data/*
 
-OpenVibe/ssvep_maka/configuration/*
+OpenVibe/logs/*
