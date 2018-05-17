@@ -294,8 +294,6 @@ Currently, the only supported setting is the screen refresh rate.
 &lt;b&gt;Screen Refresh Rate : &lt;/b&gt; The refresh rate of your screen, 
 refer to your screen's user manual to find this value.
 
-&lt;span color="red"&gt;Important notice&lt;/span&gt;
-
 Your screen will be able to reproduce only frequencies which
 are result of division of your screen refresh rate by an
 integer. </Text>
@@ -315,7 +313,7 @@ integer. </Text>
 			<Text>&lt;big&gt;&lt;b&gt;Scenario description&lt;/b&gt;&lt;/big&gt;
 
 &lt;b&gt;&lt;span color="red"&gt;This scenario must be run at least once before
-running any further SSVEP scenarios&lt;/span&gt;&lt;/b&gt;
+running any further scenarios&lt;/span&gt;&lt;/b&gt;
 
 This is a scenario where you can configure your SSVEP experiment. There
 are two boxes containing configuration parameters:
@@ -323,9 +321,7 @@ are two boxes containing configuration parameters:
 &lt;b&gt;Peripheral Settings&lt;/b&gt;
 
 &lt;b&gt;Experiment Settings&lt;/b&gt;
-
-For more detailed description please refer to the SSVEP
-documentation page.</Text>
+</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
@@ -363,19 +359,11 @@ documentation page.</Text>
 
 Settings concerning the SSVEP experiment in general.
 
-&lt;b&gt;Target Light Color&lt;/b&gt; and &lt;b&gt;Target Dark Color&lt;/b&gt; represent
-the two colors which will be used to generate the flickering of
-the targets. The notation Light and Dark is arbitrary, however on
-frequencies using odd number of frames will use more frames to
-represent the Light color.
-
 &lt;b&gt;Stimulation Frequencies&lt;/b&gt; A comma separated list of
-frequencies used for the stimulation. Refer to the documentation
-for more details.
+frequencies used for the stimulation. 
 
 &lt;b&gt;Processing Epoch Duration&lt;/b&gt; The length of the slice of the signal
-which will be used to find SSVEP response. With longer duration precision
-will increase at the detriment of the lag.
+which will be used to find SSVEP response. 
 
 &lt;b&gt;Processing Epoch Interval&lt;/b&gt; The speed interval between slices of the
 signal.
@@ -421,10 +409,4 @@ around the stimulation frequency used for classification.</Text>
 			<Data>[{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":1,"identifier":"(0x48715606, 0x15ba4f24)","name":"Default window","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":1},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x3683b3e2, 0x7c4b4806)","index":0,"name":"Default tab","parentIdentifier":"(0x48715606, 0x15ba4f24)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":0,"identifier":"(0x1fb42682, 0x45866d35)","index":0,"name":"Empty","parentIdentifier":"(0x3683b3e2, 0x7c4b4806)","type":0}]</Data>
 		</Entry>
 	</Metadata>
-	<Attributes>
-		<Attribute>
-			<Identifier>(0x4c536d0a, 0xb23dc545)</Identifier>
-			<Value>/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/ssvep-configuration.xml</Value>
-		</Attribute>
-	</Attributes>
 </OpenViBE-Scenario>

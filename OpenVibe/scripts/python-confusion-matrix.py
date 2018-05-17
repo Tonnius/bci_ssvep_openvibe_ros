@@ -1,11 +1,9 @@
 import numpy as np
 import os
-#from pandas_ml import ConfusionMatrix
 import pickle
 import collections
 from sklearn.metrics import confusion_matrix
 
-# import shutil
 class MyOVBox(OVBox):
     def __init__(self):
         OVBox.__init__(self)
@@ -15,8 +13,6 @@ class MyOVBox(OVBox):
         self.stimEndTime = 0
         self.meanDetectTime = 0
 
-        classDequeMaxLen = 1
-
         self.currentLabelTimeStop = 0
         self.currentLabelTimeStart = 0
         self.currentLabel = -1
@@ -25,8 +21,11 @@ class MyOVBox(OVBox):
         self.nrOfStimsClassified = 0
         self.nrOfStimsActual = 0
 
-        self.classProbs = [collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen),
-                           collections.deque(maxlen=classDequeMaxLen), collections.deque(maxlen=classDequeMaxLen)]
+        classDequeMaxLen = 1
+        self.classProbs = [collections.deque(maxlen=classDequeMaxLen),
+                           collections.deque(maxlen=classDequeMaxLen),
+                           collections.deque(maxlen=classDequeMaxLen),
+                           collections.deque(maxlen=classDequeMaxLen)]
 
         self.predictedTime = 0
         self.newLabel = False
@@ -34,10 +33,11 @@ class MyOVBox(OVBox):
 
         self.totalNrClassified = 0
         self.debugEnabled = False
-        self.nothingEnabled = True
+        self.predNothingEnabled = True
         self.notClassified = 0
         self.allProbsMean = [0.0, 0.0, 0.0, 0.0]
         self.underThreshValues = [0, 0, 0, 0]
+
     def initialize(self):
         threshString = self.setting['Thresholds']
         threshs = threshString.split(':')
@@ -47,7 +47,6 @@ class MyOVBox(OVBox):
         else:
             self.classThresh = 0.5
             self.maxProbDiffThresh = 0.25
-        #print "thresh: "+threshString
         return
 
     def getProbValue(self, inputNr, classNr):
@@ -59,52 +58,21 @@ class MyOVBox(OVBox):
 
         return False
 
-    def getProbMean(self):
-        for i in range(4):
-            for prob in self.classProbs[i]:
-                if prob[0] < self.classThresh:
-                    self.allProbsMean[i] += prob[0]
-                    self.underThreshValues[i] += 1
-    def process(self):
-        # stim = 0
-        # for chunkIndex in range(len(self.input[0])):
-        #     chunk = self.input[0].pop()
-        #     if type(chunk) == OVStimulationSet:
-        #         for stimIdx in range(len(chunk)):
-        #             stim = chunk.pop()
-        #             #print 'Received stim on input0', stim.identifier-33025, 'stamped at', stim.date, 's'
-        #             self.actualLabels.append(stim.identifier-33025)
-        #
-        # for chunkIndex1 in range(len(self.input[1])):
-        #     chunk1 = self.input[1].pop()
-        #     if type(chunk1) == OVStimulationSet:
-        #         for stimIdx1 in range(len(chunk1)):
-        #             stim1 = chunk1.pop()
-        #             # if stim is not 0:
-        #             # if stim1.date > stim.date:
-        #             # print 'Received stim on input1', stim1.identifier-33025, 'stamped at', stim1.date, 's'
-        #             self.predictedLabels.append(stim1.identifier-33025)
-        #
-        # for chunkIndex2 in range(len(self.input[2])):
-        #     chunk2 = self.input[2].pop()
-        #     if type(chunk2) == OVStimulationSet:
-        #         for stimIdx2 in range(len(chunk2)):
-        #             stim2 = chunk2.pop()
-        #             if (stim2.identifier == 33054):
-        #                 self.stimStartTime = stim2.date
-        #             elif (stim2.identifier == 33055):
-        #                 self.stimEndTime = stim2.date
-        #                 if (self.stimEndTime > self.stimStartTime):
-        #                     self.meanDetectTime += self.stimEndTime - self.stimStartTime
-        #                 else:
-        #                     print "Start Time came after End Time. Something went wrong."
+    # def getProbMean(self):
+    #     for i in range(4):
+    #         for prob in self.classProbs[i]:
+    #             if prob[0] < self.classThresh:
+    #                 self.allProbsMean[i] += prob[0]
+    #                 self.underThreshValues[i] += 1
 
+    def process(self):
         for chunkIndex in range(len(self.input[7])):
             chunk = self.input[7].pop()
             if type(chunk) == OVStimulationSet:
                 for stimIdx in range(len(chunk)):
                     stim = chunk.pop()
-                    #print 'Received stim on input0', stim.identifier-33025, 'stamped at', stim.date, 's'
+                    if self.debugEnabled:
+                        print 'Received stim on input 7', stim.identifier-33025, 'stamped at', stim.date, 's'
                     if(stim.identifier > 33024 and stim.identifier < 33030):
                         self.currentLabel = stim.identifier-33024
                         self.currentLabelTimeStart = stim.date + 1.0
@@ -112,17 +80,17 @@ class MyOVBox(OVBox):
                         self.newLabel = True
                         self.nrOfStimsActual += 1
                         if self.debugEnabled:
-                            print 'Total classified up to now py: '+str(self.totalNrClassified)
+                            print 'Total classified up to now: '+str(self.totalNrClassified)
 
         probsAll = [0.0, 0.0, 0.0, 0.0]
+
         if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel:
-            #self.currentLabelTimeStop -= 2
             self.newLabel = False
             self.notClassified += 1
             if self.debugEnabled:
                 print "didnt classify!"
 
-            if self.nothingEnabled and (self.currentLabel is not -1):
+            if self.predNothingEnabled and (self.currentLabel is not -1):
                 for i in range(4):
                     for prob in self.classProbs[i]:
                         probsAll[i] += prob[0]
@@ -136,8 +104,6 @@ class MyOVBox(OVBox):
                 self.meanDetectTimeProb += 7
 
 
-
-
         classHit = [self.getProbValue(inputNr=3, classNr=0),
                     self.getProbValue(inputNr=4, classNr=1),
                     self.getProbValue(inputNr=5, classNr=2),
@@ -149,69 +115,53 @@ class MyOVBox(OVBox):
         if True in classHit:
             for i in range(4):
                 for prob in self.classProbs[i]:
-                    #if prob[1] > (self.getCurrentTime()-1): #only use probabilities from last second
                     if prob[0] > self.classThresh:
                         probsAll[i] += prob[0]
+
             if self.debugEnabled:
                 print "probsAll: " + str(probsAll)
+
             maxProb = max(probsAll)
             maxpos = probsAll.index(maxProb)
             del probsAll[maxpos]
             maxProb2 = max(probsAll)
-
-            #origProbsAll = probsAll
-            #probsAll.sort()
-            #maxpos = origProbsAll.index(probsAll[-1]) + 1
-
             maxPosDif = maxProb - maxProb2
+
             if self.debugEnabled:
                 print "maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos)
-            #(np.count_nonzero(probsAll) == 1) and \
+
             self.predictedTime = self.getCurrentTime()
             if (self.currentLabel is not -1) and \
-                    maxPosDif >= self.maxProbDiffThresh and \
-                    (self.currentLabelTimeStart <= self.predictedTime) and \
-                    (self.predictedTime <= self.currentLabelTimeStop):
-
+                maxPosDif >= self.maxProbDiffThresh and \
+                (self.currentLabelTimeStart <= self.predictedTime) and \
+                (self.predictedTime <= self.currentLabelTimeStop):
 
                 self.actualLabelsProb.append(self.currentLabel)
                 self.predictedLabelsProb.append(maxpos + 1)
                 self.totalNrClassified += 1
                 meanTimeTemp = self.predictedTime - self.currentLabelTimeStart
-                if self.newLabel and meanTimeTemp > 0.6:
+                if self.newLabel:
                     self.meanDetectTimeProb += meanTimeTemp
                     self.newLabel = False
                     self.nrOfStimsClassified += 1
                     if self.debugEnabled:
                         print "nr of stims is " + str(self.nrOfStimsClassified)
-                if self.debugEnabled:
-                    print "predicted class was "+str(maxpos+1) + " label was: "+str(self.currentLabel)
+                        print "predicted class was " + str(maxpos + 1) + " label was: " + str(self.currentLabel)
 
         return
 
     def uninitialize(self):
-
-        # for i in range(4):
-        #     self.allProbsMean[i] /= self.underThreshValues[i]
-        #     print "mean for class "+str(i)+": "+str(self.allProbsMean[i])
-
         self.meanDetectTimeProb /= self.nrOfStimsClassified
         print 'nr of stims classified '+str(self.nrOfStimsClassified)+' of all '+str(self.nrOfStimsActual)
-        #print 'size of predicted ' + str(len(self.predictedLabelsProb))+ " size of actual "+str(len(self.actualLabelsProb))
-        #print "mean time old: "+str(self.meanDetectTime / self.nrOfStimsClassified)
-        print "mean time new: "+str(self.meanDetectTimeProb)
-        #confusion_matrix = ConfusionMatrix(self.actualLabelsProb, self.predictedLabelsProb)
+        print "mean time: "+str(self.meanDetectTimeProb)
         cmSklearn = confusion_matrix(self.actualLabelsProb, self.predictedLabelsProb)
-        #print cmSklearn
         cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
         print cmSklearn
-        #print("Confusion matrix:\n%s" % confusion_matrix)
-        #confusion_matrix.print_stats()
+
         nrOfSubj = int(self.setting['Nr of subjects'])
 
-        dirToWrite = '/home/tonnius/Git/magister_BCI/OpenVibe/ssvep_maka/data/'
-        #dataDirFileNames = sorted(os.listdir(dirToWrite))
-        #print dataDirFileNames
+        dirToWrite = '/home/tonnius/Git/magister_BCI/OpenVibe/data/'
+
         fileNrToWrite = self.setting['Current Subject Nr']
 
         exSettings = {'ch': self.setting['channels'],
@@ -223,9 +173,6 @@ class MyOVBox(OVBox):
                       'currentSubjNr': fileNrToWrite,
                       'classTresh': self.classThresh,
                       'maxProbDiffThresh': self.maxProbDiffThresh}
-
-        #if int(fileNrToWrite) > (nrOfSubj - 1):
-        #   fileNrToWrite = '0'
 
         settingsFileName = ''
         for key,value in exSettings.items():
@@ -246,15 +193,6 @@ class MyOVBox(OVBox):
 
         pickle.dump(data, open(writeFile, 'wb'))
 
-        #os.rename(dirToWrite + dataDirFileNames[0], dirToWrite + str(int(fileNrToWrite) + 1))
-
-        # with open(dirToWrite, 'a') as f:
-        # np.savetxt(f, (self.actualLabels, self.predictedLabels))
-        #print "meanDetectTime " + str(self.meanDetectTimeProb) + "and nr of stims " + str(self.nrOfStimsClassified)
-        #print "Mean detect time was " + str(self.meanDetectTime)
         print 'File saved to ' + writeFile
-        #print 'actual labels array size: ', len(self.actualLabels), ' predictedLabels array size: ', len(self.predictedLabels)
-
-
 
 box = MyOVBox()

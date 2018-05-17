@@ -247,11 +247,11 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>-176</Value>
+					<Value>-192</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>896</Value>
+					<Value>608</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -472,7 +472,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>896</Value>
+					<Value>720</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -629,7 +629,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}]-t6nis-75-857Hz.ov</Value>
+					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -1200,48 +1200,11 @@ stimulator and stop the scenario.</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1168</Value>
+					<Value>1232</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
 					<Value>-304</Value>
-				</Attribute>
-			</Attributes>
-		</Comment>
-		<Comment>
-			<Identifier>(0x07a7852d, 0x7630c95f)</Identifier>
-			<Text>&lt;b&gt;Connection to the external application&lt;/b&gt;
-
-The external stimulator is controlled through VRPN
-to display the configured sequence of targets at
-desired moments.</Text>
-			<Attributes>
-				<Attribute>
-					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>592</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>176</Value>
-				</Attribute>
-			</Attributes>
-		</Comment>
-		<Comment>
-			<Identifier>(0x0c19ff72, 0x2875ade7)</Identifier>
-			<Text>&lt;b&gt;Connection to the external application&lt;/b&gt;
-
-This box receives commands from the external 
-stimulator application through the VRPN
-communication protocol.
-</Text>
-			<Attributes>
-				<Attribute>
-					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>640</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>-144</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>
@@ -1252,8 +1215,7 @@ communication protocol.
 You can configure the SSVEP training through this box. This box also
 configures the next &lt;i&gt;Classifier Training&lt;/i&gt; scenario, so it is
 &lt;u&gt;imperative&lt;/u&gt; to &lt;span color="red"&gt;run this scenario every time you
-change settings in the training protocol&lt;/span&gt;. For more detail,
-please read the SSVEP Scenario documentation.
+change settings in the training protocol&lt;/span&gt;. 
 
 &lt;b&gt;Goal Sequence&lt;/b&gt; A sequence of space-separated numbers. Each number
 represents a flickering object to be marked as a target. The number 0
@@ -1307,9 +1269,6 @@ This scenario is used for acquisition of the training data necessary to
 train the SSVEP classifiers. In order to run correctly it has to be
 configured by the &lt;b&gt;SSVEP Training Controller&lt;/b&gt; box.
 
-For the detailed description and experimental protocol, please refer to
-the SSVEP Scenario documentation on the OpenViBE website.
-
 &lt;small&gt;&lt;i&gt;&lt;b&gt;note:&lt;/b&gt; the recorded files go to the
 folder where the scenario xml is located
 (&lt;span color="darkblue"&gt;${Player_ScenarioDirectory}/&lt;/span&gt;).&lt;/i&gt;&lt;/small&gt;</Text>
@@ -1321,6 +1280,23 @@ folder where the scenario xml is located
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
 					<Value>-336</Value>
+				</Attribute>
+			</Attributes>
+		</Comment>
+		<Comment>
+			<Identifier>(0x5347b592, 0x23e65627)</Identifier>
+			<Text>By default, the Acquisition client 
+(gets data from the used device)
+ and Generic stream writer 
+(writes the data to a file) are disabled.</Text>
+			<Attributes>
+				<Attribute>
+					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
+					<Value>1248</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
+					<Value>368</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>
@@ -1341,20 +1317,6 @@ folder where the scenario xml is located
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
 					<Value>16</Value>
-				</Attribute>
-			</Attributes>
-		</Comment>
-		<Comment>
-			<Identifier>(0x68162d52, 0x34c673a0)</Identifier>
-			<Text>You can browse each box' documentation by selecting the box and pressing &lt;b&gt;F1&lt;/b&gt;</Text>
-			<Attributes>
-				<Attribute>
-					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>688</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>-480</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>
