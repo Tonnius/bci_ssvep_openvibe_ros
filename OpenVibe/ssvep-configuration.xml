@@ -288,23 +288,17 @@
 			<Identifier>(0x05488892, 0x66346878)</Identifier>
 			<Text>&lt;big&gt;&lt;b&gt;Peripheral Settings&lt;/b&gt;&lt;/big&gt;
 
-Settings in this box must match your hardware configuration.
-Currently, the only supported setting is the screen refresh rate.
-
-&lt;b&gt;Screen Refresh Rate : &lt;/b&gt; The refresh rate of your screen, 
-refer to your screen's user manual to find this value.
-
 Your screen will be able to reproduce only frequencies which
 are result of division of your screen refresh rate by an
 integer. </Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>-32</Value>
+					<Value>-16</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>-48</Value>
+					<Value>0</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>
@@ -329,7 +323,7 @@ are two boxes containing configuration parameters:
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>-336</Value>
+					<Value>-256</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>

@@ -15,6 +15,7 @@ globalITRAvg = 0.0
 def MyFn(s):
     res = s[2:].split('subject')
     return res[1]+res[0]
+
 class maxRes():
     def __init__(self, count):
         self.maxCmPanda = None
