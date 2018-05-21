@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="franka_kinova">
+  <!-- common stuff -->
+
+  <!-- panda -->
+
+  <xacro:include filename="$(find franka_description)/robots/panda_arm.xacro"/>
+
+  <xacro:include filename="$(find kinova_description)/urdf/m1n6s300_ed.xacro"/>
+
+  <xacro:include filename="$(find franka_description)/robots/hand.xacro"/>
+
+  <xacro:panda_arm />
+
+  <xacro:m1n6s300 base_parent="panda_link8"/>
+
+
+  <material name="blue">
+    <color rgba="0 0 .8 1"/>
+  </material>
+
+  <material name="back">
+    <color rgba="240 240 240 0.2"/>
+  </material>
+
+
+  <material name="left">
+    <color rgba="240 240 240 0.2"/>
+  </material>
+
+  <link name="base_link_box">
+    <visual>
+      <geometry>
+        <box size="3 1.5 .1"/>
+      </geometry>
+      <material name="blue"/>
+      <collision>
+        <geometry>
+          <box size="3 1.5 .1"/>
+        </geometry>
+      </collision>
+    </visual>
+  </link>
+
+  <link name="back_link">
+    <visual>
+      <geometry>
+        <box size="3 0.03 1.3"/>
+      </geometry>
+      <material name="back"/>
+      <collision>
+        <geometry>
+          <box size="3 1.5 1"/>
+        </geometry>
+      </collision>
+    </visual>
+  </link>
+
+
+  <link name="left_link">
+    <visual>
+      <geometry>
+        <box size="0.03 1.5 1.3"/>
+      </geometry>
+      <material name="left"/>
+      <collision>
+        <geometry>
+          <box size="0.03 1.5 1.3"/>
+        </geometry>
+      </collision>
+    </visual>
+  </link>
+
+
+  <link name="world"/>
+  <joint name="world_joint"  type="fixed">
+    <origin xyz="2 0 0.01" rpy="0 0 0" />
+    <parent link="world"/>
+    <child link="base_link_box"/>
+  </joint>
+
+
+
+  <joint name="base_link_to_base_box" type="fixed">
+    <parent link="base_link_box"/>
+    <child link="panda_link0"/>
+    <origin xyz="-1.2 -0.5 0.05" rpy="0 0 0.8"/>
+  </joint>
+
+ 
+
+  <joint name="back_link_to_base_box" type="fixed">
+    <parent link="base_link_box"/>
+    <child link="back_link"/>
+    <origin xyz="0 -4.73 0.7" rpy="0 0 0"/>
+  </joint>
+
+
+  <joint name="left_link_to_base_box" type="fixed">
+    <parent link="base_link_box"/>
+    <child link="left_link"/>
+    <origin xyz="-4.49 0 0.7" rpy="0 0 0"/>
+  </joint>
+
+</robot>
