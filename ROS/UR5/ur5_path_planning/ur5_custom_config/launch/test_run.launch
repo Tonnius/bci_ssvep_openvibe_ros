@@ -1,0 +1,11 @@
+<!-- Starts driver, moveit planner and rviz -->
+<launch>
+  <include file="$(find ur_modern_driver)/launch/ur5_bringup.launch">
+    <arg name="robot_ip" value="192.168.1.67"/>
+  </include>
+
+  <include file="$(find ur5_custom_config)/launch/ur5_on_table_moveit_planning_execution.launch"/>
+  <include file="$(find ur5_custom_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+</launch>
