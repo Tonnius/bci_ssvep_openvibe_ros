@@ -1461,7 +1461,7 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Freq Tol</Name>
 					<DefaultValue>0.25</DefaultValue>
-					<Value>0.3</Value>
+					<Value>0.25</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -1496,7 +1496,7 @@
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Thresholds</Name>
 					<DefaultValue>0.5:0.25</DefaultValue>
-					<Value>0.6:0.1</Value>
+					<Value>0.6:0.15</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -3359,6 +3359,79 @@
 			</Attributes>
 		</Box>
 		<Box>
+			<Identifier>(0x2d7d52e1, 0x67b6ce56)</Identifier>
+			<Name>Generic stream writer</Name>
+			<AlgorithmClassIdentifier>(0x09c92218, 0x7c1216f8)</AlgorithmClassIdentifier>
+			<Inputs>
+				<Input>
+					<TypeIdentifier>(0x403488e7, 0x565d70b6)</TypeIdentifier>
+					<Name>Input stream 1</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x5ba36127, 0x195feae1)</TypeIdentifier>
+					<Name>Input stream 2</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
+					<Name>Input stream 3</Name>
+				</Input>
+				<Input>
+					<TypeIdentifier>(0x013df452, 0xa3a8879a)</TypeIdentifier>
+					<Name>Input stream 4</Name>
+				</Input>
+			</Inputs>
+			<Settings>
+				<Setting>
+					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
+					<Name>Filename</Name>
+					<DefaultValue>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</DefaultValue>
+					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x2cdb2f0b, 0x12f231ea)</TypeIdentifier>
+					<Name>Use compression</Name>
+					<DefaultValue>false</DefaultValue>
+					<Value>false</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
+			</Settings>
+			<Attributes>
+				<Attribute>
+					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
+					<Value>448</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
+					<Value>1376</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
+					<Value>(0x89a08108, 0xc8d1fac1)</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x527ad68d, 0x16d746a0)</Identifier>
+					<Value></Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0xce18836a, 0x9c0eb403)</Identifier>
+					<Value>2</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0xcfad85b0, 0x7c6d841c)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0xfba64161, 0x65304e21)</Identifier>
+					<Value></Value>
+				</Attribute>
+			</Attributes>
+		</Box>
+		<Box>
 			<Identifier>(0x2eb18d3c, 0x7422b864)</Identifier>
 			<Name>Start Stimulation</Name>
 			<AlgorithmClassIdentifier>(0x0b5a2787, 0x02750621)</AlgorithmClassIdentifier>
@@ -3853,10 +3926,6 @@
 					<Value>1168</Value>
 				</Attribute>
 				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0x0d4656c0, 0xc95b1fa8)</Value>
 				</Attribute>
@@ -3988,7 +4057,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/signals/ssvep-record-subject1-test.ov</Value>
+					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/signals/ssvep-record-[2018.05.21-15.06.59]-parim.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -4008,6 +4077,10 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -5587,6 +5660,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x31a9aef0, 0x4b41502b)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x4d994d17, 0x4d7d5a9e)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x2d7d52e1, 0x67b6ce56)</BoxIdentifier>
+				<BoxInputIndex>1</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x3259cbc9, 0x05f840a5)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x6e8b9d94, 0x04c8215d)</BoxIdentifier>
@@ -5737,6 +5821,17 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x0a7c8712, 0x78a9580f)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x4850b2b9, 0x74da2c4a)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x4d994d17, 0x4d7d5a9e)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
@@ -6002,17 +6097,6 @@
 			<Target>
 				<BoxIdentifier>(0x102c3aa1, 0x2d1a2420)</BoxIdentifier>
 				<BoxInputIndex>3</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x768debb0, 0x3894c749)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>

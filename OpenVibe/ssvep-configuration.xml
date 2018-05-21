@@ -143,7 +143,7 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Processing Frequency Tolerance</Name>
 					<DefaultValue>0.250</DefaultValue>
-					<Value>0.3</Value>
+					<Value>0.25</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
