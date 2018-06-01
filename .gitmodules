@@ -21,5 +21,3 @@
 	path = ROS/jog_arm
 	url = https://github.com/ut-ims-robotics/jog_arm
 	branch = kinetic
-[submodule "ROS/keyboard_publisher"]
-	url = https://github.com/ut-ims-robotics/keyboard_publisher
