@@ -58,6 +58,10 @@
 					<Value>880</Value>
 				</Attribute>
 				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0x0d4656c0, 0xc95b1fa8)</Value>
 				</Attribute>
@@ -646,6 +650,10 @@
 					<Value>992</Value>
 				</Attribute>
 				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0x89a08108, 0xc8d1fac1)</Value>
 				</Attribute>
@@ -1205,9 +1213,8 @@ stimulator and stop the scenario.</Text>
 			<Text>&lt;big&gt;&lt;b&gt;SSVEP Training Controller&lt;/b&gt;&lt;/big&gt;
 
 You can configure the SSVEP training through this box. This box also
-configures the next &lt;i&gt;Classifier Training&lt;/i&gt; scenario, so it is
-&lt;u&gt;imperative&lt;/u&gt; to &lt;span color="red"&gt;run this scenario every time you
-change settings in the training protocol&lt;/span&gt;. 
+configures the next scenarios, so you must  &lt;span color="red"&gt;run this scenario every time
+ you change settings in the training protocol&lt;/span&gt;. 
 
 &lt;b&gt;Goal Sequence&lt;/b&gt; A sequence of space-separated numbers. Each number
 represents a flickering object to be marked as a target. The number 0
@@ -1225,9 +1232,7 @@ arrow marking the target to be looked at by the subject appears and the
 beginning of the flickering sequence.
 
 &lt;b&gt;Training Target size&lt;/b&gt; The size of a stimulating object on screen.
-The size is given as a proportion of the size of the window. Thus an
-object of size 0.5;0.5 would have dimensions of length equal to the half
-of the size of the shortest dimension of the window.
+The size is given as a proportion of the size of the window.
 
 &lt;small&gt;Example of a value for this setting : &lt;b&gt;0.5;0.5&lt;/b&gt;&lt;/small&gt;
 
@@ -1261,9 +1266,8 @@ This scenario is used for acquisition of the training data necessary to
 train the SSVEP classifiers. In order to run correctly it has to be
 configured by the &lt;b&gt;SSVEP Training Controller&lt;/b&gt; box.
 
-&lt;small&gt;&lt;i&gt;&lt;b&gt;note:&lt;/b&gt; the recorded files go to the
-folder where the scenario xml is located
-(&lt;span color="darkblue"&gt;${Player_ScenarioDirectory}/&lt;/span&gt;).&lt;/i&gt;&lt;/small&gt;</Text>
+&lt;small&gt;&lt;i&gt;&lt;b&gt;note:&lt;/b&gt; the recorded files go to the signals folder 
+(&lt;span color="darkblue"&gt;${Player_ScenarioDirectory}/signals/&lt;/span&gt;).&lt;/i&gt;&lt;/small&gt;</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>

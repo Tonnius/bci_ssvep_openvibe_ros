@@ -4649,6 +4649,29 @@
 			</Attributes>
 		</Comment>
 		<Comment>
+			<Identifier>(0x2a728905, 0x0fe8a6cb)</Identifier>
+			<Text>&lt;b&gt;Signal processing&lt;/b&gt;
+
+Each frequency is treated separately. There are two important
+boxes in the processing chain:
+
+&lt;b&gt;Temporal filter&lt;/b&gt; extracts a single frequency band.
+
+&lt;b&gt;Target Separator&lt;/b&gt; separates targets used to mark one
+frequency from the others and sends stimulations to corresponding
+outputs (Target/Non-Target). </Text>
+			<Attributes>
+				<Attribute>
+					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
+					<Value>992</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
+					<Value>-736</Value>
+				</Attribute>
+			</Attributes>
+		</Comment>
+		<Comment>
 			<Identifier>(0x4a57db8e, 0x7e6ed942)</Identifier>
 			<Text>&lt;big&gt;&lt;b&gt;Scenario description&lt;/b&gt;&lt;/big&gt;
 
@@ -4684,28 +4707,44 @@ folder where the scenario xml is located
 	</Metadata>
 	<Attributes>
 		<Attribute>
+			<Identifier>(0x079d1f09, 0x667c7871)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x60bc58ab, 0x7a1b4d83)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
 			<Identifier>(0x790d75b8, 0x3bb90c33)</Identifier>
-			<Value>Jozef Legeny</Value>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x7a3a1558, 0xf12c63c2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x84009d7c, 0x3c4e763b)</Identifier>
+			<Value>	</Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0x8c1fc55b, 0x7b433dc2)</Identifier>
-			<Value>1.0</Value>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0x9f5c4075, 0x4a0d3666)</Identifier>
-			<Value>SSVEP CSP Training</Value>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0xf36a1567, 0xd13c53da)</Identifier>
-			<Value>http://openvibe.inria.fr/using-the-ssvep-mind-shooter-scenarios/</Value>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0xf6b2e3fa, 0x7bd43926)</Identifier>
-			<Value>SSVEP</Value>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0xf8034a49, 0x8b3f37cc)</Identifier>
-			<Value>Inria</Value>
+			<Value></Value>
 		</Attribute>
 	</Attributes>
 </OpenViBE-Scenario>

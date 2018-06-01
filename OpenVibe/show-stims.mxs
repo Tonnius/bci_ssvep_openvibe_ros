@@ -199,178 +199,6 @@
 			</Attributes>
 		</Box>
 		<Box>
-			<Identifier>(0x240f1aee, 0x1385b3f7)</Identifier>
-			<Name>Target Select</Name>
-			<AlgorithmClassIdentifier>(0x0e382e6f, 0x5be1f00c)</AlgorithmClassIdentifier>
-			<Inputs>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input 1</Name>
-				</Input>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input 2</Name>
-				</Input>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input 3</Name>
-				</Input>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input 4</Name>
-				</Input>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input 5</Name>
-				</Input>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input 6</Name>
-				</Input>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input 7</Name>
-				</Input>
-			</Inputs>
-			<Settings>
-				<Setting>
-					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
-					<Name>Peripheral name</Name>
-					<DefaultValue>openvibe-vrpn</DefaultValue>
-					<Value>SSVEP_VRPN_Target</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 1 ON</Name>
-					<DefaultValue>OVTK_GDF_Feedback_Continuous</DefaultValue>
-					<Value>OVTK_StimulationId_Label_00</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 1 OFF</Name>
-					<DefaultValue>OVTK_GDF_End_Of_Trial</DefaultValue>
-					<Value>OVTK_StimulationId_Label_00</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 2 ON</Name>
-					<DefaultValue>OVTK_GDF_Feedback_Continuous</DefaultValue>
-					<Value>OVTK_StimulationId_Label_01</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 2 OFF</Name>
-					<DefaultValue>OVTK_GDF_End_Of_Trial</DefaultValue>
-					<Value>OVTK_StimulationId_Label_01</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 3 ON</Name>
-					<DefaultValue>OVTK_GDF_Feedback_Continuous</DefaultValue>
-					<Value>OVTK_StimulationId_Label_02</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 3 OFF</Name>
-					<DefaultValue>OVTK_GDF_End_Of_Trial</DefaultValue>
-					<Value>OVTK_StimulationId_Label_02</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 4 ON</Name>
-					<DefaultValue>OVTK_GDF_Feedback_Continuous</DefaultValue>
-					<Value>OVTK_StimulationId_Label_03</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 4 OFF</Name>
-					<DefaultValue>OVTK_GDF_End_Of_Trial</DefaultValue>
-					<Value>OVTK_StimulationId_Label_03</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 5 ON</Name>
-					<DefaultValue>OVTK_GDF_Feedback_Continuous</DefaultValue>
-					<Value>OVTK_StimulationId_Label_04</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 5 OFF</Name>
-					<DefaultValue>OVTK_GDF_End_Of_Trial</DefaultValue>
-					<Value>OVTK_StimulationId_Label_04</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 6 ON</Name>
-					<DefaultValue>OVTK_GDF_Feedback_Continuous</DefaultValue>
-					<Value>OVTK_StimulationId_Label_05</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 6 OFF</Name>
-					<DefaultValue>OVTK_GDF_End_Of_Trial</DefaultValue>
-					<Value>OVTK_StimulationId_Label_05</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 7 ON</Name>
-					<DefaultValue>OVTK_GDF_Feedback_Continuous</DefaultValue>
-					<Value>OVTK_StimulationId_Label_06</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-				<Setting>
-					<TypeIdentifier>(0x2c132d6e, 0x44ab0d97)</TypeIdentifier>
-					<Name>Button 7 OFF</Name>
-					<DefaultValue>OVTK_GDF_End_Of_Trial</DefaultValue>
-					<Value>OVTK_StimulationId_Label_06</Value>
-					<Modifiability>false</Modifiability>
-				</Setting>
-			</Settings>
-			<Attributes>
-				<Attribute>
-					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>224</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>656</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
-					<Value>(0x1473765a, 0x12eb3520)</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0xce18836a, 0x9c0eb403)</Identifier>
-					<Value>3</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0xcfad85b0, 0x7c6d841c)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0xfba64161, 0x65304e21)</Identifier>
-					<Value></Value>
-				</Attribute>
-			</Attributes>
-		</Box>
-		<Box>
 			<Identifier>(0x2d1eee72, 0x5d16ec35)</Identifier>
 			<Name>Player Controller</Name>
 			<AlgorithmClassIdentifier>(0x5f426dce, 0x08456e13)</AlgorithmClassIdentifier>
@@ -527,11 +355,11 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>224</Value>
+					<Value>112</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>512</Value>
+					<Value>544</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -639,11 +467,11 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>80</Value>
+					<Value>-32</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>528</Value>
+					<Value>560</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -720,100 +548,8 @@
 				</Attribute>
 			</Attributes>
 		</Box>
-		<Box>
-			<Identifier>(0x7bc257e7, 0x17e198e0)</Identifier>
-			<Name>Identity</Name>
-			<AlgorithmClassIdentifier>(0x5dffe431, 0x35215c50)</AlgorithmClassIdentifier>
-			<Inputs>
-				<Input>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Input stream</Name>
-				</Input>
-			</Inputs>
-			<Outputs>
-				<Output>
-					<TypeIdentifier>(0x6f752dd0, 0x082a321e)</TypeIdentifier>
-					<Name>Output stream</Name>
-				</Output>
-			</Outputs>
-			<Attributes>
-				<Attribute>
-					<Identifier>(0x17ee7c08, 0x94c14893)</Identifier>
-					<Value></Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>80</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>656</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
-					<Value></Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
-					<Value>(0xa8ffe2a3, 0x27038f03)</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x527ad68d, 0x16d746a0)</Identifier>
-					<Value></Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0xc80ce8af, 0xf699f813)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0xcfad85b0, 0x7c6d841c)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0xfba64161, 0x65304e21)</Identifier>
-					<Value></Value>
-				</Attribute>
-			</Attributes>
-		</Box>
 	</Boxes>
 	<Links>
-		<Link>
-			<Identifier>(0x0283b642, 0x75fdebdd)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x08185827, 0x2b518b10)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x0639cd18, 0x25452566)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x240f1aee, 0x1385b3f7)</BoxIdentifier>
-				<BoxInputIndex>6</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x08f21b9a, 0x602f27fc)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x240f1aee, 0x1385b3f7)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
 		<Link>
 			<Identifier>(0x12346df9, 0x1dd1539d)</Identifier>
 			<Source>
@@ -837,17 +573,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x2639c977, 0x7c0a8087)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x240f1aee, 0x1385b3f7)</BoxIdentifier>
-				<BoxInputIndex>4</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x275c0b96, 0x3a5468f2)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x3bd028d3, 0x30f45685)</BoxIdentifier>
@@ -856,17 +581,6 @@
 			<Target>
 				<BoxIdentifier>(0x2d571917, 0x6888058a)</BoxIdentifier>
 				<BoxInputIndex>2</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x326ce6f5, 0x6efe024d)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x240f1aee, 0x1385b3f7)</BoxIdentifier>
-				<BoxInputIndex>1</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>
@@ -903,28 +617,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x492b7b8a, 0x5586c491)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x240f1aee, 0x1385b3f7)</BoxIdentifier>
-				<BoxInputIndex>2</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x4e8d2da5, 0x3cada96a)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x240f1aee, 0x1385b3f7)</BoxIdentifier>
-				<BoxInputIndex>5</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x69e3ec6a, 0x567c01e4)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x3bd028d3, 0x30f45685)</BoxIdentifier>
@@ -947,17 +639,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x77978a25, 0x17b8a931)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x7bc257e7, 0x17e198e0)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x240f1aee, 0x1385b3f7)</BoxIdentifier>
-				<BoxInputIndex>3</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x7ef1afca, 0x43981554)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x08185827, 0x2b518b10)</BoxIdentifier>
@@ -971,20 +652,18 @@
 	</Links>
 	<Comments>
 		<Comment>
-			<Identifier>(0x07a7852d, 0x7630c95f)</Identifier>
-			<Text>&lt;b&gt;Connection to the external application&lt;/b&gt;
+			<Identifier>(0x57c833e1, 0x71ddf32c)</Identifier>
+			<Text>&lt;big&gt;&lt;b&gt;Scenario description&lt;/b&gt;&lt;/big&gt;
 
-The external stimulator is controlled through VRPN
-to display the configured sequence of targets at
-desired moments.</Text>
+Scenario for displaying the filickering stimuli.</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>576</Value>
+					<Value>912</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>-16</Value>
+					<Value>-368</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>
@@ -1016,4 +695,46 @@ desired moments.</Text>
 			<Data>[{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":320,"identifier":"(0x0aabd052, 0x3993aee6)","name":"Default window","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":480},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x23eb5386, 0x3df92f16)","index":0,"name":"Default tab","parentIdentifier":"(0x0aabd052, 0x3993aee6)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":0,"identifier":"(0x7a9ec970, 0x7b4f3de8)","index":0,"name":"Empty","parentIdentifier":"(0x23eb5386, 0x3df92f16)","type":0}]</Data>
 		</Entry>
 	</Metadata>
+	<Attributes>
+		<Attribute>
+			<Identifier>(0x079d1f09, 0x667c7871)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x60bc58ab, 0x7a1b4d83)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x790d75b8, 0x3bb90c33)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x7a3a1558, 0xf12c63c2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x84009d7c, 0x3c4e763b)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x8c1fc55b, 0x7b433dc2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x9f5c4075, 0x4a0d3666)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf36a1567, 0xd13c53da)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf6b2e3fa, 0x7bd43926)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf8034a49, 0x8b3f37cc)</Identifier>
+			<Value></Value>
+		</Attribute>
+	</Attributes>
 </OpenViBE-Scenario>

@@ -3402,6 +3402,10 @@
 					<Value>1376</Value>
 				</Attribute>
 				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0x89a08108, 0xc8d1fac1)</Value>
 				</Attribute>
@@ -3918,6 +3922,10 @@
 					<Value>1168</Value>
 				</Attribute>
 				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
+				</Attribute>
+				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0x0d4656c0, 0xc95b1fa8)</Value>
 				</Attribute>
@@ -4069,6 +4077,10 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -6250,26 +6262,12 @@ Use the SSVEP Training Controller to configure the stimuli.</Text>
 			</Attributes>
 		</Comment>
 		<Comment>
-			<Identifier>(0x57c833e1, 0x71ddf32d)</Identifier>
-			<Text>Enable TCP Writer to send commands to ROS.</Text>
-			<Attributes>
-				<Attribute>
-					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1536</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>1568</Value>
-				</Attribute>
-			</Attributes>
-		</Comment>
-		<Comment>
 			<Identifier>(0x57c833e1, 0x71ddf32e)</Identifier>
 			<Text>Switch between Acquisition client and Generic stream reader.</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1584</Value>
+					<Value>1568</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>

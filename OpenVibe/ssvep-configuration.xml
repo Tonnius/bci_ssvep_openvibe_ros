@@ -60,7 +60,7 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>528</Value>
+					<Value>464</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
@@ -309,12 +309,7 @@ integer. </Text>
 &lt;b&gt;&lt;span color="red"&gt;This scenario must be run at least once before
 running any further scenarios&lt;/span&gt;&lt;/b&gt;
 
-This is a scenario where you can configure your SSVEP experiment. There
-are two boxes containing configuration parameters:
-
-&lt;b&gt;Peripheral Settings&lt;/b&gt;
-
-&lt;b&gt;Experiment Settings&lt;/b&gt;
+This is a scenario where you can configure your SSVEP experiment. 
 </Text>
 			<Attributes>
 				<Attribute>
@@ -323,7 +318,7 @@ are two boxes containing configuration parameters:
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>-256</Value>
+					<Value>-176</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>
@@ -403,4 +398,46 @@ around the stimulation frequency used for classification.</Text>
 			<Data>[{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":1,"identifier":"(0x48715606, 0x15ba4f24)","name":"Default window","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":1},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x3683b3e2, 0x7c4b4806)","index":0,"name":"Default tab","parentIdentifier":"(0x48715606, 0x15ba4f24)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":0,"identifier":"(0x1fb42682, 0x45866d35)","index":0,"name":"Empty","parentIdentifier":"(0x3683b3e2, 0x7c4b4806)","type":0}]</Data>
 		</Entry>
 	</Metadata>
+	<Attributes>
+		<Attribute>
+			<Identifier>(0x079d1f09, 0x667c7871)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x60bc58ab, 0x7a1b4d83)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x790d75b8, 0x3bb90c33)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x7a3a1558, 0xf12c63c2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x84009d7c, 0x3c4e763b)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x8c1fc55b, 0x7b433dc2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x9f5c4075, 0x4a0d3666)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf36a1567, 0xd13c53da)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf6b2e3fa, 0x7bd43926)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf8034a49, 0x8b3f37cc)</Identifier>
+			<Value></Value>
+		</Attribute>
+	</Attributes>
 </OpenViBE-Scenario>

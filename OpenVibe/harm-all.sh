@@ -2,9 +2,9 @@
 trap "exit" INT
 
 OPENVIBE_ROOT_PATH="$HOME/Git/openvibe/dist/extras-Release"
-MY_SCRIPT_PATH="$HOME/Git/magister_BCI/OpenVibe/ssvep_maka"
+MY_SCRIPT_PATH="$HOME/Git/bci_ssvep_openvibe_ros/OpenVibe"
 
-rm -rf "$MY_SCRIPT_PATH/data/"*
+#rm -rf "$MY_SCRIPT_PATH/data/"*
 
 declare -a trainingArr=(
 				"$MY_SCRIPT_PATH/signals/ssvep-record-subject1.ov" 
@@ -27,6 +27,7 @@ declare -a testingArr=(
                 "$MY_SCRIPT_PATH/signals/ssvep-record-subject7-test.ov"
                 "$MY_SCRIPT_PATH/signals/ssvep-record-subject8-test.ov"
                 )
+
 parameterIdent2="freqTol"
 parameterIdent="epDur"
 declare -a parametersEpDur=(0.5)
@@ -86,9 +87,7 @@ do
 			SIM_FREQ4="7.5"
 
     	fi
-#    	if [ "$i" -eq "2" ]; then
-#			CHANNELS="1:4"
-#    	fi
+
 	for ((k=0; k<${paramArraylength}; k++));
 	do
 	if [ "$parameterIdent" = "epDur" ]; then
@@ -112,8 +111,6 @@ do
         		TRESH=${parameters2[$j]}
     		fi
 			if (( $parameterIdent == "epDur" )) || (( $parameterIdent2 == "thresh" && $j == 0 )); then
-			#if [ "$parameterIdent" = "epDur" ] || [ "$parameterIdent" = "freqTol" ]; then
-
 				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-configuration-auto.xml" --invisible \
 					--define epDur $PROC_EPOCH_DUR \
 					--define epInt $PROC_EPOCH_INTER \
