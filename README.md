@@ -1,6 +1,6 @@
 # VEP-based BCI using OpenVibe and ROS
 ## Introduction
-This repository was initially produced in the process of an MSc thesis in the University of Tartu. The main purpose of this repository is to give an overview of the developed OpenVibe and ROS packages for setting up the brain-computer interface (BCI) for robot control.
+This repository was initially produced in the process of an MSc thesis at the University of Tartu. The main purpose of this repository is to give an overview of the developed OpenVibe and ROS packages for setting up the brain-computer interface (BCI) for robot control.
 
 ## Setup
 The whole system was set up on Ubuntu 16.04 because of ROS, but the BCI part on OpenVibe can be tested on any other OS. 
@@ -14,7 +14,7 @@ The OpenVibe folder in this repository contains all the neccessary files for usi
 2. training-acquisition.xml - for training data acquisition
 3. CSP-training-harm.xml - for training the CSP spatial filters
 4. classifier-training-harm.xml - for training the classifiers
-5. online-test-4-stim.mxs - for using the system online with 4 stimuli
+5. online-4-stim.mxs - for using the system online with 4 stimuli
 
 Also there is *acquisition-test.xml* for looking at raw EEG data and *perf-measure-harm.mxs* for performance measurements.
 
