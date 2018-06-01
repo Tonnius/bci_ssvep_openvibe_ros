@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="franka_openvibe_move" type="panda_movegroup" name="panda_movegroup" output="screen"/>	
+    <rosparam command="load" file="$(find franka_openvibe_move)/config/settings.yaml"/>
+
+</launch>

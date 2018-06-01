@@ -1,0 +1,25 @@
+[submodule "ROS/ur5/ur5_path_planning"]
+	path = ROS/ur5/ur5_path_planning
+	url = https://github.com/ut-ims-robotics/ur5_path_planning
+[submodule "ROS/ur5/ur_modern_driver"]
+	path = ROS/ur5/ur_modern_driver
+	url = https://github.com/willcbaker/ur_modern_driver
+	branch = kinetic-devel
+[submodule "ROS/ur5/universal_robot"]
+	path = ROS/ur5/universal_robot
+	url = https://github.com/ros-industrial/universal_robot
+	branch = kinetic-devel
+[submodule "ROS/franka_emika_panda/kinova-ros"]
+	path = ROS/franka_emika_panda/kinova-ros
+	url = https://github.com/CNURobotics/kinova-ros
+	branch = kinetic_devel
+[submodule "ROS/franka_emika_panda/franka_ros"]
+	path = ROS/franka_emika_panda/franka_ros
+	url = https://github.com/frankaemika/franka_ros
+	branch = kinetic-devel
+[submodule "ROS/jog_arm"]
+	path = ROS/jog_arm
+	url = https://github.com/ut-ims-robotics/jog_arm
+	branch = kinetic
+[submodule "ROS/keyboard_publisher"]
+	url = https://github.com/ut-ims-robotics/keyboard_publisher

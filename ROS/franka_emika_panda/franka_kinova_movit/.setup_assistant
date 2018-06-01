@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/tonnius/catkin_ws/src/planning_tutorial/franka_description/urdf/franka_kinova.xacro
+  SRDF:
+    relative_path: config/franka_kinova.srdf
+  CONFIG:
+    author_name: IMS lab
+    author_email: tonis.tiimus@gmail.com
+    generated_timestamp: 1521464347

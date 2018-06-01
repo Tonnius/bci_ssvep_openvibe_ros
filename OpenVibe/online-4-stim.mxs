@@ -2273,10 +2273,6 @@
 					<Value>1104</Value>
 				</Attribute>
 				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
-				</Attribute>
-				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
 					<Value>(0x7a1f4e3a, 0x74c05f92)</Value>
 				</Attribute>
@@ -3385,7 +3381,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}].ov</Value>
+					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-[$core{date}-$core{time}]-ur5.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -3404,10 +3400,6 @@
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
 					<Value>1376</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -3453,7 +3445,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Delay</Name>
 					<DefaultValue>1</DefaultValue>
-					<Value>1</Value>
+					<Value>0.01</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -4077,10 +4069,6 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -5103,7 +5091,7 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>400</Value>
+					<Value>384</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
@@ -5517,6 +5505,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x187d452a, 0x28709e12)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x4d994d17, 0x4d7d5a9e)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x196966cf, 0x44765f1c)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x4803c39c, 0x50ab550d)</BoxIdentifier>
@@ -5821,17 +5820,6 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x0a7c8712, 0x78a9580f)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x4850b2b9, 0x74da2c4a)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x4d994d17, 0x4d7d5a9e)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>

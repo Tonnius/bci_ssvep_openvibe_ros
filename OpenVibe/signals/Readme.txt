@@ -1,1 +1,1 @@
-The aquired signals will be saved here.
+The acquired signals will be saved here.
