@@ -7,12 +7,6 @@ from sklearn.metrics import confusion_matrix
 class MyOVBox(OVBox):
     def __init__(self):
         OVBox.__init__(self)
-        self.actualLabels = []
-        self.predictedLabels = []
-        self.stimStartTime = 0
-        self.stimEndTime = 0
-        self.meanDetectTime = 0
-
         self.currentLabelTimeStop = 0
         self.currentLabelTimeStart = 0
         self.currentLabel = -1
@@ -33,13 +27,13 @@ class MyOVBox(OVBox):
 
         self.totalNrClassified = 0
         self.debugEnabled = False
-        self.predNothingEnabled = True
+        self.predNothingEnabled = False
         self.notClassified = 0
         self.allProbsMean = [0.0, 0.0, 0.0, 0.0]
         self.underThreshValues = [0, 0, 0, 0]
 
     def initialize(self):
-        threshString = self.setting['Thresholds']
+        threshString = self.setting['Thresholds'] #Get thresholds
         threshs = threshString.split(':')
         if threshs:
             self.classThresh = float(threshs[0])
@@ -47,9 +41,8 @@ class MyOVBox(OVBox):
         else:
             self.classThresh = 0.5
             self.maxProbDiffThresh = 0.25
-        return
 
-    def getProbValue(self, inputNr, classNr):
+    def getProbValue(self, inputNr, classNr): #Get classification probability from classifier
         for chunkIndexMatrix in range(len(self.input[inputNr])):
             probMatrix = self.input[inputNr].pop() #probMatrix[0] is stimulated, probMatrix[1] is non-stimulated
             self.classProbs[classNr].append([probMatrix[0], self.getCurrentTime()])
@@ -58,15 +51,8 @@ class MyOVBox(OVBox):
 
         return False
 
-    # def getProbMean(self):
-    #     for i in range(4):
-    #         for prob in self.classProbs[i]:
-    #             if prob[0] < self.classThresh:
-    #                 self.allProbsMean[i] += prob[0]
-    #                 self.underThreshValues[i] += 1
-
     def process(self):
-        for chunkIndex in range(len(self.input[7])):
+        for chunkIndex in range(len(self.input[7])): # Get actual stimuli value
             chunk = self.input[7].pop()
             if type(chunk) == OVStimulationSet:
                 for stimIdx in range(len(chunk)):
@@ -84,13 +70,13 @@ class MyOVBox(OVBox):
 
         probsAll = [0.0, 0.0, 0.0, 0.0]
 
-        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel:
+        if (self.getCurrentTime() > self.currentLabelTimeStop) and self.newLabel: # Mark as unclassified if not classified in allotted time
             self.newLabel = False
             self.notClassified += 1
             if self.debugEnabled:
                 print "didnt classify!"
 
-            if self.predNothingEnabled and (self.currentLabel is not -1):
+            if self.predNothingEnabled and (self.currentLabel is not -1): # Predict best guess if out of time
                 for i in range(4):
                     for prob in self.classProbs[i]:
                         probsAll[i] += prob[0]
@@ -109,10 +95,7 @@ class MyOVBox(OVBox):
                     self.getProbValue(inputNr=5, classNr=2),
                     self.getProbValue(inputNr=6, classNr=3)]
 
-        #self.getProbMean()
-
-
-        if True in classHit:
+        if True in classHit: #First threshold cleared
             for i in range(4):
                 for prob in self.classProbs[i]:
                     if prob[0] > self.classThresh:
@@ -130,11 +113,11 @@ class MyOVBox(OVBox):
             if self.debugEnabled:
                 print "maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos)
 
-            self.predictedTime = self.getCurrentTime()
+            self.predictedTime = self.getCurrentTime() 
             if (self.currentLabel is not -1) and \
                 maxPosDif >= self.maxProbDiffThresh and \
                 (self.currentLabelTimeStart <= self.predictedTime) and \
-                (self.predictedTime <= self.currentLabelTimeStop):
+                (self.predictedTime <= self.currentLabelTimeStop): #Second threshold cleared
 
                 self.actualLabelsProb.append(self.currentLabel)
                 self.predictedLabelsProb.append(maxpos + 1)
@@ -147,20 +130,19 @@ class MyOVBox(OVBox):
                     if self.debugEnabled:
                         print "nr of stims is " + str(self.nrOfStimsClassified)
                         print "predicted class was " + str(maxpos + 1) + " label was: " + str(self.currentLabel)
-
         return
 
     def uninitialize(self):
         self.meanDetectTimeProb /= self.nrOfStimsClassified
-        print 'nr of stims classified '+str(self.nrOfStimsClassified)+' of all '+str(self.nrOfStimsActual)
-        print "mean time: "+str(self.meanDetectTimeProb)
+        print "mean time for first classification (new stimuli): "+str(self.meanDetectTimeProb)
         cmSklearn = confusion_matrix(self.actualLabelsProb, self.predictedLabelsProb)
         cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
+        print "Confusion matrix:"
         print cmSklearn
 
         nrOfSubj = int(self.setting['Nr of subjects'])
 
-        dirToWrite = '/home/tonnius/Git/magister_BCI/OpenVibe/data/'
+        dirToWrite = self.setting['Results Directory'] #directory to write results
 
         fileNrToWrite = self.setting['Current Subject Nr']
 

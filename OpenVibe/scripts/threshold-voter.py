@@ -1,8 +1,6 @@
 import numpy as np
 import os
-
 import collections
-
 
 class MyOVBox(OVBox):
     def __init__(self):
@@ -20,7 +18,7 @@ class MyOVBox(OVBox):
         self.underThreshValues = [0, 0, 0, 0]
 
     def initialize(self):
-        threshString = self.setting['Thresholds']
+        threshString = self.setting['Thresholds'] #Get thresholds
         threshs = threshString.split(':')
         if threshs:
             self.classThresh = float(threshs[0])
@@ -30,7 +28,7 @@ class MyOVBox(OVBox):
             self.maxProbDiffThresh = 0.25
         return
 
-    def getProbValue(self, inputNr, classNr):
+    def getProbValue(self, inputNr, classNr): #Get classification probability from classifier
         for chunkIndexMatrix in range(len(self.input[inputNr])):
             probMatrix = self.input[inputNr].pop() #probMatrix[0] is stimulated, probMatrix[1] is non-stimulated
             self.classProbs[classNr].append([probMatrix[0], self.getCurrentTime()])
@@ -49,7 +47,7 @@ class MyOVBox(OVBox):
                     self.getProbValue(inputNr=6, classNr=3)]
 
 
-        if True in classHit:
+        if True in classHit: #First threshold cleared
             for i in range(4):
                 for prob in self.classProbs[i]:
                     if prob[0] > self.classThresh:
@@ -67,14 +65,12 @@ class MyOVBox(OVBox):
             if self.debugEnabled:
                 print "maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos)
 
-            if (maxPosDif >= self.maxProbDiffThresh):
-                print "predicted class was " + str(maxpos + 1)
+            if (maxPosDif >= self.maxProbDiffThresh): #Second threshold cleared
+                if self.debugEnabled:
+                    print "predicted class was " + str(maxpos + 1)
                 stimSet = OVStimulationSet(self.getCurrentTime(), self.getCurrentTime() + 1. / self.getClock())
-                # the date of the stimulation is simply the current openvibe time when calling the box process
                 stimSet.append(OVStimulation(33025 + maxpos, self.getCurrentTime(), 0.))
                 self.output[0].append(stimSet)
-                #self.output[0].append(OVStimulation(33025 + maxpos, self.getCurrentTime(), 0.0))
-
         return
 
     def uninitialize(self):

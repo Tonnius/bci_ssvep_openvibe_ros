@@ -1443,6 +1443,13 @@
 					<Value>0.6:0.1</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
+				<Setting>
+					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
+					<Name>Results Directory</Name>
+					<DefaultValue>${Player_ScenarioDirectory}/results/</DefaultValue>
+					<Value>${Player_ScenarioDirectory}/results/</Value>
+					<Modifiability>false</Modifiability>
+				</Setting>
 			</Settings>
 			<Attributes>
 				<Attribute>
@@ -3264,7 +3271,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/signals/ssvep-record-subject1-test.ov</Value>
+					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-subjectX-test.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -5168,7 +5175,7 @@
 			<Text>&lt;big&gt;&lt;b&gt;Scenario description&lt;/b&gt;&lt;/big&gt;
 
 In this scenario the performance of the system can be measured
-where the trained system is compared to a test set.
+where the trained system is compared to a recorded test set.
 
 Don't forget to input the &lt;b&gt;test set&lt;/b&gt;  into the Generic stream reader!
 </Text>
@@ -5180,6 +5187,20 @@ Don't forget to input the &lt;b&gt;test set&lt;/b&gt;  into the Generic stream r
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
 					<Value>-192</Value>
+				</Attribute>
+			</Attributes>
+		</Comment>
+		<Comment>
+			<Identifier>(0x57c833e1, 0x71ddf32d)</Identifier>
+			<Text>Results will be displayed in the OpenVibe console</Text>
+			<Attributes>
+				<Attribute>
+					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
+					<Value>1040</Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
+					<Value>928</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>

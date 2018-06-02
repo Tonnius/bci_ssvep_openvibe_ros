@@ -1192,8 +1192,8 @@ automatically after the start of the scenario.
 The stimulator accepts two keyboard commands:
 
 Pressing &lt;b&gt;&amp;lt;Space&amp;gt;&lt;/b&gt; will send a start
-stimulation to the scenario and the experiment will
-begin.
+stimulation to the scenario and the experiment
+ will begin.
 
 Pressing &lt;b&gt;&amp;lt;Escape&amp;gt;&lt;/b&gt; will quit the
 stimulator and stop the scenario.</Text>
@@ -1281,18 +1281,19 @@ configured by the &lt;b&gt;SSVEP Training Controller&lt;/b&gt; box.
 		</Comment>
 		<Comment>
 			<Identifier>(0x5347b592, 0x23e65627)</Identifier>
-			<Text>By default, the Acquisition client 
-(gets data from the used device)
- and Generic stream writer 
-(writes the data to a file) are disabled.</Text>
+			<Text>By default, the Acquisition client (gets data from the EEG device)
+and Generic stream writer (writes the data to a file) are 
+disabled so that the scenario would run without an EEG device.
+
+&lt;b&gt;Enable&lt;/b&gt; them when using with actual signal acquisition device.</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1248</Value>
+					<Value>1360</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>368</Value>
+					<Value>384</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>
@@ -1324,4 +1325,46 @@ configured by the &lt;b&gt;SSVEP Training Controller&lt;/b&gt; box.
 			<Data>[{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":400,"identifier":"(0x3c7b1c2d, 0x235a359e)","name":"Default window","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":376},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x7cc860bc, 0x265f0897)","index":0,"name":"Default tab","parentIdentifier":"(0x3c7b1c2d, 0x235a359e)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":0,"identifier":"(0x79d63782, 0x7f4c16fe)","index":0,"name":"Empty","parentIdentifier":"(0x7cc860bc, 0x265f0897)","type":0}]</Data>
 		</Entry>
 	</Metadata>
+	<Attributes>
+		<Attribute>
+			<Identifier>(0x079d1f09, 0x667c7871)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x60bc58ab, 0x7a1b4d83)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x790d75b8, 0x3bb90c33)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x7a3a1558, 0xf12c63c2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x84009d7c, 0x3c4e763b)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x8c1fc55b, 0x7b433dc2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x9f5c4075, 0x4a0d3666)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf36a1567, 0xd13c53da)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf6b2e3fa, 0x7bd43926)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0xf8034a49, 0x8b3f37cc)</Identifier>
+			<Value></Value>
+		</Attribute>
+	</Attributes>
 </OpenViBE-Scenario>

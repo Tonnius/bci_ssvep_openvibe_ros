@@ -51,7 +51,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x000000cc, 0x00007022)</Identifier>
-			<Name>Frequency 2 (1st harmonic)</Name>
+			<Name>Frequency 2 (2nd harmonic)</Name>
 			<AlgorithmClassIdentifier>(0xb4f9d042, 0x9d79f2e5)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -771,7 +771,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1856</Value>
+					<Value>2176</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -1804,7 +1804,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1840</Value>
+					<Value>2224</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -1960,7 +1960,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1776</Value>
+					<Value>2096</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -2304,7 +2304,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x00002787, 0x000037e6)</Identifier>
-			<Name>Frequency 1 (1st harmonic)</Name>
+			<Name>Frequency 1 (2nd harmonic)</Name>
 			<AlgorithmClassIdentifier>(0xb4f9d042, 0x9d79f2e5)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -3199,7 +3199,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1840</Value>
+					<Value>2224</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -4469,7 +4469,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>/home/tonnius/Git/magister_BCI/OpenVibe/signals/ssvep-record-[2018.05.21-13.49.46].ov</Value>
+					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-subjectX.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -4484,7 +4484,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1856</Value>
+					<Value>2176</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -5497,7 +5497,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x00005e51, 0x00001c39)</Identifier>
-			<Name>Frequency 3 (1st harmonic)</Name>
+			<Name>Frequency 3 (2nd harmonic)</Name>
 			<AlgorithmClassIdentifier>(0xb4f9d042, 0x9d79f2e5)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -5592,7 +5592,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x00005e51, 0x00001c3a)</Identifier>
-			<Name>Frequency 4 (1st harmonic)</Name>
+			<Name>Frequency 4 (2nd harmonic)</Name>
 			<AlgorithmClassIdentifier>(0xb4f9d042, 0x9d79f2e5)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -5951,7 +5951,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1776</Value>
+					<Value>2096</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -10930,7 +10930,7 @@ the file you recorded in the training acquisition step.</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1856</Value>
+					<Value>2176</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>

@@ -1,4 +1,4 @@
-
+-- training aquisition controller
 sequence = {}
 number_of_cycles = 0
 

@@ -803,7 +803,7 @@ always be checked before training.
 		</Comment>
 		<Comment>
 			<Identifier>(0x00007f52, 0x000053c0)</Identifier>
-			<Text>You can browse each box' documentation by selecting the box and pressing &lt;b&gt;F1&lt;/b&gt;</Text>
+			<Text>You can browse the documentation of each box by selecting the box and pressing &lt;b&gt;F1&lt;/b&gt;</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
@@ -825,16 +825,32 @@ always be checked before training.
 	</Metadata>
 	<Attributes>
 		<Attribute>
+			<Identifier>(0x079d1f09, 0x667c7871)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x60bc58ab, 0x7a1b4d83)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
 			<Identifier>(0x790d75b8, 0x3bb90c33)</Identifier>
-			<Value>Jozef Legény</Value>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x7a3a1558, 0xf12c63c2)</Identifier>
+			<Value></Value>
+		</Attribute>
+		<Attribute>
+			<Identifier>(0x84009d7c, 0x3c4e763b)</Identifier>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0x8c1fc55b, 0x7b433dc2)</Identifier>
-			<Value>1.0</Value>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0x9f5c4075, 0x4a0d3666)</Identifier>
-			<Value>SSVEP Acquisition Test</Value>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0xf36a1567, 0xd13c53da)</Identifier>
@@ -842,11 +858,11 @@ always be checked before training.
 		</Attribute>
 		<Attribute>
 			<Identifier>(0xf6b2e3fa, 0x7bd43926)</Identifier>
-			<Value>SSVEP</Value>
+			<Value></Value>
 		</Attribute>
 		<Attribute>
 			<Identifier>(0xf8034a49, 0x8b3f37cc)</Identifier>
-			<Value>Inria</Value>
+			<Value></Value>
 		</Attribute>
 	</Attributes>
 </OpenViBE-Scenario>

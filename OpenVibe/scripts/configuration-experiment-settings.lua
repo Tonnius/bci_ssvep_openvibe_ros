@@ -27,15 +27,12 @@ function initialize(box)
 		table.insert(stimulation_frequencies, value)
 		frequency_count = frequency_count + 1
 	end
-	box:log("Info", "box:get_setting(4) '" .. box:get_setting(4) .. "'")
-
+	--box:log("Info", "box:get_setting(4) '" .. box:get_setting(4) .. "'")
 
 	processing_epoch_duration = tonumber(box:get_setting(5))
 	processing_epoch_interval = tonumber(box:get_setting(6))
 	processing_frequency_tolerance = tonumber(box:get_setting(7))
 	channels = box:get_setting(8)
-	--box:log("Info", "input '" .. processing_epoch_duration .. "'")
-
 end
 
 function uninitialize(box)
@@ -146,7 +143,7 @@ function process(box)
 	if cfg_file == nil then
 		box:log("Error", "Could not open config file for writing")
 	end
-	--success = true
+	success = true
 
 	success = success and cfg_file:write("<OpenViBE-SettingsOverride>\n")
 	success = success and cfg_file:write(string.format("<SettingValue>%s</SettingValue>\n", channels))

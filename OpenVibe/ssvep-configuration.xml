@@ -348,7 +348,7 @@ This is a scenario where you can configure your SSVEP experiment.
 
 Settings concerning the SSVEP experiment in general.
 
-&lt;b&gt;Stimulation Frequencies&lt;/b&gt; A comma separated list of
+&lt;b&gt;Stimulation Frequencies&lt;/b&gt; A semicolon separated list of
 frequencies used for the stimulation. 
 
 &lt;b&gt;Processing Epoch Duration&lt;/b&gt; The length of the slice of the signal
@@ -358,7 +358,14 @@ which will be used to find SSVEP response.
 signal.
 
 &lt;b&gt;Processing Frequency Tolerance&lt;/b&gt; The width of the frequency band
-around the stimulation frequency used for classification.</Text>
+around the stimulation frequency used for classification.
+
+&lt;b&gt;Selected Channels&lt;/b&gt; The channels to be used for processing.
+Comma sparation for individual channels or colon separation
+for a range of channels. 
+
+&lt;small&gt;Example of a value for this setting :
+&lt;b&gt;1,2,3:5&lt;/b&gt;&lt;/small&gt;</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>

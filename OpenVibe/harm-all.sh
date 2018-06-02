@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Script for running OpenVibe programmatically in a loop
+
 trap "exit" INT
 
 OPENVIBE_ROOT_PATH="$HOME/Git/openvibe/dist/extras-Release"
@@ -30,8 +33,9 @@ declare -a testingArr=(
 
 parameterIdent2="freqTol"
 parameterIdent="epDur"
+
 declare -a parametersEpDur=(0.5)
-#declare -a parametersEpInt=(0.01 0.025 0.05 0.075 0.1 0.2)
+#declare -a parametersEpInt=(0.5)
 declare -a parametersFreqTol=(0.25)
 declare -a parametersThresh=("0.5:0.1")
 
@@ -69,39 +73,38 @@ arraylength=${#trainingArr[@]}
 for ((i=0; i<${arraylength}; i++));
 do
 	SIM_FREQ1="20"
-		SIM_FREQ2="15"
+	SIM_FREQ2="15"
+	SIM_FREQ3="12"
+	SIM_FREQ4="10"
+	CHANNELS="1:5"
+	if [ "$i" -ge "4" ]; then
+    	SIM_FREQ1="30"
+		SIM_FREQ2="20"
 		SIM_FREQ3="12"
-		SIM_FREQ4="10"
-		CHANNELS="1:5"
-		if [ "$i" -ge "4" ]; then
-        	SIM_FREQ1="30"
-			SIM_FREQ2="20"
-			SIM_FREQ3="12"
-			SIM_FREQ4="7.5"
+		SIM_FREQ4="7.5"
 
-    	fi 
-		if [ "$i" -ge "6" ]; then
-        	SIM_FREQ1="12"
-			SIM_FREQ2="10"
-			SIM_FREQ3="8.57142857143"
-			SIM_FREQ4="7.5"
+	fi 
+	if [ "$i" -ge "6" ]; then
+    	SIM_FREQ1="12"
+		SIM_FREQ2="10"
+		SIM_FREQ3="8.57142857143"
+		SIM_FREQ4="7.5"
 
-    	fi
+	fi
 
 	for ((k=0; k<${paramArraylength}; k++));
 	do
-	if [ "$parameterIdent" = "epDur" ]; then
-        PROC_EPOCH_DUR=${parameters[$k]}
-        PROC_EPOCH_INTER=${parameters[$k]}
-    fi
+		if [ "$parameterIdent" = "epDur" ]; then
+	        PROC_EPOCH_DUR=${parameters[$k]}
+	        PROC_EPOCH_INTER=${parameters[$k]}
+	    fi
+	    if [ "$parameterIdent" = "freqTol" ]; then
+	        FREQ_TOLERANCE=${parameters[$k]}
+	    fi
+	    if [ "$parameterIdent" = "thresh" ]; then
+	        TRESH=${parameters[$k]}
+	    fi
 
-
-    if [ "$parameterIdent" = "freqTol" ]; then
-        FREQ_TOLERANCE=${parameters[$k]}
-    fi
-    if [ "$parameterIdent" = "thresh" ]; then
-        TRESH=${parameters[$k]}
-    fi
 	    for ((j=0; j<${paramArraylength2}; j++));
 		do
 			if [ "$parameterIdent2" = "freqTol" ]; then
@@ -111,7 +114,7 @@ do
         		TRESH=${parameters2[$j]}
     		fi
 			if (( $parameterIdent == "epDur" )) || (( $parameterIdent2 == "thresh" && $j == 0 )); then
-				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-configuration-auto.xml" --invisible \
+				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-configuration.xml" --invisible \
 					--define epDur $PROC_EPOCH_DUR \
 					--define epInt $PROC_EPOCH_INTER \
 					--define freqTol $FREQ_TOLERANCE \
@@ -121,12 +124,12 @@ do
 					--define simFreq3 $SIM_FREQ3 \
 					--define simFreq4 $SIM_FREQ4 
 				wait
-				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/CSP-training-harm-auto.xml" --define inFile ${trainingArr[$i]} --invisible 
+				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/CSP-training-harm.xml" --define inFile ${trainingArr[$i]} --invisible 
 				wait
-				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/classifier-training-harm-auto.xml" --define inFile ${trainingArr[$i]} --invisible
+				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/classifier-training-harm.xml" --define inFile ${trainingArr[$i]} --invisible
 				wait
 			fi 
-			sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/perf-measure-harm-auto.mxs" --define inFile ${testingArr[$i]} --invisible \
+			sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/perf-measure-harm.mxs" --define inFile ${testingArr[$i]} --invisible \
 				--define epDur $PROC_EPOCH_DUR \
 			    --define epInt $PROC_EPOCH_INTER \
 			    --define freqTol $FREQ_TOLERANCE \
