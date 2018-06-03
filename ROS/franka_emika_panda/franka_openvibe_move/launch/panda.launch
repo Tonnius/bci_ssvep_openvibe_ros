@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <launch>
 
     <node pkg="franka_openvibe_move" type="panda_movegroup" name="panda_movegroup" output="screen"/>	

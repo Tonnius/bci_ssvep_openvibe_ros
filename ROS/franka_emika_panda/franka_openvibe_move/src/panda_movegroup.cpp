@@ -50,18 +50,21 @@ enum class StateClass
     NONE
 };
 
+// Input from openvibe_to_ros_tcp
 void chatterCallback(const std_msgs::String::ConstPtr& msg)
 {
     inDataOpenVibe = std::stoi(msg->data.c_str());
     //ROS_INFO("I heard from openvibe: [%d]", inDataOpenVibe);
 }
 
+// Input from keyboard_publisher
 void keyboardCallback(const std_msgs::String::ConstPtr& msg)
 {
     inputKeyboard = msg->data[0];
     //ROS_INFO("I heard from keyboard: [%c]", inputKeyboard);
 }
 
+// Create a (cartesian) plan and then move robot to that position
 void planAndMove(std::vector<geometry_msgs::Pose> poseVecIn, 
                 moveit::planning_interface::MoveGroupInterface &groupRef,
                 StateClass &state) {
@@ -82,7 +85,8 @@ void planAndMove(std::vector<geometry_msgs::Pose> poseVecIn,
         state = StateClass::OKAY;
     }
 }
-//Open or close gripper, argument 'open = true' to open, 'open = false' to close
+
+// Open or close the kinova gripper. Argument 'open = true' to open gripper, 'open = false' to close gripper
 void setGripper(bool open, actionlib::SimpleActionClient<kinova_msgs::SetFingersPositionAction> &client, bool &gripperState) {
     // grippr open position
     kinova_msgs::SetFingersPositionGoal openPos;
@@ -109,37 +113,24 @@ void setGripper(bool open, actionlib::SimpleActionClient<kinova_msgs::SetFingers
     }
 
     gripperState = open;
-
 }
 
-int main(int argc, char* argv[])
-{
-    bool useKeyboard;
+int main(int argc, char* argv[]) {
+    bool debugEnabled = false;
 
     bool item1InGripper = false;
     bool item2InGripper = false;
-
     bool gripperOpenState = true;
 
     ros::init(argc, argv, "panda_movegroup");
     ros::NodeHandle node_handle;
     ros::Subscriber sub = node_handle.subscribe("chatter", 100, chatterCallback);
     ros::Subscriber sub2 = node_handle.subscribe("panda_movegroup/keyboard", 100, keyboardCallback);
-   
-    if (node_handle.getParam("/panda_movegroup/use_keyboard", useKeyboard))
-    {
-      ROS_INFO("Got param: %d", useKeyboard);
-    }
-    else
-    {
-      ROS_ERROR("Failed to get param 'use_keyboard'");
-      useKeyboard = true;
-    }
 
     ros::AsyncSpinner spinner(1);
     spinner.start();
 
-    moveit::planning_interface::MoveGroupInterface group("panda_arm_hand");
+    moveit::planning_interface::MoveGroupInterface group("panda_arm_hand"); //robot handle name
 
     moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
 
@@ -147,7 +138,7 @@ int main(int argc, char* argv[])
     ros::Publisher display_publisher = node_handle.advertise<moveit_msgs::DisplayTrajectory>("/move_group/display_planned_path", 1, true);
     moveit_msgs::DisplayTrajectory display_trajectory;
 
-    // Set Franka external force thresholds
+    // Set Panda external force thresholds
     ros::ServiceClient client = node_handle.serviceClient<franka_control::SetFullCollisionBehavior>("set_full_collision_behavior");
     franka_control::SetFullCollisionBehavior srv;
 
@@ -162,24 +153,22 @@ int main(int argc, char* argv[])
 
     client.call(srv);
 
-    // Set tolrance of movements
+    // Set tolerance of target goals
     group.setGoalTolerance(0.01);
 
-    // Start kinova gripper action client server
-    actionlib::SimpleActionClient<kinova_msgs::SetFingersPositionAction> kinova_client("/c1n4s300_driver/fingers_action/finger_positions", true);
-
-    // Error recovery action
+    // Panda error recovery action
     ros::Publisher error_pub = node_handle.advertise<franka_control::ErrorRecoveryActionGoal>("/franka_control/error_recovery/goal", 1000);
     franka_control::ErrorRecoveryActionGoal err;
+
+    // Start Kinova gripper action client server
+    actionlib::SimpleActionClient<kinova_msgs::SetFingersPositionAction> kinova_client("/c1n4s300_driver/fingers_action/finger_positions", true);
 
     // Loop rate
     ros::Rate loop_rate(30);
     
     // Initial state machine states
-    StateClass state = StateClass::HOME;
+    StateClass state = StateClass::NONE;
     StateClass prevState = StateClass::NONE;
-    
-    bool debugEnabled = false;
 
     // Available poses (cartesian)
     geometry_msgs::Pose home;
@@ -239,16 +228,13 @@ int main(int argc, char* argv[])
     // Open gripper
     setGripper(true, kinova_client, gripperOpenState);
 
+    ROS_INFO("If using keyboard, please press 'b' for bottle, 't' for tea, 'h' for home, 'u' for user or 'e' for exit");
     // Keep running until false
     bool running = true;
 
-    if(useKeyboard == true) {
-        ROS_INFO("Please press 'b' for bottle, 't' for tea, 'h' for home, 'u' for user or 'e' for exit");
-    } else {
-        ROS_INFO("Please make sure openvibe and comm_tcp are running");
-    }
     while (ros::ok() && running)
     {
+        // Wait for user input. If robot in Error state, go directly to that state.
         while (state != StateClass::ERROR && ros::ok() && running)
         {   
             if (inputKeyboard == 'e'){
@@ -260,10 +246,6 @@ int main(int argc, char* argv[])
                 state = StateClass::HOME;
                 break;
             }
-            else if(inDataOpenVibe == 4 || inputKeyboard == 'u') {
-                state = StateClass::USER;
-                break;
-            }
             else if(inDataOpenVibe == 2 || inputKeyboard == 'b') {
                 state = StateClass::ITEM1;
                 break;
@@ -272,23 +254,30 @@ int main(int argc, char* argv[])
                 state = StateClass::ITEM2;
                 break;
             }
+            else if(inDataOpenVibe == 4 || inputKeyboard == 'u') {
+                state = StateClass::USER;
+                break;
+            }
             
             loop_rate.sleep();                 
         };
 
+        // State machine
         switch (state)
         {
             case StateClass::HOME:
             {
-                if (debugEnabled == true) ROS_INFO("ENTER HOME");  
-                std::vector<geometry_msgs::Pose> poseVec;               
-                poseVec.push_back(home);
+                if (prevState != StateClass::HOME) {
+                    if (debugEnabled == true) ROS_INFO("ENTER HOME");
+                    std::vector <geometry_msgs::Pose> poseVec;
+                    poseVec.push_back(home);
 
-                planAndMove(poseVec, group, state);
-                if (state == StateClass::ERROR) break;             
+                    planAndMove(poseVec, group, state);
+                    if (state == StateClass::ERROR) break;
 
-                prevState = StateClass::HOME;
-                if (debugEnabled == true) ROS_INFO("EXIT HOME");  
+                    prevState = StateClass::HOME;
+                    if (debugEnabled == true) ROS_INFO("EXIT HOME");
+                }
             }
             break;
 
@@ -300,13 +289,12 @@ int main(int argc, char* argv[])
 
                     // Put item 2 back if it's in the gripper
                     if (item2InGripper) {
-                        poseVec.clear();
-                        poseVec.push_back(goNearItem2); 
+                        poseVec.push_back(goNearItem2);
                         poseVec.push_back(graspItem2);
                         // Move to item 2
                         planAndMove(poseVec, group, state);
                         if (state == StateClass::ERROR) break;
-
+                        // Release item 2
                         setGripper(true, kinova_client, gripperOpenState);
 
                         poseVec.clear();
@@ -341,13 +329,12 @@ int main(int argc, char* argv[])
 
                     // Put item 1 back if it's in the gripper
                     if (item1InGripper) {
-                        poseVec.clear();
-                        poseVec.push_back(goNearItem1); 
+                        poseVec.push_back(goNearItem1);
                         poseVec.push_back(graspItem1);
                         // Move to item 1
                         planAndMove(poseVec, group, state);
                         if (state == StateClass::ERROR) break;
-
+                        // Release item 1
                         setGripper(true, kinova_client, gripperOpenState);
 
                         poseVec.clear();
@@ -362,8 +349,8 @@ int main(int argc, char* argv[])
                     poseVec.push_back(graspItem2);
                     // Move to item 2
                     planAndMove(poseVec, group, state);
-                    if (state == StateClass::ERROR) break;   
-
+                    if (state == StateClass::ERROR) break;
+                    // Grip or release item 2
                     setGripper(item2InGripper, kinova_client, gripperOpenState);
                     item2InGripper = !item2InGripper;
 
@@ -375,15 +362,17 @@ int main(int argc, char* argv[])
 
             case StateClass::USER:
             {
-                if (debugEnabled == true) ROS_INFO("ENTER USER");
-                std::vector<geometry_msgs::Pose> poseVec;               
-                poseVec.push_back(goToUser);
+                if (prevState != StateClass::USER) {
+                    if (debugEnabled == true) ROS_INFO("ENTER USER");
+                    std::vector <geometry_msgs::Pose> poseVec;
+                    poseVec.push_back(goToUser);
 
-                planAndMove(poseVec, group, state);
-                if (state == StateClass::ERROR) break;
+                    planAndMove(poseVec, group, state);
+                    if (state == StateClass::ERROR) break;
 
-                prevState = StateClass::USER;
-                if (debugEnabled == true) ROS_INFO("EXIT USER");
+                    prevState = StateClass::USER;
+                    if (debugEnabled == true) ROS_INFO("EXIT USER");
+                }
             }
             break;
 

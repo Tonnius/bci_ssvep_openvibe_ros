@@ -5,9 +5,9 @@ import math
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 
-class maxRes():
-    def __init__(self, count):
-        self.maxCmPanda = None
+
+class MaxRes:
+    def __init__(self):
         self.maxCmSklearn = None
         self.maxItr = 0
         self.maxItrFileN = ''
@@ -19,19 +19,20 @@ class maxRes():
         self.predictedLabels = None
         self.meanPredictTime = 0.0
         self.acc = 0.0
-        self.thresh = None
 
-dataDir = '/home/tonnius/Git/bci_ssvep_openvibe_ros/OpenVibe/results' #directory to search for results
+
+dataDir = '/home/tonnius/Git/bci_ssvep_openvibe_ros/OpenVibe/results'  # Directory to search for results
 dataDirFileNames = sorted(os.listdir(dataDir))
 data = pickle.load(open(os.path.join(dataDir, dataDirFileNames[0]), 'rb'))
 NR_OF_SUBJECTS = data['settings']['nrOfSubjects']
 NR_OF_STATES = 4
 
-maxResList = [maxRes(count) for count in xrange(NR_OF_SUBJECTS)]
+maxResList = [MaxRes() for count in xrange(NR_OF_SUBJECTS)]  # Holds results
 
 for fileN in dataDirFileNames:
     if fileN == 'Readme.txt':
         continue
+
     data = pickle.load(open(os.path.join(dataDir, fileN), 'rb'))
     experimentSettings = data['settings']
     actualLabels = data['actual']
@@ -45,18 +46,17 @@ for fileN in dataDirFileNames:
         cmSklearn = confusion_matrix(actualLabels, predictedLabels)
         cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
         perClassAccs = [False, False, False, False]
+
+        # Minimum accuracy condition
         acc = 0.0
         for i in range(4):
             acc += cmSklearn[i][i]
             if cmSklearn[i][i] >= 0.7:
                 perClassAccs[i] = True
         perClassAccCond = all(item is True for item in perClassAccs)
-
         acc /= 4
-        accCond = False
-        if acc > 0.7:
-            accCond = True
 
+        # Calc ITR
         if acc == 1.0:
             itr = (math.log(NR_OF_STATES, 2) + acc*math.log(acc, 2)) * (60.0 / meanDetectTime)
         elif acc == 0.0:
@@ -69,7 +69,8 @@ for fileN in dataDirFileNames:
         stimsClassified = stimsData['stimsNrClassified']
         stimsTotal = stimsData['stimsNrActual']
 
-        if itr > maxResList[subjectNr].maxItr and accCond and meanDetectTime < 7:
+        # Save results if better
+        if itr > maxResList[subjectNr].maxItr and meanDetectTime < 7 and acc > 0.7:
             if stimsClassified >= maxResList[subjectNr].stimsClassified:
                 maxResList[subjectNr].maxItr = itr
                 maxResList[subjectNr].maxItrFileN = fileN
@@ -82,6 +83,7 @@ for fileN in dataDirFileNames:
                 maxResList[subjectNr].meanPredictTime = meanDetectTime
                 maxResList[subjectNr].acc = acc
 
+# Print results
 for res in maxResList:
     print "Subject {0} had max ITR {1} with settings {2}".format(res.subjectNr, res.maxItr, res.settings)
     print "Confusion matrix: actual are rows, predicted are columns"
@@ -89,4 +91,4 @@ for res in maxResList:
     print "stims data "+str(res.stims)
     print "mean detect time "+str(res.meanPredictTime)
     print "accuracy was " + str(res.acc)
-    print(classification_report(res.actualLabels, res.predictedLabels, digits=4))
+    print classification_report(res.actualLabels, res.predictedLabels, digits=4)

@@ -1,11 +1,8 @@
-import numpy as np
-import os
 import collections
 
 class MyOVBox(OVBox):
     def __init__(self):
         OVBox.__init__(self)
-
         classDequeMaxLen = 1
         self.classProbs = [collections.deque(maxlen=classDequeMaxLen),
                            collections.deque(maxlen=classDequeMaxLen),
@@ -13,12 +10,9 @@ class MyOVBox(OVBox):
                            collections.deque(maxlen=classDequeMaxLen)]
 
         self.debugEnabled = False
-        self.predNothingEnabled = True
-        self.allProbsMean = [0.0, 0.0, 0.0, 0.0]
-        self.underThreshValues = [0, 0, 0, 0]
 
     def initialize(self):
-        threshString = self.setting['Thresholds'] #Get thresholds
+        threshString = self.setting['Thresholds']  # Get thresholds
         threshs = threshString.split(':')
         if threshs:
             self.classThresh = float(threshs[0])
@@ -26,19 +20,19 @@ class MyOVBox(OVBox):
         else:
             self.classThresh = 0.5
             self.maxProbDiffThresh = 0.25
-        return
 
-    def getProbValue(self, inputNr, classNr): #Get classification probability from classifier
+    # Get classification probability
+    def getProbValue(self, inputNr, classNr):
         for chunkIndexMatrix in range(len(self.input[inputNr])):
-            probMatrix = self.input[inputNr].pop() #probMatrix[0] is stimulated, probMatrix[1] is non-stimulated
+            probMatrix = self.input[inputNr].pop()  # probMatrix[0] is stimulated, probMatrix[1] is non-stimulated
             self.classProbs[classNr].append([probMatrix[0], self.getCurrentTime()])
             if probMatrix[0] > self.classThresh:
                 return True
 
         return False
 
+    # Process loop for classification
     def process(self):
-
         probsAll = [0.0, 0.0, 0.0, 0.0]
 
         classHit = [self.getProbValue(inputNr=3, classNr=0),
@@ -46,8 +40,7 @@ class MyOVBox(OVBox):
                     self.getProbValue(inputNr=5, classNr=2),
                     self.getProbValue(inputNr=6, classNr=3)]
 
-
-        if True in classHit: #First threshold cleared
+        if True in classHit:  # Clear first threshold
             for i in range(4):
                 for prob in self.classProbs[i]:
                     if prob[0] > self.classThresh:
@@ -65,12 +58,12 @@ class MyOVBox(OVBox):
             if self.debugEnabled:
                 print "maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos)
 
-            if (maxPosDif >= self.maxProbDiffThresh): #Second threshold cleared
+            if (maxPosDif >= self.maxProbDiffThresh):  # Clear second threshold
                 if self.debugEnabled:
                     print "predicted class was " + str(maxpos + 1)
                 stimSet = OVStimulationSet(self.getCurrentTime(), self.getCurrentTime() + 1. / self.getClock())
                 stimSet.append(OVStimulation(33025 + maxpos, self.getCurrentTime(), 0.))
-                self.output[0].append(stimSet)
+                self.output[0].append(stimSet)  # Send stimulation to TCP Writer
         return
 
     def uninitialize(self):
