@@ -40,11 +40,11 @@ For moving the robot in two axes (up, down, left, right) run the following:
 
 1. `$ roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=<ROBOT_IP>` - robot bring-up, where ROBOT_IP is the ip address of the robot.
 2. `$ roslaunch ur5_custom_config ur5_on_table_moveit_planning_execution.launch` - loads configuration files and robot model where the robot is on a table.
-3. `$ roslaunch ur5_jog_arm test_with_openvibe.launch` (launches jogging server for moving the robot in small incremental steps with velocity control) OR `$ roslaunch ur5_openvibe_move move_ur5.launch` (moving the robot via incremental poses).
+3. `$ roslaunch ur5_openvibe_move ur5_jog.launch` (launches jogging server for moving the robot in small incremental steps with velocity control) OR `$ roslaunch ur5_openvibe_move ur5_move_pose.launch` (moving the robot via incremental poses).
 (Optional): `roslaunch ur5_jog_arm test_with_keyboard.launch` - to test the robot with a keyboard (either test_with_openvibe.launch or move_ur5.launch must be running).
-4. `$ rosrun openvibe_to_ros_tcp client_node <SERVER_IP_ADDRESS> <PORT>` - client node for interfacing OpenVibe and ROS. In the current setup SERVER_IP_ADDRESS=localhost, PORT=5678. NOTE: the client_node will run properly if the TCP server has been started in OpenVibe (by running online-4-stim.mxs).
+4. `$ rosrun openvibe_to_ros_tcp client_node <SERVER_IP_ADDRESS> <PORT>` - client node for interfacing OpenVibe and ROS. In the current setup SERVER_IP_ADDRESS=localhost, PORT=5678. NOTE: the client_node will run properly if the TCP server has been started in OpenVibe (by running online-4-stim.mxs) and roscore has been started (any of the previous launch files does that).
 
-NOTE: The ROS/ur5/ur5_jog_arm package is a part of [this](https://github.com/ut-ims-robotics/ur5_force_control) UT IMS Robotics repository. No changes have been made to the original ur5_jog_arm package used in this repository.
+NOTE: The ROS/ur5/ur5_jog_arm package is a part of [this](https://github.com/ut-ims-robotics/ur5_force_control) UT IMS Robotics repository. No changes have been made to the original ur5_jog_arm package that is used in this repository.
 
 ### Franka Emika Panda
 The particular setup used the Kinova KG-3 gripper on the Franka Emika Panda. For properly interfacing with the gripper, the [Kinova K-Series SDK](https://drive.google.com/file/d/1dFKkJeGiRlSAabhaQTuiR6M_zAxXDcI7/view) must be installed. 
