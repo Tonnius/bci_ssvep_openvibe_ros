@@ -114,7 +114,7 @@ do
         		TRESH=${parameters2[$j]}
     		fi
 			if (( $parameterIdent == "epDur" )) || (( $parameterIdent2 == "thresh" && $j == 0 )); then
-				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-configuration.xml" --invisible \
+				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/ssvep-configuration.mxs" --invisible \
 					--define epDur $PROC_EPOCH_DUR \
 					--define epInt $PROC_EPOCH_INTER \
 					--define freqTol $FREQ_TOLERANCE \
@@ -124,9 +124,9 @@ do
 					--define simFreq3 $SIM_FREQ3 \
 					--define simFreq4 $SIM_FREQ4 
 				wait
-				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/CSP-training-harm.xml" --define inFile ${trainingArr[$i]} --invisible 
+				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/CSP-training-harm.mxs" --define inFile ${trainingArr[$i]} --invisible 
 				wait
-				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/classifier-training-harm.xml" --define inFile ${trainingArr[$i]} --invisible
+				sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/classifier-training-harm.mxs" --define inFile ${trainingArr[$i]} --invisible
 				wait
 			fi 
 			sudo "$OPENVIBE_ROOT_PATH/openvibe-designer.sh" --play-fast "$MY_SCRIPT_PATH/perf-measure-harm.mxs" --define inFile ${testingArr[$i]} --invisible \

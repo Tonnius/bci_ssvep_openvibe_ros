@@ -708,11 +708,11 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>-128</Value>
+					<Value>-32</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1184</Value>
+					<Value>1136</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -867,11 +867,11 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>-48</Value>
+					<Value>48</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>1184</Value>
+					<Value>1136</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -1200,11 +1200,11 @@ stimulator and stop the scenario.</Text>
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1232</Value>
+					<Value>1184</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>-304</Value>
+					<Value>-208</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>

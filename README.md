@@ -14,12 +14,12 @@ Run Openvibe acquisition server (either openvibe-acquisition-server.sh in Linux 
 ### OpenVibe Designer
 To start, clone this repository with submodules (`git clone --recursive`).
 
-The OpenVibe folder of this repository contains all the neccessary files for using the BCI part of the system. Once OpenVibe is installed run openvibe-designer.sh or .cmd and open the scenarios files (.xml, .mxs) in OpenVibe. The following is a list explaining the most important scenarios and the order they should be used:
+The OpenVibe folder of this repository contains all the neccessary files for using the BCI part of the system. Once OpenVibe is installed run openvibe-designer.sh or .cmd and open the scenarios files (.mxs) in OpenVibe. The following is a list explaining the most important scenarios and the order they should be used:
 
-1. ssvep-configuration.xml - for setting up system parameters
-2. training-acquisition.xml - for training data acquisition
-3. CSP-training-harm.xml - for training the CSP spatial filters
-4. classifier-training-harm.xml - for training the classifiers
+1. ssvep-configuration.mxs - for setting up system parameters
+2. training-acquisition.mxs - for training data acquisition
+3. CSP-training-harm.mxs - for training the CSP spatial filters
+4. classifier-training-harm.mxs - for training the classifiers
 5. online-4-stim.mxs - for using the system online with 4 stimuli
 
 If steps 1 - 4 were completed successfully, running the online-4-stim scenario will classify the visual stimuli that the user is watching and send a command to ROS via TCP socket.
