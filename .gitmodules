@@ -24,3 +24,6 @@
 [submodule "ROS/keyboard_publisher"]
 	path = ROS/keyboard_publisher
 	url = https://github.com/Tonnius/keyboard_publisher
+[submodule "ROS/ur5/ur5_jog_arm"]
+	path = ROS/ur5/ur5_jog_arm
+	url = https://github.com/ut-ims-robotics/ur5_jog_arm
