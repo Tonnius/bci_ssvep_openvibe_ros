@@ -54,8 +54,6 @@ An introductory tutorial for using the UR5 can be found [here](http://wiki.ros.o
 
 4. `$ rosrun openvibe_to_ros_tcp client_node <SERVER_IP_ADDRESS> <PORT>` - TCP socket client node for interfacing OpenVibe and ROS. In the current setup SERVER_IP_ADDRESS = localhost, PORT = 5678. NOTE: the client_node will run properly if the TCP server has been started in OpenVibe (by running online-4-stim.mxs) and roscore has been started (any of the previous launch files does that).
 
-NOTE: The ROS/ur5/ur5_jog_arm package is a part of [this](https://github.com/ut-ims-robotics/ur5_force_control) UT IMS Robotics repository. No changes have been made to the original ur5_jog_arm package that is used in this repository.
-
 ### Franka Emika Panda
 The particular setup used the Kinova KG-3 gripper on the Franka Emika Panda. For properly interfacing with the gripper, the [Kinova K-Series SDK](https://drive.google.com/file/d/1dFKkJeGiRlSAabhaQTuiR6M_zAxXDcI7/view) must be installed. An introductory tutorial for using the Panda can be found [here](https://github.com/ut-ims-robotics/tutorials/wiki/Franka-Emika-Panda-beginner-guide).
 
