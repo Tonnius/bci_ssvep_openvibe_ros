@@ -1386,7 +1386,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x102c3aa1, 0x2d1a2420)</Identifier>
-			<Name>Python scripting</Name>
+			<Name>Threshold function</Name>
 			<AlgorithmClassIdentifier>(0x5dc4f669, 0xd3fd4d64)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
@@ -3921,7 +3921,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue>Will-be-overridden</DefaultValue>
-					<Value>${Player_ScenarioDirectory}/signals/ssvep-record-test.ov</Value>
+					<Value>/home/tonnius/Git/bci_ssvep_openvibe_ros/OpenVibe/signals/ssvep-record-subjectX-test.ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -3941,10 +3941,6 @@
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -5194,6 +5190,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x017c4e4b, 0x1a199d93)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x561cb172, 0x4eb061c1)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x01e5dbfb, 0x7086ce25)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x587dad7a, 0x583df57c)</BoxIdentifier>
@@ -5366,17 +5373,6 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x0a7c8712, 0x78a9580d)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x187d452a, 0x28709e12)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x4d994d17, 0x4d7d5a9e)</BoxIdentifier>
-				<BoxOutputIndex>1</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x7b41a707, 0x681981b3)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
@@ -6130,20 +6126,6 @@ Stimulation listener displays results in OpenVibe console.</Text>
 				<Attribute>
 					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
 					<Value>1632</Value>
-				</Attribute>
-			</Attributes>
-		</Comment>
-		<Comment>
-			<Identifier>(0x57c833e1, 0x71ddf330)</Identifier>
-			<Text>Threshold function implementation.</Text>
-			<Attributes>
-				<Attribute>
-					<Identifier>(0x473d9a43, 0x97fc0a97)</Identifier>
-					<Value>1392</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x7234b86b, 0x2b8651a5)</Identifier>
-					<Value>1472</Value>
 				</Attribute>
 			</Attributes>
 		</Comment>

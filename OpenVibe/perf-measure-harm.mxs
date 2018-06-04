@@ -1336,7 +1336,7 @@
 		</Box>
 		<Box>
 			<Identifier>(0x102c3aa1, 0x2d1a2420)</Identifier>
-			<Name>Python scripting</Name>
+			<Name>Performance</Name>
 			<AlgorithmClassIdentifier>(0x5dc4f669, 0xd3fd4d64)</AlgorithmClassIdentifier>
 			<Inputs>
 				<Input>
