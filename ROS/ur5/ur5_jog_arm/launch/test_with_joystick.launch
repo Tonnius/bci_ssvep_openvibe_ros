@@ -1,9 +1,0 @@
-<!-- moveit path planning must be started beforehand -->
-<launch>
-  <arg name="simu" default="false"/>
-
-  <include file="$(find jog_arm)/launch/test_with_joystick.launch"/>
-  <!-- override with custom settings -->
-  <rosparam unless="$(arg simu)" command="load" file="$(find ur5_jog_arm)/config/jog_settings.yaml"/>
-  <rosparam if="$(arg simu)" command="load" file="$(find ur5_jog_arm)/config/jog_settings_simu.yaml"/>
-</launch>
