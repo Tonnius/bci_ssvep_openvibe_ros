@@ -2,32 +2,7 @@
 	<FormatVersion>1</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
 	<CreatorVersion>2.0.0</CreatorVersion>
-	<Settings>
-		<Setting>
-			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
-			<Name>epDur</Name>
-			<DefaultValue>0.25</DefaultValue>
-			<Value>0.5</Value>
-		</Setting>
-		<Setting>
-			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
-			<Name>epInt</Name>
-			<DefaultValue>0.1</DefaultValue>
-			<Value>0.1</Value>
-		</Setting>
-		<Setting>
-			<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
-			<Name>freqTol</Name>
-			<DefaultValue>0.25</DefaultValue>
-			<Value>0.25</Value>
-		</Setting>
-		<Setting>
-			<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
-			<Name>ch</Name>
-			<DefaultValue>1:5</DefaultValue>
-			<Value>1:5</Value>
-		</Setting>
-	</Settings>
+	<Settings></Settings>
 	<Inputs></Inputs>
 	<Outputs></Outputs>
 	<Boxes>
