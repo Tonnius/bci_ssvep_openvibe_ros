@@ -1,6 +1,6 @@
 # VEP-based BCI using OpenVibe and ROS
 ## Introduction
-This repository was initially produced in the process of an MSc thesis at the University of Tartu. The main purpose of this repository is to give an overview of the developed **OpenVibe** scenarios and **ROS** packages for setting up a brain-computer interface (BCI) for robot control using the **[OpenBCI Cyton EEG headset](http://docs.openbci.com/Hardware/02-Cyton)**. The whole system was set up on Ubuntu 16.04 because of ROS, but the BCI software on OpenVibe can be used on any other OS. 
+This repository was initially produced in the process of an MSc thesis at the University of Tartu. The main purpose of this repository is to give an overview of the developed **OpenVibe** scenarios and **ROS** packages for setting up a brain-computer interface (BCI) for controlling the UR5 and Franka Emika Panda robots using the **[OpenBCI Cyton/Ultracortex EEG headset](http://openbci.com/)**. The whole system was set up on Ubuntu 16.04 because of ROS, but the BCI software on OpenVibe can be used on any other OS. 
 
 **Example videos of the system in use: [Video 1](https://youtu.be/jVh7MMvXQok), [Video 2](https://youtu.be/asDwupMbE2I)**
 
