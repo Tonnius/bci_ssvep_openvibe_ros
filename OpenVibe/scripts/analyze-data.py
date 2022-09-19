@@ -27,7 +27,7 @@ data = pickle.load(open(os.path.join(dataDir, dataDirFileNames[0]), 'rb'))
 NR_OF_SUBJECTS = data['settings']['nrOfSubjects']
 NR_OF_STATES = 4
 
-maxResList = [MaxRes() for count in xrange(NR_OF_SUBJECTS)]  # Holds results
+maxResList = [MaxRes() for count in range(NR_OF_SUBJECTS)]  # Holds results
 
 for fileN in dataDirFileNames:
     if fileN == 'Readme.txt':
@@ -85,10 +85,10 @@ for fileN in dataDirFileNames:
 
 # Print results
 for res in maxResList:
-    print "Subject {0} had max ITR {1} with settings {2}".format(res.subjectNr, res.maxItr, res.settings)
-    print "Confusion matrix: actual are rows, predicted are columns"
-    print res.maxCmSklearn
-    print "stims data "+str(res.stims)
-    print "mean detect time "+str(res.meanPredictTime)
-    print "accuracy was " + str(res.acc)
-    print classification_report(res.actualLabels, res.predictedLabels, digits=4)
+    print("Subject {0} had max ITR {1} with settings {2}".format(res.subjectNr, res.maxItr, res.settings))
+    print("Confusion matrix: actual are rows, predicted are columns")
+    print(res.maxCmSklearn)
+    print("stims data "+str(res.stims))
+    print("mean detect time "+str(res.meanPredictTime))
+    print("accuracy was " + str(res.acc))
+    print(classification_report(res.actualLabels, res.predictedLabels, digits=4))

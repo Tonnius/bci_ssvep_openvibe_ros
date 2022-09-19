@@ -47,7 +47,7 @@ class MyOVBox(OVBox):
                         probsAll[i] += prob[0]
 
             if self.debugEnabled:
-                print "probsAll: " + str(probsAll)
+                print("probsAll: " + str(probsAll))
 
             maxProb = max(probsAll)
             maxpos = probsAll.index(maxProb)
@@ -56,11 +56,11 @@ class MyOVBox(OVBox):
             maxPosDif = maxProb - maxProb2
 
             if self.debugEnabled:
-                print "maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos)
+                print("maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos))
 
             if (maxPosDif >= self.maxProbDiffThresh):  # Clear second threshold
                 if self.debugEnabled:
-                    print "predicted class was " + str(maxpos + 1)
+                    print("predicted class was " + str(maxpos + 1))
                 stimSet = OVStimulationSet(self.getCurrentTime(), self.getCurrentTime() + 1. / self.getClock())
                 stimSet.append(OVStimulation(33025 + maxpos, self.getCurrentTime(), 0.))
                 self.output[0].append(stimSet)  # Send stimulation to TCP Writer

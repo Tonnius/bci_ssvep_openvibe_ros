@@ -1,7 +1,8 @@
 import numpy as np
 import pickle
 import collections
-from sklearn.metrics import confusion_matrix
+# Comment in for confusion matrix printing, must have scikit-learn installed
+# from sklearn.metrics import confusion_matrix
 
 class MyOVBox(OVBox):
     def __init__(self):
@@ -57,7 +58,7 @@ class MyOVBox(OVBox):
                 for stimIdx in range(len(chunk)):
                     stim = chunk.pop()
                     if self.debugEnabled:
-                        print 'Received stim on input 7', stim.identifier - 33025, 'stamped at', stim.date, 's'
+                        print('Received stim on input 7', stim.identifier - 33025, 'stamped at', stim.date, 's')
                     if (stim.identifier > 33024 and stim.identifier < 33030):
                         self.currentLabel = stim.identifier - 33024
                         self.currentLabelTimeStart = stim.date + 1.0
@@ -65,7 +66,7 @@ class MyOVBox(OVBox):
                         self.newLabel = True
                         self.nrOfStimsActual += 1
                         if self.debugEnabled:
-                            print 'Total classified up to now: ' + str(self.totalNrClassified)
+                            print('Total classified up to now: ' + str(self.totalNrClassified))
 
         probsAll = [0.0, 0.0, 0.0, 0.0]
 
@@ -73,9 +74,9 @@ class MyOVBox(OVBox):
             self.newLabel = False
             self.notClassified += 1
             if self.debugEnabled:
-                print "didnt classify!"
+                print("didnt classify!")
 
-            if self.predNothingEnabled and (self.currentLabel is not -1):  # Predict best guess if out of time
+            if self.predNothingEnabled and (self.currentLabel != -1):  # Predict best guess if out of time
                 for i in range(4):
                     for prob in self.classProbs[i]:
                         probsAll[i] += prob[0]
@@ -100,7 +101,7 @@ class MyOVBox(OVBox):
                         probsAll[i] += prob[0]
 
             if self.debugEnabled:
-                print "probsAll: " + str(probsAll)
+                print("probsAll: " + str(probsAll))
 
             maxProb = max(probsAll)
             maxpos = probsAll.index(maxProb)
@@ -109,10 +110,10 @@ class MyOVBox(OVBox):
             maxPosDif = maxProb - maxProb2
 
             if self.debugEnabled:
-                print "maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos)
+                print("maxPosDif: " + str(maxPosDif) + "maxpos: " + str(maxpos))
 
             self.predictedTime = self.getCurrentTime()
-            if (self.currentLabel is not -1) and \
+            if (self.currentLabel != -1) and \
                     maxPosDif >= self.maxProbDiffThresh and \
                     (self.currentLabelTimeStart <= self.predictedTime) and \
                     (self.predictedTime <= self.currentLabelTimeStop):  # Clear second threshold
@@ -126,18 +127,19 @@ class MyOVBox(OVBox):
                     self.newLabel = False
                     self.nrOfStimsClassified += 1
                     if self.debugEnabled:
-                        print "nr of stims is " + str(self.nrOfStimsClassified)
-                        print "predicted class was " + str(maxpos + 1) + " label was: " + str(self.currentLabel)
+                        print("nr of stims is " + str(self.nrOfStimsClassified))
+                        print("predicted class was " + str(maxpos + 1) + " label was: " + str(self.currentLabel))
         return
 
     # Write results to a file
     def uninitialize(self):
         self.meanDetectTimeNewStim /= self.nrOfStimsClassified
-        print "mean time for first classification (new stimulus): " + str(self.meanDetectTimeNewStim)
-        cmSklearn = confusion_matrix(self.actualLabelsProb, self.predictedLabelsProb)
-        cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
-        print "Confusion matrix:"
-        print cmSklearn
+        print("mean time for first classification (new stimulus): " + str(self.meanDetectTimeNewStim))
+        # Comment in below lines for confusion matrix
+        # cmSklearn = confusion_matrix(self.actualLabelsProb, self.predictedLabelsProb)
+        # cmSklearn = cmSklearn.astype('float') / cmSklearn.sum(axis=1)[:, np.newaxis]
+        # print("Confusion matrix:")
+        # print(cmSklearn)
 
         nrOfSubj = int(self.setting['Nr of subjects'])
         dirToWrite = self.setting['Results Directory']
@@ -154,7 +156,7 @@ class MyOVBox(OVBox):
                       'maxProbDiffThresh': self.maxProbDiffThresh}
 
         settingsFileName = ''
-        for key, value in exSettings.items():
+        for key, value in list(exSettings.items()):
             if (key != 'simFreq'):
                 settingsFileName += str(value)[2:]
 
@@ -171,6 +173,6 @@ class MyOVBox(OVBox):
                 }
 
         pickle.dump(data, open(writeFile, 'wb'))
-        print 'File saved to ' + writeFile
+        print('File saved to ' + writeFile)
 
 box = MyOVBox()
